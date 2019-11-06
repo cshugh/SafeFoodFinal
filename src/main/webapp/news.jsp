@@ -50,46 +50,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
   <body>
     
     <header role="banner">
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">Foody</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="recipes.html">Recipes</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="services.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown04">
-                  <a class="dropdown-item" href="services.html">Food Catering</a>
-                  <a class="dropdown-item" href="services.html">Drink &amp; Beverages</a>
-                  <a class="dropdown-item" href="services.html">Wedding &amp; Birthday</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="news.html">News</a>
-              </li>
-            </ul>
-
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item cta-btn">
-                <a class="nav-link" href="contact.html">Contact Us</a>
-              </li>
-            </ul>
-            
-          </div>
-        </div>
-      </nav>
+      <jsp:include page="nav.jsp"></jsp:include>
     </header>
     <!-- END header -->
     
@@ -105,7 +66,6 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
             </div>
           </div>
         </div>
-
       </div>
     <!-- END slider -->
     </div> 
@@ -129,87 +89,6 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
               
             </div>
           </div>
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="blog d-block">
-              <a class="bg-image d-block" href="single.html" style="background-image: url('img/dishes_2.jpg');"></a>
-              <div class="text">
-                <h3><a href="single.html">How To Cook Pasta?</a></h3>
-                <p class="sched-time">
-                  <span><span class="fa fa-calendar"></span> April 22, 2018</span> <br>
-                </p>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                
-                <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
-                
-              </div>
-              
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="blog d-block">
-              <a class="bg-image d-block" href="single.html" style="background-image: url('img/dishes_3.jpg');"></a>
-              <div class="text">
-                <h3><a href="single.html">How To Cook Pasta?</a></h3>
-                <p class="sched-time">
-                  <span><span class="fa fa-calendar"></span> April 22, 2018</span> <br>
-                </p>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                
-                <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
-                
-              </div>
-              
-            </div>
-          </div>
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="blog d-block">
-              <a class="bg-image d-block" href="single.html" style="background-image: url('img/dishes_4.jpg');"></a>
-              <div class="text">
-                <h3><a href="single.html">How To Cook Pasta?</a></h3>
-                <p class="sched-time">
-                  <span><span class="fa fa-calendar"></span> April 22, 2018</span> <br>
-                </p>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                
-                <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
-                
-              </div>
-              
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="blog d-block">
-              <a class="bg-image d-block" href="single.html" style="background-image: url('img/dishes_5.jpg');"></a>
-              <div class="text">
-                <h3><a href="single.html">How To Cook Pasta?</a></h3>
-                <p class="sched-time">
-                  <span><span class="fa fa-calendar"></span> April 22, 2018</span> <br>
-                </p>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                
-                <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
-                
-              </div>
-              
-            </div>
-          </div>
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="blog d-block">
-              <a class="bg-image d-block" href="single.html" style="background-image: url('img/dishes_2.jpg');"></a>
-              <div class="text">
-                <h3><a href="single.html">How To Cook Pasta?</a></h3>
-                <p class="sched-time">
-                  <span><span class="fa fa-calendar"></span> April 22, 2018</span> <br>
-                </p>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                
-                <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
-                
-              </div>
-              
-            </div>
           </div>
         </div>
 
@@ -224,8 +103,6 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
         </div>
       </div>
     </section>
-    
-    
 
     
     
