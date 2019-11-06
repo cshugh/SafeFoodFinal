@@ -8,29 +8,7 @@
 <title>footer</title>
 </head>
 <body>
- <div class="container mb-5">
-        <div class="row justify-content-center">
-          <div class="col-lg-6 text-center">
-            <div class="row">
-              <div class="col-md-12 mb-3">
-                <h3>Subsribe Newsletter</h3>
-                <p>이것이 필요할까 아닐까 그것이 고민이다.</p>
-              </div>
 
-              <form action="" class="col-12 mb-5">
-                <div class="row align-items-center">
-                <div class="col-md-8 mb-3 mb-md-0">
-                  <input type="text" class="form-control" placeholder="Enter Email Address">
-                </div>
-                <div class="col-md-4">
-                  <input type="submit" class="btn btn-primary btn-block" value="Subscribe">
-                </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-4 mb-5">
@@ -77,7 +55,7 @@
           <div class="col-12 text-md-center text-left">
             <p>
               <!-- Link back to Free-Template.co can't be removed. Template is licensed under CC BY 3.0. -->
-          <small class="block">&copy; 2019 <strong class="text-black">Foody</strong> Free Template. All Rights Reserved. <br> Design by <a href="https://free-template.co/" target="_blank">Free-Template.co</a></small> 
+          <small class="block">&copy; 2019 <strong class="text-black">SAFE FOOD</strong> 서울 06반 정구헌 채상훈. All Rights Reserved. <br> Design by <a href="https://free-template.co/" target="_blank">Jung&Chae</a></small> 
           </p>
           </div>
         </div>
