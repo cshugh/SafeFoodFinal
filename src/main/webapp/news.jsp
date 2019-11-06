@@ -91,7 +91,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
           </div>
           </div>
         </div>
-
+		
         <div class="row mt-5" data-aos="fade-up">
           <div class="col-12 text-center">
             <a href="#" class="p-3">1</a>
