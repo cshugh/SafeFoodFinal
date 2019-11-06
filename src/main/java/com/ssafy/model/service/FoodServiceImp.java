@@ -22,6 +22,7 @@ public class FoodServiceImp implements FoodService{
 			throw new SafeFoodException("찾으려는 정보가 없습니다");
 		}
 	}
+	
 	public Food search(int code) {
 		try {
 			return dao.search(code);
