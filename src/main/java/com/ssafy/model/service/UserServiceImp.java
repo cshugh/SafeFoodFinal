@@ -7,15 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ssafy.model.dao.UserDao;
-import com.ssafy.model.dto.DuplicateException;
 import com.ssafy.model.dto.Food;
 import com.ssafy.model.dto.SafeFoodException;
 import com.ssafy.model.dto.User;
-import com.ssafy.model.dto.UserException;
 import com.ssafy.model.dto.UserfoodBean;
 @Service
 public class UserServiceImp implements UserService {
-//	private UserMgrImpl dao = UserMgrImpl.getInstance();
 	@Autowired
 	private UserDao dao;
 //	public String getAllergyIngredients(Food food, String allergies) {
@@ -42,7 +39,7 @@ public class UserServiceImp implements UserService {
 				if(pw.equals(User.getPassword())) {
 					return true;
 				}else {
-					throw new UserException("비밀 번호 오류");
+					throw new SafeFoodException("비밀 번호 오류");
 				}
 			}
 		} catch (Exception e) {
@@ -60,7 +57,7 @@ public class UserServiceImp implements UserService {
 		try {
 			User find = dao.search(User.getId());
 			if(find != null) {
-				throw new DuplicateException();
+				throw new SafeFoodException("회원정보 삽입 중 오류");
 			}else {
 				dao.add(User);
 			}
@@ -72,7 +69,7 @@ public class UserServiceImp implements UserService {
 		try {
 			User find = dao.search(User.getId());
 			if(find == null) {
-				throw new UserException("수정할 회원 정보가 없습니다.");
+				throw new SafeFoodException("수정할 회원 정보가 없습니다.");
 			}else {
 				dao.update(User);
 			}
@@ -84,7 +81,7 @@ public class UserServiceImp implements UserService {
 		try {
 			User find = dao.search(id);
 			if(find == null) {
-				throw new UserException("탈퇴할 회원 정보가 없습니다.");
+				throw new SafeFoodException("탈퇴할 회원 정보가 없습니다.");
 			}else {
 				dao.remove(id);
 			}
