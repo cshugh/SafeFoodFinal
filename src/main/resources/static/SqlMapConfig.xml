@@ -11,8 +11,8 @@
     
   <mappers>
      <!--  <mapper url = ""/> 리소스 or URL -->  
-     <mapper resource ="com/ssafy/config/User_query.xml"/>
-     <mapper resource ="com/ssafy/config/Food_query.xml"/>
+     <mapper resource ="static/User_query.xml"/>
+     <mapper resource ="static/Food_query.xml"/>
   </mappers>
    <!-- query 설정 끝 -->
 </configuration>
