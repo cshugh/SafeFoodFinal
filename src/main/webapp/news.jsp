@@ -20,7 +20,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Foody &mdash; Onepage Website Template by Free-Template.co</title>
+    <title>Safe Food - 당신의 안전한 먹거리를 위하여</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -56,13 +56,25 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
     
     <div class="slider-wrap">
       <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
-        
+        <!-- 내용 첨가할 것 -->
         <div class="container">
           <div class="row slider-text align-items-center justify-content-center">
             <div class="col-md-8 text-center col-sm-12 ">
               <h1 data-aos="fade-up">Foody News</h1>
               <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Handcrafted with love by <a href="https://free-template.co" target="_blank">Free-Template.co</a></p>
-              <p data-aos="fade-up" data-aos-delay="200"><a href="#" class="btn btn-white btn-outline-white">Get Started</a></p>
+              
+               <!-- 이거 select 
+               <ul>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="services.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">검색 조건</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="services.html">이름</a>
+                  <a class="dropdown-item" href="services.html">제조사</a>
+                  <a class="dropdown-item" href="services.html">재료명</a>
+                  <span data-aos="fade-up" data-aos-delay="200"><a href="#" class="btn btn-white btn-outline-white">검색하기</a></span>
+                </div>
+              </li>
+              </ul> -->
             </div>
           </div>
         </div>
@@ -77,13 +89,13 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
             <div class="blog d-block">
               <a class="bg-image d-block" href="single.html" style="background-image: url('img/dishes_1.jpg');"></a>
               <div class="text">
-                <h3><a href="single.html">How To Cook Pasta?</a></h3>
+                <h3><a href="single.html">식품명</a></h3>
                 <p class="sched-time">
                   <span><span class="fa fa-calendar"></span> April 22, 2018</span> <br>
                 </p>
                 <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                 
-                <p><a href="#" class="btn btn-primary btn-sm">Read More</a></p>
+                <p><a href="#" class="btn btn-primary btn-sm">식품 상세 정보</a></p>
                 
               </div>
               
@@ -118,11 +130,8 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/aos.js"></script>
-
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/magnific-popup-options.js"></script>
-    
-
     <script src="js/main.js"></script>
     
   </body>
