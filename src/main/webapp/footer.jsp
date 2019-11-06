@@ -47,16 +47,16 @@
           <div class="col-md-5 mb-5">
             <div class="mb-5">
               <h3>Opening Hours</h3>
-              <p><strong class="d-block font-weight-normal text-black">Sunday-Thursday</strong> 09AM - 06PM</p>
+              <p><strong class="d-block font-weight-normal text-black">Monday-Friday</strong> 09AM - 06PM</p>
             </div>
             <div>
               <h3>Contact Info</h3>
               <ul class="list-unstyled footer-link">
                 <li class="d-block">
                   <span class="d-block text-black">Address:</span>
-                  <span>34 Street Name, City Name Here, United States</span></li>
-                <li class="d-block"><span class="d-block text-black">Phone:</span><span>+1 242 4942 290</span></li>
-                <li class="d-block"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
+                  <span>서울특별시 강남구 역삼동 언주로 508, 멀티캠퍼스</span></li>
+                <li class="d-block"><span class="d-block text-black">Phone:</span><span>+82) 02-3429-0000</span></li>
+                <li class="d-block"><span class="d-block text-black">Email:</span><span>SSAFY@Seoul06.com</span></li>
               </ul>
             </div>
           </div>
