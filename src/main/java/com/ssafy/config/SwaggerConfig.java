@@ -20,7 +20,7 @@ public class SwaggerConfig {
 				.groupName("employee-controller") //서비스할 project 이름이나 Domain이름
 				.apiInfo(info()) //스웨거 화면에 표시할 설명 정보
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.ssafy.hrm.controller")) //서비스할 애들.
+				.apis(RequestHandlerSelectors.basePackage("com.ssafy.controller")) //서비스할 애들.
 				.paths(PathSelectors.ant("/api/**")) //경로 잡아주기 . ant로 pattern처리 phone으로 들어오는 모든것
 				.build(); //빌드패턴 : 객체 생성할때 .을 통해서 다양한 설정을 해주고나서 마지막에 build로 마무리함
 		

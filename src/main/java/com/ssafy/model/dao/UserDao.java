@@ -3,10 +3,11 @@ package com.ssafy.model.dao;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import com.ssafy.model.dto.User;
 import com.ssafy.model.dto.UserfoodBean;
-
+@Repository
 @Mapper
 public interface UserDao {
 	public void update(User user);
