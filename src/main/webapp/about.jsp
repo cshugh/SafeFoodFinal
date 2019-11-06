@@ -255,7 +255,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
         <div class="row mb-5">
           <div class="col-md-4 mb-5">
             <h3>About Us</h3>
-            <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus et dolor blanditiis consequuntur ex voluptates perspiciatis omnis unde minima expedita.</p>
+            <p class="mb-5">서울 06반 정구헌 채상훈 커플의 페이지입니다.</p>
             <ul class="list-unstyled footer-link d-flex footer-social">
               <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
               <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
