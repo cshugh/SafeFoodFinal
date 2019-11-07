@@ -822,7 +822,7 @@ header .navbar .cta-btn a:hover {
 .slider-item .slider-text h1 {
   font-size: 5rem;
   color: #fff;
-  line-height: 1.2;
+  line-height: 1;
   font-weight: 800 !important;
   text-transform: uppercase;
 }
@@ -836,7 +836,7 @@ header .navbar .cta-btn a:hover {
 .slider-item .slider-text p {
   font-size: 20px;
   line-height: 1.5;
-  font-weight: 300;
+  font-weight: 150;
   color: white;
 }
 
@@ -863,13 +863,13 @@ header .navbar .cta-btn a:hover {
   background-color: #f8f9fa;
   left: 0;
   position: absolute;
-  -webkit-transform: skewY(-6deg);
+  /* -webkit-transform: skewY(-6deg);
   -ms-transform: skewY(-6deg);
   transform: skewY(-6deg);
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
-  transform-origin: top left;
-}
+  transform-origin: top left; */
+} 
 
 .slider-wrap.no-slanted:after {
   display: none;
@@ -892,6 +892,23 @@ header .navbar .cta-btn a:hover {
   display: inline-block;
 }
 
+.newsection{
+	padding:1em 0;
+	position : relative;
+	z-index : 2;
+	background:transparent;
+	margin: 0 0 0 0;
+	z-index:1;
+}
+.newsection ul{
+	list-style : none;
+}
+.newsection li{
+	margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border : 0;
+    float: left;
+}
 .section {
   padding: 15em 0;
   position: relative;
@@ -1510,7 +1527,7 @@ header .navbar .cta-btn a:hover {
   position: relative;
 }
 
-.bottom-slant-gray:after {
+.bottom- slant-gray:after {
   content: "";
   width: 100%;
   height: 240px;
@@ -1520,13 +1537,7 @@ header .navbar .cta-btn a:hover {
   background-color: #f8f9fa;
   left: 0;
   position: absolute;
-  -webkit-transform: skewY(-6deg);
-  -ms-transform: skewY(-6deg);
-  transform: skewY(-6deg);
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-}
+} 
 
 .top-slant-white {
   position: relative;
@@ -1543,13 +1554,7 @@ header .navbar .cta-btn a:hover {
   background-color: #fff;
   left: 0;
   position: absolute;
-  -webkit-transform: skewY(-6deg);
-  -ms-transform: skewY(-6deg);
-  transform: skewY(-6deg);
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-}
+} 
 
 .top-slant-white2 {
   position: relative;
@@ -1564,13 +1569,7 @@ header .navbar .cta-btn a:hover {
   background-color: #fff;
   left: 0;
   position: absolute;
-  -webkit-transform: skewY(-6deg);
-  -ms-transform: skewY(-6deg);
-  transform: skewY(-6deg);
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-}
+} 
 
 .relative-higher {
   position: relative;

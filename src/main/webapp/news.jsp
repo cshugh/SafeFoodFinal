@@ -49,35 +49,79 @@
               <p class="mb-5" data-aos="fade-up" data-aos-delay="100">건강한 삶을 위한 먹거리 프로젝트</p>
                
             </div>
+            <div class="newsection col-md-6 text-center col-sm-12">
+					<ul>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="services.html"
+							id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">검색 조건</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown04">
+								<a class="dropdown-item" href="services.html">이름</a> <a
+									class="dropdown-item" href="services.html">제조사</a> <a
+									class="dropdown-item" href="services.html">재료명</a>
+							</div></li>
+						<li><input data-aos="fade-up" data-aos-delay="200"><a
+							href="#" class="btn btn-white btn-outline-white">검색하기</a></li>
+					</ul>
+				</div>
           </div>
-		</div>
+				
+			</div>
       </div>
     <!-- END slider -->
     </div> 
     
- 	<div class = "section bg-dark pt-0  ">
-		<ul>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="services.html"
-				id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false" >검색 조건</a>
-				<div class="dropdown-menu" aria-labelledby="dropdown04">
-					<a class="dropdown-item" href="services.html">이름</a> <a
-						class="dropdown-item" href="services.html">제조사</a> <a
-						class="dropdown-item" href="services.html">재료명</a>
-				</div>
-				<input data-aos="fade-up" data-aos-delay="200"><a
-					href="#" class="btn btn-white btn-outline-white">검색하기</a>
-					</li>
-		</ul>
-	</div>
+
 	
     <section class="section bg-light pt-0 bottom-slant-gray">
       <div class="container">
         <div class="row">
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+				<div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+					<div class="blog d-block">
+						<a class="bg-image d-block" href="single.html"
+							style="background-image: url('img/누크바3.jpg');"></a>
+						<div class="text">
+							<h3>
+								<a href="single.html">식품명</a>
+							</h3>
+							<p class="sched-time">
+								<span><span class="fa fa-calendar"></span> April 22, 2018</span>
+								<br>
+							</p>
+							<p>Far far away, behind the word mountains, far from the
+								countries Vokalia and Consonantia, there live the blind texts.</p>
+
+							<p>
+								<a href="#" class="btn btn-primary btn-sm">식품 상세 정보</a>
+							</p>
+
+						</div>
+
+					</div>
+				</div>
+				<div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+					<div class="blog d-block">
+						<a class="bg-image d-block" href="single.html"
+							style="background-image: url('img/누크바2.jpg');"></a>
+						<div class="text">
+							<h3>
+								<a href="single.html">식품명</a>
+							</h3>
+							<p class="sched-time">
+								<span><span class="fa fa-calendar"></span> April 22, 2018</span>
+								<br>
+							</p>
+							<p>Far far away, behind the word mountains, far from the
+								countries Vokalia and Consonantia, there live the blind texts.</p>
+							<p>
+								<a href="#" class="btn btn-primary btn-sm">식품 상세 정보</a>
+							</p>
+						</div>
+					</div>
+				</div>
+<div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="blog d-block">
-              <a class="bg-image d-block" href="single.html" style="background-image: url('img/dishes_1.jpg');"></a>
+              <a class="bg-image d-block" href="single.html" style="background-image: url('img/신라면큰사발2.jpg');"></a>
               <div class="text">
                 <h3><a href="single.html">식품명</a></h3>
                 <p class="sched-time">
@@ -91,7 +135,8 @@
               
             </div>
           </div>
-          </div>
+
+			</div>
         </div>
 		
         <div class="row mt-5" data-aos="fade-up">
