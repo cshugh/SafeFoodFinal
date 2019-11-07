@@ -1,22 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
-<!-- 
-////////////////////////////////////////////////////////////////
 
-Author: Free-Template.co
-Author URL: http://free-template.co.
-License: https://creativecommons.org/licenses/by/3.0/
-License URL: https://creativecommons.org/licenses/by/3.0/
-Site License URL: https://free-template.co/template-license/
-  
-Website:  https://free-template.co
-Facebook: https://www.facebook.com/FreeDashTemplate.co
-Twitter:  https://twitter.com/Free_Templateco
-RSS Feed: https://feeds.feedburner.com/Free-templateco
-
-////////////////////////////////////////////////////////////////
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -60,28 +45,33 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
         <div class="container">
           <div class="row slider-text align-items-center justify-content-center">
             <div class="col-md-8 text-center col-sm-12 ">
-              <h1 data-aos="fade-up">Foody News</h1>
-              <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Handcrafted with love by <a href="https://free-template.co" target="_blank">Free-Template.co</a></p>
-              
-               <!-- 이거 select 
-               <ul>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="services.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">검색 조건</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown04">
-                  <a class="dropdown-item" href="services.html">이름</a>
-                  <a class="dropdown-item" href="services.html">제조사</a>
-                  <a class="dropdown-item" href="services.html">재료명</a>
-                  <span data-aos="fade-up" data-aos-delay="200"><a href="#" class="btn btn-white btn-outline-white">검색하기</a></span>
-                </div>
-              </li>
-              </ul> -->
+              <h1 data-aos="fade-up">What We Provide</h1>
+              <p class="mb-5" data-aos="fade-up" data-aos-delay="100">건강한 삶을 위한 먹거리 프로젝트</p>
+               
             </div>
           </div>
-        </div>
+		</div>
       </div>
     <!-- END slider -->
     </div> 
-
+    
+ 	<div class = "section bg-dark pt-0  ">
+		<ul>
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="services.html"
+				id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false" >검색 조건</a>
+				<div class="dropdown-menu" aria-labelledby="dropdown04">
+					<a class="dropdown-item" href="services.html">이름</a> <a
+						class="dropdown-item" href="services.html">제조사</a> <a
+						class="dropdown-item" href="services.html">재료명</a>
+				</div>
+				<input data-aos="fade-up" data-aos-delay="200"><a
+					href="#" class="btn btn-white btn-outline-white">검색하기</a>
+					</li>
+		</ul>
+	</div>
+	
     <section class="section bg-light pt-0 bottom-slant-gray">
       <div class="container">
         <div class="row">

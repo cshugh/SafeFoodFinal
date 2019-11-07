@@ -1199,7 +1199,7 @@ header .navbar .cta-btn a:hover {
 }
 
 .list-unstyled.check li:before {
-  color: #5AC8D8;
+  color: #5AC8D8;¤»
   left: 0;
   font-family: "Ionicons";
   content: "\f122";
@@ -1557,7 +1557,6 @@ header .navbar .cta-btn a:hover {
 
 .top-slant-white2:before {
   content: "";
-  width: 100%;
   height: 240px;
   background: #fff;
   z-index: -1;
@@ -1747,4 +1746,12 @@ header .navbar .cta-btn a:hover {
 .categories li.active a, .sidelink li.active a {
   color: #000;
   font-style: italic;
+}
+
+.searchdiv{
+	position:relative;
+	text-align:center;
+	background-color: black;
+	
+	
 }

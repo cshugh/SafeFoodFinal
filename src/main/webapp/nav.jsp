@@ -11,17 +11,20 @@
           <div class="collapse navbar-collapse" id="navbarsExample05">
             <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Notice</a>
+                <a class="nav-link" href="index.html">공지사항</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="recipes.html">Food Information</a>
+                <a class="nav-link" href="recipes.html">상품 정보</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="recipes.html">Best Intake Information</a>
+                <a class="nav-link" href="recipes.html">베스트 섭취 정보</a>
               </li>
              
               <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="about.html">내 섭취 정보</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">예상 섭취 정보</a>
               </li>
               <!-- <li class="nav-item">
                 <a class="nav-link active" href="news.html">인생</a>
