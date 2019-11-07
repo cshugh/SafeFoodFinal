@@ -3,16 +3,15 @@ package com.ssafy.model.service;
 import java.util.List;
 
 import com.ssafy.model.dto.User;
-import com.ssafy.model.dto.UserfoodBean;
+import com.ssafy.model.dto.UserFoodBean;
 
 public interface UserService  {
-	public User search(String id) throws Exception;
-	public void add(User user) throws Exception;
-	public void update(User user) throws Exception;
-	public void remove(String id) throws Exception;
-	
-	public void insertFood(UserfoodBean userfood) throws Exception;
-	public List<UserfoodBean> searchFoodList(String uid) throws Exception;
-	public void deleteFood(UserfoodBean userfood) throws Exception;
-	public UserfoodBean searchFood(UserfoodBean bean) throws Exception;
+	public User searchUser(String id) throws Exception;
+	public void insertUser(User user) throws Exception;
+	public void updateUser(User user) throws Exception;
+	public void deleteUser(String id) throws Exception;
+	public void insertUserFood(UserFoodBean userfood) throws Exception;
+	public List<UserFoodBean> searchUserFoodList(String uid) throws Exception;
+	public void deleteUserFood(UserFoodBean userfood) throws Exception;
+	public UserFoodBean searchUserFood(UserFoodBean bean) throws Exception;
 }

@@ -17,7 +17,7 @@ public class SwaggerConfig {
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2)
-				.groupName("employee-controller") //서비스할 project 이름이나 Domain이름
+				.groupName("safefood-controller") //서비스할 project 이름이나 Domain이름
 				.apiInfo(info()) //스웨거 화면에 표시할 설명 정보
 				.select()
 				.apis(RequestHandlerSelectors.basePackage("com.ssafy.controller")) //서비스할 애들.
@@ -28,8 +28,8 @@ public class SwaggerConfig {
 	}
 	private ApiInfo info() {
 		return new ApiInfoBuilder().title("SSAFY API")
-				.description("SSAFY AOU Referebce fir Devekioers")
-				.license("SSAFY RESOURCES MANAGEMENT 2019")
+				.description("SAFE FOOD API Reference for Developers")
+				.license("SAFE FOOD MANAGEMENT 2019")
 				.version("1.0")
 				.build();
 	}

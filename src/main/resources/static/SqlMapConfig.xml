@@ -6,7 +6,7 @@
    	<typeAlias type ="com.ssafy.model.dto.User" 	alias ="user"/>
    	<typeAlias type ="com.ssafy.model.dto.FoodPageBean" alias ="pagebean"/>
    	<typeAlias type ="com.ssafy.model.dto.Food" alias ="food"/>
-   	<typeAlias type ="com.ssafy.model.dto.UserfoodBean" alias ="userfood"/>
+   	<typeAlias type ="com.ssafy.model.dto.UserFoodBean" alias ="userfood"/>
   </typeAliases>
     
   <mappers>
