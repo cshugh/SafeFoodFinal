@@ -31,6 +31,24 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
+    <script>
+    function openForm() {
+    	document.getElementById("loginPopup").style.display = "block";
+    }
+    function loginClick() {
+    	document.getElementById("loginBtn").innerHTML = "Sign Out";
+    }
+    function closeForm() {
+    	document.getElementById("loginPopup").style.display = "none";
+    	document.getElementById("loginBtn").innerHTML = "Sign In";
+    }
+    window.onclick = function(event) {
+    	var modal = document.getElementById('loginPopup');
+    	if (event.target == modal) {
+    		closeForm();
+    	}
+    }
+</script>
   </head>
   <body>
     
@@ -38,44 +56,12 @@
       <jsp:include page="nav.jsp"></jsp:include>
     </header>
     <!-- END header -->
-    
-    <div class="slider-wrap">
-      <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
-        <!-- 내용 첨가할 것 -->
-        <div class="container">
-          <div class="row slider-text align-items-center justify-content-center">
-            <div class="col-md-8 text-center col-sm-12 ">
-              <h1 data-aos="fade-up">What We Provide</h1>
-              <p class="mb-5" data-aos="fade-up" data-aos-delay="100">건강한 삶을 위한 먹거리 프로젝트</p>
-               
-            </div>
-            <div class="newsection col-md-6 text-center col-sm-12">
-					<ul>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="services.html"
-							id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">검색 조건</a>
-							<div class="dropdown-menu" aria-labelledby="dropdown04">
-								<a class="dropdown-item" href="services.html">이름</a> <a
-									class="dropdown-item" href="services.html">제조사</a> <a
-									class="dropdown-item" href="services.html">재료명</a>
-							</div></li>
-						<li><input data-aos="fade-up" data-aos-delay="200"><a
-							href="#" class="btn btn-white btn-outline-white">검색하기</a></li>
-					</ul>
-				</div>
-          </div>
-				
-			</div>
-      </div>
+	<jsp:include page="mainSlider.jsp"></jsp:include>    	
     <!-- END slider -->
-    </div> 
-    
-
 	
-    <section class="section bg-light pt-0 bottom-slant-gray">
-      <div class="container">
-        <div class="row">
+	<section class="section bg-light pt-0 bottom-slant-gray">
+		<div class="container">
+			<div class="row">
 				<div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
 					<div class="blog d-block">
 						<a class="bg-image d-block" href="single.html"
@@ -92,7 +78,8 @@
 								countries Vokalia and Consonantia, there live the blind texts.</p>
 
 							<p>
-								<a href="#" class="btn btn-primary btn-sm">식품 상세 정보</a>
+								<a href="#" class="btn btn-primary btn-sm">추가</a>
+								<a href="#" class="btn btn-primary btn-sm">찜</a>
 							</p>
 
 						</div>
@@ -114,42 +101,44 @@
 							<p>Far far away, behind the word mountains, far from the
 								countries Vokalia and Consonantia, there live the blind texts.</p>
 							<p>
-								<a href="#" class="btn btn-primary btn-sm">식품 상세 정보</a>
+								<a href="#" class="btn btn-primary btn-sm">추가</a>
+								<a href="#" class="btn btn-primary btn-sm">찜</a>
 							</p>
 						</div>
 					</div>
 				</div>
-<div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="blog d-block">
-              <a class="bg-image d-block" href="single.html" style="background-image: url('img/신라면큰사발2.jpg');"></a>
-              <div class="text">
-                <h3><a href="single.html">식품명</a></h3>
-                <p class="sched-time">
-                  <span><span class="fa fa-calendar"></span> April 22, 2018</span> <br>
-                </p>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                
-                <p><a href="#" class="btn btn-primary btn-sm">식품 상세 정보</a></p>
-                
-              </div>
-              
-            </div>
-          </div>
-
+				<div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+					<div class="blog d-block">
+						<a class="bg-image d-block" href="single.html"
+							style="background-image: url('img/신라면큰사발2.jpg');"></a>
+						<div class="text">
+							<h3>
+								<a href="single.html">식품명</a>
+							</h3>
+							<p class="sched-time">
+								<span><span class="fa fa-calendar"></span> April 22, 2018</span>
+								<br>
+							</p>
+							<p>Far far away, behind the word mountains, far from the
+								countries Vokalia and Consonantia, there live the blind texts.</p>
+							<p>
+								<a href="#" class="btn btn-primary btn-sm">추가</a>
+								<a href="#" class="btn btn-primary btn-sm">찜</a>
+							</p>
+						</div>
+					</div>
+				</div>
 			</div>
-        </div>
-		
-        <div class="row mt-5" data-aos="fade-up">
-          <div class="col-12 text-center">
-            <a href="#" class="p-3">1</a>
-            <a href="#" class="p-3">2</a>
-            <a href="#" class="p-3">3</a>
-            <span class="p-3">...</span>
-            <a href="#" class="p-3">5</a>
-          </div>
-        </div>
-      </div>
-    </section>
+		</div>
+
+		<div class="row mt-5" data-aos="fade-up">
+			<div class="col-12 text-center">
+				<a href="#" class="p-3">1</a> <a href="#" class="p-3">2</a> <a
+					href="#" class="p-3">3</a> <span class="p-3">...</span> <a href="#"
+					class="p-3">5</a>
+			</div>
+		</div>
+	</section>
 
     <footer class="site-footer" role="contentinfo">
      	<jsp:include page="footer.jsp"></jsp:include>

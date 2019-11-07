@@ -23,7 +23,10 @@ html {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto; 
+  margin-top : auto;
+  margin-bottom: auto;
+  }
   @media (min-width: 576px) {
     .container {
       max-width: 540px; } }
@@ -51,7 +54,8 @@ html {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-right: -15px;
-  margin-left: -15px; }
+  margin-left: -15px; 
+  margin : auto;}
 
 .no-gutters {
   margin-right: 0;
@@ -459,6 +463,7 @@ html {
     flex: 0 0 58.33333%;
     max-width: 58.33333%; }
   .col-md-8 {
+  	margin-top:auto;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 66.66667%;
     flex: 0 0 66.66667%;

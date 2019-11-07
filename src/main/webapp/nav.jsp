@@ -36,7 +36,25 @@
                 <a class="nav-link" href="contact.html">Sign Up</a>
               </li>
               <li class="nav-item cta-btn">
-                <a class="nav-link" href="contact.html">Sign In</a>
+                <!-- <a class="nav-link" href="contact.html">Sign In</a> -->
+                <button class="nav-link" id="loginBtn" onclick="openForm()"
+                style="margin:auto; font-size: 1rem; color: white !important;
+                @media (max-width: 1199px) { padding: .5rem 0rem; };">
+                Sing In
+                </button>
+                <div id="loginPopup">
+					<div class="form-popup" id="popupForm">
+						<form action="/action_page.php" class="form-container">
+							<label for="아이디"> <strong>아이디</strong>
+							</label> <input type="text" id="email" placeholder="아이디를 입력하세요."
+								name="email" required> <label for="psw"> <strong>비밀번호</strong>
+							</label> <input type="password" id="login_psw" placeholder="비밀번호를 입력하세요."
+								name="psw" required>
+							<button type="submit" class="btn" onclick="loginClick()">로그인</button>
+							<button type="button" class="btn cancel" onclick="closeForm()">닫기</button>
+						</form>
+					</div>
+				</div>
               </li>
             </ul>
             
