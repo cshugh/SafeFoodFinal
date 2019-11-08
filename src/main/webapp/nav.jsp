@@ -17,10 +17,12 @@
     		closeForm();
     	}
     }
-/*     function userIn() {
-    	document.getElementById("userOut").style.display = "none";
-    	document.getElementById("userIn").style.display = "block";
+    
+    function userIn() {
+    	document.getElementById("#userOut").style.display = "none";
+    	document.getElementById("#userIn").style.display = "block";
     }
+    /*
     function userOut() {
     	document.getElementById("userIn").style.display = "none";
     	document.getElementById("userOut").style.display = "block";
@@ -44,38 +46,31 @@
 				<li class="nav-item"><a class="nav-link" href="recipes.html">베스트
 						섭취 정보</a></li>
 			</ul>
-			<c:choose>
-				<c:when test="${not empty user}">
-				<ul class="navbar-nav ml-auto" id = "userIn">
-					<li class="nav-item cta-btn"><a class="nav-link" href="regitUser.do">${user}님 안녕하세요!</a></li>
-					<li class="nav-item cta-btn"><a class="nav-link" href="updateUser.do">My Page</a></li>
-					<li class="nav-item cta-btn"><a class="nav-link" href="logout.do">Sign Out</a></li>
-				</ul>
-				
-			</c:when>
-				<c:otherwise>
-					<ul class="navbar-nav ml-auto" id = "userOut">
-						<li class="nav-item cta-btn"><a class="nav-link" href="regitUser.do">Sign Up</a></li>
-						<li class="nav-item cta-btn">
-							<!-- <a class="nav-link" href="contact.html">Sign In</a> -->
-							<a a class="nav-link" id="loginBtn" onclick="openForm()">Sign In</a>
-							<div id="loginPopup">
-								<div class="form-popup" id="popupForm">
-									<form method="post" action="login.do" class="form-container" >
-										<label for="아이디"> <strong>아이디</strong>
-										</label> <input type="text" id="user" name = "user" placeholder="아이디를 입력하세요."
-											required> <label for="psw"> <strong>비밀번호</strong>
-										</label> <input type="password" id="password"
-											placeholder="비밀번호를 입력하세요." name="password" required>
-										<button type="submit" class="btn" onclick="loginClick()">로그인</button>
-										<button type="button" class="btn cancel" onclick="closeForm()">닫기</button>
-									</form>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</c:otherwise>
-			</c:choose>
+			<ul class="navbar-nav ml-auto" id="userIn" style="display: ${(empty user) ? 'none': 'block'};">
+				<li class="nav-item cta-btn"><a class="nav-link" href="#">${user}님	안녕하세요!</a></li>
+				<li class="nav-item cta-btn"><a class="nav-link" href="updateUser.do">My Page</a></li>
+				<li class="nav-item cta-btn"><a class="nav-link" href="logout.do">Sign Out</a></li>
+			</ul>
+			<ul class="navbar-nav ml-auto" id="userOut" style="display: ${(not empty user) ? 'none': 'block'};">
+				<li class="nav-item cta-btn"><a class="nav-link" href="regitUser.do">Sign Up</a></li>
+				<li class="nav-item cta-btn">
+					<a class="nav-link" id="loginBtn" onclick="openForm()">Sign In</a>
+					<div id="loginPopup">
+						<div class="form-popup" id="popupForm">
+							<form method="post" action="login.do" class="form-container">
+								<label for="아이디"> <strong>아이디</strong>
+								</label> <input type="text" id="user" name="user"
+									placeholder="아이디를 입력하세요." required> <label for="psw">
+									<strong>비밀번호</strong>
+								</label> <input type="password" id="password"
+									placeholder="비밀번호를 입력하세요." name="password" required>
+								<button type="submit" class="btn" onclick="loginClick()">로그인</button>
+								<button type="button" class="btn cancel" onclick="closeForm()">닫기</button>
+							</form>
+						</div>
+					</div>
+				</li>
+			</ul>
 		</div>
 	</div>
 </nav>
