@@ -51,7 +51,9 @@
     </header>
 	<jsp:include page="userSlider.jsp"></jsp:include>
 <section class="section bg-light" style="padding: 3em">
-<form id="regitForm" class="form-horizontal" style=" margin: 0 auto;  padding: 20px;  width : 60%;">
+
+	<form method="post" action="insertUser.do" id="regitForm" class="form-horizontal" style=" margin: 0 auto;  padding: 20px;  width : 60%;"
+		>
 		<div class="form-group">
 			<label for="inputid" class="control-label">아 이 디</label> 
 			<input	type="text" class="form-control" id="id" placeholder="">
@@ -108,12 +110,12 @@
 				</div>
 			</fieldset>
 		</div>
-	</form>
 	<div style="text-align:center; margin-bottom:15px;">
-		<input type="button" name ="signup" value='가입하기' >
-		<input type="button" name ="signup" value='취소' >
-
+		<input type="submit" name ="signup" value='가입하기' >
+		<input type="reset" name ="cancel" value='취소' >
 	</div>
+	</form>
+
 </section>
 
     <footer class="site-footer" role="contentinfo">

@@ -43,11 +43,13 @@ public class MainController {
 	public String regitUser() {
 		return "userRegit";
 	}
+	
 	@PostMapping("insertUser.do")
 	public String insertUser(User user) {
 		userService.insertUser(user);
 		return "redirect:UserResult.jsp";
 	}
+	
 //	@PutMapping("updateUser.do")
 	
 	/*
