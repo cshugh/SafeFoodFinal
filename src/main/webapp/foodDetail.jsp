@@ -140,7 +140,7 @@ function DoughnutChart() {
 			<table id="table" class="table" style="margin: auto;">
 				<tr>
 					<td rowspan='6' width='30%' align="center"><img id="Picture"
-						src="img/${food.name}.jpg" width='200px' height='200px'></td>
+						src="img/${food.name}.jpg" width='300px' height='300px' style="margin:auto"></td>
 				</tr>
 				<tr>
 					<th>제품명</th>
