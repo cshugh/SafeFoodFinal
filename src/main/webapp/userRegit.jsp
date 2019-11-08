@@ -56,56 +56,60 @@
 		>
 		<div class="form-group">
 			<label for="inputid" class="control-label">아 이 디</label> 
-			<input	type="text" class="form-control" id="id" placeholder="">
+			<input	type="text" class="form-control" id="id" name= "password" placeholder="">
 		</div>
 
 		<div class="form-group">
 			<label for="inputPassword" class="control-label">비밀 번호</label> 
-			<input	type="password" class="form-control" id="pw" placeholder="영문 숫자 포함 6자리 이상">
+			<input	type="password" class="form-control" id="password" name="password" placeholder="영문 숫자 포함 6자리 이상">
 		</div>
 
 		<div class="form-group">
 			<label class="control-label">이름</label> 
-			<input type="text" class="form-control" id="name" placeholder="User name">
+			<input type="text" class="form-control" id="name" name="name" placeholder="User name">
+		</div>
+		<div class="form-group">
+			<label class="control-label">이메일</label> 
+			<input type="text" class="form-control" id="email" name = "email" placeholder="User email">
 		</div>
 
 		<div class="form-group">
 			<label class="control-label">주소</label> 
-			<input type="text"	class="form-control" id="address" placeholder="주소">
+			<input type="text"	class="form-control" id="address" name ="address"  placeholder="주소">
 		</div>
 
 		<div class="form-group">
 			<label>전화 번호</label> 
-			<input type="tel" class="form-control" id="phoneNumber" placeholder="010-xxx-xxxx">
+			<input type="tel" class="form-control" id="phone" name = "phone" placeholder="010-xxx-xxxx">
 		</div>
 
 		<div class="form-group" style="text-align: center;">
 			<label for="" class="col-sm-2 control-label">Check</label>
 			<fieldset style="border: solid 1px white;">
 				<div>
-					<label> <input type="checkbox" name='Alergy' value='' /> 대두
-						<input type="checkbox" name='Alergy' value='' /> 땅콩 <input
-						type="checkbox" name='Alergy' value='' /> 우유 <input
-						type="checkbox" name='Alergy' value='' /> 게
+					<label> <input type="checkbox" name='alergy' value='대두' /> 대두
+						<input type="checkbox" name='alergy' value='땅콩' /> 땅콩 <input
+						type="checkbox" name='alergy' value='우유' /> 우유 <input
+						type="checkbox" name='alergy' value='게' /> 게
 					</label>
 				</div>
 				<div>
-					<label> <input type="checkbox" name='Alergy' value='' /> 새우
-						<input type="checkbox" name='Alergy' value='' /> 참치 <input
-						type="checkbox" name='Alergy' value='' /> 연어 <input
-						type="checkbox" name='Alergy' value='' /> 쑥
+					<label> <input type="checkbox" name='alergy' value='새우' /> 새우
+						<input type="checkbox" name='alergy' value='참치' /> 참치 <input
+						type="checkbox" name='alergy' value='연어' /> 연어 <input
+						type="checkbox" name='alergy' value='쑥' /> 쑥
 					</label>	
 				</div>
 				<div>
-					<label> <input type="checkbox" name='Alergy' value='' />
-						소고기 <input type="checkbox" name='Alergy' value='' /> 닭고기 <input
-						type="checkbox" name='Alergy' value='' /> 돼지고기
+					<label> <input type="checkbox" name='alergy' value='' />
+						소고기 <input type="checkbox" name='alergy' value='' /> 닭고기 <input
+						type="checkbox" name='alergy' value='' /> 돼지고기
 					</label>
 				</div>
 				<div>
-					<label> <input type="checkbox" name='Alergy' value='' />
-						복숭아 <input type="checkbox" name='Alergy' value='' /> 민들레 <input
-						type="checkbox" name='Alergy' value='' /> 계란흰자
+					<label> <input type="checkbox" name='alergy' value='복숭아' />
+						복숭아 <input type="checkbox" name='alergy' value='민들레' /> 민들레 <input
+						type="checkbox" name='alergy' value='계란흰자' /> 계란흰자
 					</label>
 				</div>
 			</fieldset>
