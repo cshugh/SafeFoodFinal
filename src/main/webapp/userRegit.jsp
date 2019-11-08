@@ -50,13 +50,13 @@
       <jsp:include page="nav.jsp"></jsp:include>
     </header>
 	<jsp:include page="userSlider.jsp"></jsp:include>
+	
 <section class="section bg-light" style="padding: 3em">
-
-	<form method="post" action="insertUser.do" id="regitForm" class="form-horizontal" style=" margin: 0 auto;  padding: 20px;  width : 60%;"
-		>
+	<form method="post" action="insertUser.do" id="regitForm" class="form-horizontal" 
+		style=" margin: 0 auto;  padding: 20px;  width : 60%;">
 		<div class="form-group">
 			<label for="inputid" class="control-label">아 이 디</label> 
-			<input	type="text" class="form-control" id="id" name= "password" placeholder="">
+			<input	type="text" class="form-control" id="id" name= "id" placeholder="">
 		</div>
 
 		<div class="form-group">
@@ -68,6 +68,7 @@
 			<label class="control-label">이름</label> 
 			<input type="text" class="form-control" id="name" name="name" placeholder="User name">
 		</div>
+		
 		<div class="form-group">
 			<label class="control-label">이메일</label> 
 			<input type="text" class="form-control" id="email" name = "email" placeholder="User email">
@@ -114,12 +115,11 @@
 				</div>
 			</fieldset>
 		</div>
-	<div style="text-align:center; margin-bottom:15px;">
-		<input type="submit" name ="signup" value='가입하기' >
-		<input type="reset" name ="cancel" value='취소' >
-	</div>
+		<div style="text-align:center; margin-bottom:15px;">
+			<input type="submit" name ="signup" value='가입하기' >
+			<input type="reset" name ="cancel" value='취소' >
+		</div>
 	</form>
-
 </section>
 
     <footer class="site-footer" role="contentinfo">

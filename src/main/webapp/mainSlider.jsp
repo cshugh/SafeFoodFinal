@@ -15,19 +15,21 @@
 						위한 먹거리 프로젝트</p>
 				</div>
 				<div class="newsection col-md-6 text-center col-sm-12">
+				<form method="post" action="searchAllFood.do">
 					<ul>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="services.html"
+						<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#"
 							id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false">검색 조건</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown04">
-								<a class="dropdown-item" href="services.html">이름</a> <a
-									class="dropdown-item" href="services.html">제조사</a> <a
-									class="dropdown-item" href="services.html">재료명</a>
+								<a class="dropdown-item" href="#" id="name" value="name">이름</a> 
+								<a class="dropdown-item" href="#" id="maker"  value="maker">제조사</a> 
+								<a class="dropdown-item" href="#" id="material"  value="material">재료명</a>
 							</div></li>
 						<li><input data-aos="fade-up" data-aos-delay="200"><a
 							href="#" class="btn btn-white btn-outline-white">검색하기</a></li>
 					</ul>
+				</form>
 				</div>
 			</div>
 		</div>

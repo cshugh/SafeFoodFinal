@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,7 +29,7 @@ public class MainController {
 	
 	@ExceptionHandler
 	public ModelAndView handler (Exception e) {
-		ModelAndView mav = new ModelAndView("error");
+		ModelAndView mav = new ModelAndView("Error");
 		mav.addObject("msg", e.getMessage());
 		return mav;
 	}
@@ -46,6 +47,7 @@ public class MainController {
 	
 	@PostMapping("insertUser.do")
 	public String insertUser(User user) {
+		System.out.println(user);
 		userService.insertUser(user);
 		return "redirect:main.jsp";
 	}
@@ -61,16 +63,16 @@ public class MainController {
 		return "foodDetail";
 	}
 
-	@GetMapping("searchAllFood.do") 
-	 public String searchAllFood(Model model) {
-		model.addAttribute("foodList", foodService.searchAllFood("", ""));
-		System.out.println(foodService.searchAllFood("",""));
+	@PostMapping("searchAllFood.do") 
+	 public String searchAllFood(Model model, String key, String value) {
+		if(key==null) key="";
+		if(value==null) value="";
+		model.addAttribute("foodList", foodService.searchAllFood(key, value));
 		return "foodInfo"; 
 	 }
 
 	@PostMapping("login.do")
 	public String login(String user, String password, HttpSession session) {
-		System.out.println(user+","+password);
 		boolean result = userService.login(user, password);
 		if(result) {
 			session.setAttribute("user", user);
