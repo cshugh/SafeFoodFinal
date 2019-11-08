@@ -37,7 +37,7 @@ public class MainController {
 	@DeleteMapping("deleteUser.do")
 	public String deleteUser(@RequestParam String id) {
 		userService.deleteUser(id);
-		return "redirect:main.do";
+		return "redirect:main.jsp";
 	}
 	@GetMapping("regitUser.do")
 	public String regitUser() {
@@ -47,7 +47,7 @@ public class MainController {
 	@PostMapping("insertUser.do")
 	public String insertUser(User user) {
 		userService.insertUser(user);
-		return "redirect:UserResult.jsp";
+		return "redirect:main.jsp";
 	}
 	
 //	@PutMapping("updateUser.do")
