@@ -7,14 +7,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>detailList</title>
-<link rel="stylesheet" href="css/index.css">
+<!-- <link rel="stylesheet" href="css/index.css"> -->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <!-- Bootstrap core CSS -->
-<link href="dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Bootstrap theme -->
+<!-- <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+Bootstrap theme
 <link href="dist/css/bootstrap-theme.min.css" rel="stylesheet">
-<link href="theme.css" rel="stylesheet">
+<link href="theme.css" rel="stylesheet"> -->
 <script type='text/javascript' src='js/jquery-3.3.1.js'></script>
 <script type="text/javascript">
 $(function(){
@@ -37,8 +37,8 @@ function DoughnutChart() {
 							"콜레스테롤", "포화지방산", "트랜스지방" ],
 					datasets : [ {
 						label : '# of Votes',
-						data : [ ${food.calory}, ${food.carbo}, ${food.protein}, ${food.fat}, ${food.sugar}, ${food.natrium},
-								${food.chole}, ${food.fattyacid}, ${food.transfat} ],
+						data : [${food.calory}, ${food.carbo}, ${food.protein}, ${food.fat}, ${food.sugar}, ${food.natrium},
+								${food.chole}, ${food.fattyacid}, ${food.transfat}],
 						backgroundColor : [ 'rgba(255, 99, 132, 0.2)',
 								'rgba(54, 162, 235, 0.2)',
 								'rgba(255, 206, 86, 0.2)',
@@ -154,10 +154,10 @@ function DoughnutChart() {
 					<th>원재료</th>
 					<td id="Ingredient">${food.material}</td>
 				</tr>
-				<tr>
+			<%-- 	<tr>
 					<th>알레르기성분</th>
 					<td>${food.allergy}</td>
-				</tr>
+				</tr> --%>
 				<tr>
 					<th align='left'>Quantity&nbsp;<br /> <input type="number"
 						required="required" min="1" id='person' />

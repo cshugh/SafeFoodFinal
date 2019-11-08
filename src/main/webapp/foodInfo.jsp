@@ -48,11 +48,11 @@
 				<c:forEach items = "${foodList}" var = "food">
 				<div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
 					<div class="blog d-block">
-						<a class="bg-image d-block" href="single.html"
+						<a class="bg-image d-block" href="foodDetail.do?code=${food.code}"
 							style="background-image: url(${food.img}); background-size:cover; background-repeat:no-repeat;"></a>
 						<div class="text">
 							<h3>
-								<a href="foodDetail.do=?code=${food.code}">${food.name}</a>
+								<a href="foodDetail.do?code=${food.code}">${food.name}</a>
 							</h3>
 							<p class="sched-time">
 								<span><span class="fa fa-calendar"></span> April 22, 2018</span>
