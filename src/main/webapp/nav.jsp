@@ -48,6 +48,7 @@
 				<c:when test="${not empty user}">
 				<ul class="navbar-nav ml-auto" id = "userIn">
 					<li class="nav-item cta-btn"><a class="nav-link" href="regitUser.do">${user}님 안녕하세요!</a></li>
+					<li class="nav-item cta-btn"><a class="nav-link" href="updateUser.do">My Page</a></li>
 					<li class="nav-item cta-btn"><a class="nav-link" href="logout.do">Sign Out</a></li>
 				</ul>
 				
