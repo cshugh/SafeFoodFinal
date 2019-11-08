@@ -60,12 +60,12 @@
 							<button id="loginBtn" onclick="openForm()">Sign In</button>
 							<div id="loginPopup">
 								<div class="form-popup" id="popupForm">
-									<form action="login.do" class="form-container">
+									<form method="post" action="login.do" class="form-container" >
 										<label for="아이디"> <strong>아이디</strong>
-										</label> <input type="text" id="email" placeholder="아이디를 입력하세요."
-											name="email" required> <label for="psw"> <strong>비밀번호</strong>
-										</label> <input type="password" id="login_psw"
-											placeholder="비밀번호를 입력하세요." name="psw" required>
+										</label> <input type="text" id="user" name = "user" placeholder="아이디를 입력하세요."
+											required> <label for="psw"> <strong>비밀번호</strong>
+										</label> <input type="password" id="password"
+											placeholder="비밀번호를 입력하세요." name="password" required>
 										<button type="submit" class="btn" onclick="loginClick()">로그인</button>
 										<button type="button" class="btn cancel" onclick="closeForm()">닫기</button>
 									</form>
