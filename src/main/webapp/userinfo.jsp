@@ -60,7 +60,7 @@
 			<div class="form-group">
 				<label for="inputid" class="control-label">아 이 디</label> <input
 					type="text" class="form-control" id="id" name="id" placeholder=""
-					value="${user.id}" readonly="readonly">
+					value="${member.id}" readonly="readonly">
 			</div>
 
 			<div class="form-group">
@@ -72,25 +72,25 @@
 			<div class="form-group">
 				<label class="control-label">이름</label> <input type="text"
 					class="form-control" id="name" name="name" placeholder="User name"
-					value="${user.name}">
+					value="${member.name}">
 			</div>
 
 			<div class="form-group">
 				<label class="control-label">이메일</label> <input type="text"
 					class="form-control" id="email" name="email"
-					placeholder="User email" value="${user.email}">
+					placeholder="User email" value="${member.email}">
 			</div>
 
 			<div class="form-group">
 				<label class="control-label">주소</label> <input type="text"
 					class="form-control" id="address" name="address" placeholder="주소"
-					value="${user.address}">
+					value="${member.address}">
 			</div>
 
 			<div class="form-group">
 				<label>전화 번호</label> <input type="tel" class="form-control"
 					id="phone" name="phone" placeholder="010-xxx-xxxx"
-					value="${user.phone}">
+					value="${member.phone}">
 			</div>
 
 			<div class="form-group" style="text-align: center;">
@@ -98,85 +98,85 @@
 				<fieldset style="border: solid 1px white;">
 					<input class="form-check-input" type="checkbox" id="gridCheck1"
 						name="allergy" value="대두"
-						<c:if test="${fn:contains(user.allergy, '대두')}">
+						<c:if test="${fn:contains(member.allergy, '대두')}">
 											checked
 											</c:if>>
 					<label class="form-check-label" for="gridCheck1"> 대두 </label>
 					&nbsp;&nbsp;&nbsp; <input class="form-check-input" type="checkbox"
 						id="gridCheck2" name="allergy" value="땅콩"
-						<c:if test="${fn:contains(user.allergy, '땅콩')}">
+						<c:if test="${fn:contains(member.allergy, '땅콩')}">
 											checked
 											</c:if>>
 					<label> 땅콩 </label> &nbsp;&nbsp;&nbsp; <input
 						class="form-check-input" type="checkbox" id="gridCheck2"
 						name="allergy" value="우유"
-						<c:if test="${fn:contains(user.allergy, '우유')}">
+						<c:if test="${fn:contains(member.allergy, '우유')}">
 											checked
 											</c:if>>
 					<label class="form-check-label" for="gridCheck1"> 우유 </label>
 					&nbsp;&nbsp;&nbsp; <input class="form-check-input" type="checkbox"
 						id="gridCheck2" name="allergy" value="게"
-						<c:if test="${fn:contains(user.allergy, '게')}">
+						<c:if test="${fn:contains(member.allergy, '게')}">
 											checked
 											</c:if>>
 					<label class="form-check-label" for="gridCheck1"> 게 </label> <br>
 					<input class="form-check-input" type="checkbox" id="gridCheck2"
 						name="allergy" value="새우"
-						<c:if test="${fn:contains(user.allergy, '새우')}">
+						<c:if test="${fn:contains(member.allergy, '새우')}">
 											checked
 											</c:if>>
 					<label class="form-check-label" for="gridCheck1"> 새우 </label>
 					&nbsp;&nbsp;&nbsp; <input class="form-check-input" type="checkbox"
 						id="gridCheck2" name="allergy" value="참치"
-						<c:if test="${fn:contains(user.allergy, '참치')}">
+						<c:if test="${fn:contains(member.allergy, '참치')}">
 											checked
 											</c:if>>
 					<label class="form-check-label" for="gridCheck1"> 참치 </label>
 					&nbsp;&nbsp;&nbsp; <input class="form-check-input" type="checkbox"
 						id="gridCheck2" name="allergy" value="연어"
-						<c:if test="${fn:contains(user.allergy, '연어')}">
+						<c:if test="${fn:contains(member.allergy, '연어')}">
 											checked
 											</c:if>>
 					<label class="form-check-label" for="gridCheck1"> 연어 </label>
 					&nbsp;&nbsp;&nbsp; <input class="form-check-input" type="checkbox"
 						id="gridCheck2" name="allergy" value="쑥"
-						<c:if test="${fn:contains(user.allergy, '쑥')}">
+						<c:if test="${fn:contains(member.allergy, '쑥')}">
 											checked
 											</c:if>>
 					<label class="form-check-label" for="gridCheck1"> 쑥 </label> <br>
 					<input class="form-check-input" type="checkbox" id="gridCheck2"
 						name="allergy" value="소고기"
-						<c:if test="${fn:contains(user.allergy, '소고기')}">
+						<c:if test="${fn:contains(member.allergy, '소고기')}">
 											checked
 											</c:if>>
 					<label class="form-check-label" for="gridCheck1"> 소고기 </label>
 					&nbsp;&nbsp;&nbsp; <input class="form-check-input" type="checkbox"
 						id="gridCheck2" name="allergy" value="닭고기"
-						<c:if test="${fn:contains(user.allergy, '닭고기')}">
+						<c:if test="${fn:contains(member.allergy, '닭고기')}">
 											checked
 											</c:if>>
 					<label class="form-check-label" for="gridCheck1"> 닭고기 </label>
 					&nbsp;&nbsp;&nbsp; <input class="form-check-input" type="checkbox"
 						id="gridCheck2" name="allergy" value="돼지고기"
-						<c:if test="${fn:contains(user.allergy, '돼지고기')}">
+						<c:if test="${fn:contains(member.allergy, '돼지고기')}">
 											checked
 											</c:if>>
 					<label class="form-check-label" for="gridCheck1"> 돼지고기 </label> <br>
 					<input class="form-check-input" type="checkbox" id="gridCheck2"
 						name="allergy" value="복숭아"
-						<c:if test="${fn:contains(user.allergy, '복숭아')}">
+						<c:if test="${fn:contains(member.allergy, '복숭아')}">
 											checked
 											</c:if>>
 					<label class="form-check-label" for="gridCheck1"> 복숭아 </label>
 					&nbsp;&nbsp;&nbsp; <input class="form-check-input" type="checkbox"
 						id="gridCheck2" name="allergy" value="민들레"
-						<c:if test="${fn:contains(user.allergy, '민들레')}">
+						<c:if test="${fn:contains(member.allergy, '민들레')}">
 											checked
 											</c:if>>
 					<label class="form-check-label" for="gridCheck1"> 민들레 </label>
 					&nbsp;&nbsp;&nbsp; <input class="form-check-input" type="checkbox"
 						id="gridCheck2" name="allergy" value="계란흰자"
-						<c:if test="${fn:contains(user.allergy, '계란흰자')}">
+						<c:if test="${fn:contains(member.allergy, '계란흰자')}">
 											checked
 											</c:if>>
 					<label class="form-check-label" for="gridCheck1"> 계란흰자 </label>
@@ -185,7 +185,7 @@
 			</div>
 			<div style="text-align: center; margin-bottom: 15px;">
 				<input type="submit" name="update" value='수정하기'> 
-				<a href="deleteUser.do?id=${user.id}">
+				<a href="deleteUser.do?id=${member.id}">
 				<input type="button" name="signOut" value='탈퇴하기 '>
 				</a> 
 				<input type="reset" name="cancel" value='취소'>

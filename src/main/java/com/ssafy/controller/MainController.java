@@ -46,9 +46,10 @@ public class MainController {
 	}
 	
 	@GetMapping("infoUser.do")
-	public String updateUser(Model model) {
-		String id = session.
-		userService.searchUser(id)
+	public String updateUser(Model model, HttpSession session) {
+		String id = (String) session.getAttribute("user");
+		User member =userService.searchUser(id);
+		model.addAttribute("member", member);
 		return "userinfo";
 	}
 	
@@ -87,11 +88,10 @@ public class MainController {
 	 }
 
 	@PostMapping("login.do")
-	public String login(String id, String password, HttpSession session) {
-		boolean result = userService.login(id, password);
+	public String login(String user, String password, HttpSession session) {
+		boolean result = userService.login(user, password);
 		if(result) {
-
-			session.setAttribute("user", id);
+			session.setAttribute("user", user);
 		}
 		return "redirect:main.jsp";
 	}
