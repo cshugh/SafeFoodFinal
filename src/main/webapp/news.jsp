@@ -31,24 +31,7 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
-    <script>
-    function openForm() {
-    	document.getElementById("loginPopup").style.display = "block";
-    }
-    function loginClick() {
-    	document.getElementById("loginBtn").innerHTML = "Sign Out";
-    }
-    function closeForm() {
-    	document.getElementById("loginPopup").style.display = "none";
-    	document.getElementById("loginBtn").innerHTML = "Sign In";
-    }
-    window.onclick = function(event) {
-    	var modal = document.getElementById('loginPopup');
-    	if (event.target == modal) {
-    		closeForm();
-    	}
-    }
-</script>
+
   </head>
   <body>
     
