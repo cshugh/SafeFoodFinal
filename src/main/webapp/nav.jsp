@@ -57,7 +57,7 @@
 						<li class="nav-item cta-btn"><a class="nav-link" href="regitUser.do">Sign Up</a></li>
 						<li class="nav-item cta-btn">
 							<!-- <a class="nav-link" href="contact.html">Sign In</a> -->
-							<button id="loginBtn" onclick="openForm()">Sign In</button>
+							<a a class="nav-link" id="loginBtn" onclick="openForm()">Sign In</a>
 							<div id="loginPopup">
 								<div class="form-popup" id="popupForm">
 									<form method="post" action="login.do" class="form-container" >
