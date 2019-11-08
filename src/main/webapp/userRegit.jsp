@@ -1,29 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <form class="form-horizontal"
 		style=" margin: 0 auto;  padding: 20px;  width : 60%;">
 		<div class="form-group">
-			<label for="inputid" class="control-label">¾Æ ÀÌ µð</label> 
+			<label for="inputid" class="control-label">ì•„ ì´ ë””</label> 
 			<input	type="text" class="form-control" id="id" placeholder="">
 		</div>
 
 		<div class="form-group">
-			<label for="inputPassword" class="control-label">ºñ¹Ð ¹øÈ£</label> 
-			<input	type="password" class="form-control" id="pw" placeholder="¿µ¹® ¼ýÀÚ Æ÷ÇÔ 6ÀÚ¸® ÀÌ»ó">
+			<label for="inputPassword" class="control-label">ë¹„ë°€ ë²ˆí˜¸</label> 
+			<input	type="password" class="form-control" id="pw" placeholder="ì˜ë¬¸ ìˆ«ìž í¬í•¨ 6ìžë¦¬ ì´ìƒ">
 		</div>
 
 		<div class="form-group">
-			<label class="control-label">ÀÌ¸§</label> 
+			<label class="control-label">ì´ë¦„</label> 
 			<input type="text" class="form-control" id="name" placeholder="User name">
 		</div>
 
 		<div class="form-group">
-			<label class="control-label">ÁÖ¼Ò</label> 
-			<input type="text"	class="form-control" id="address" placeholder="ÁÖ¼Ò">
+			<label class="control-label">ì£¼ì†Œ</label> 
+			<input type="text"	class="form-control" id="address" placeholder="ì£¼ì†Œ">
 		</div>
 
 		<div class="form-group">
-			<label>ÀüÈ­ ¹øÈ£</label> 
+			<label>ì „í™” ë²ˆí˜¸</label> 
 			<input type="tel" class="form-control" id="phoneNumber" placeholder="010-xxx-xxxx">
 		</div>
 
@@ -31,36 +31,36 @@
 			<label for="" class="col-sm-2 control-label">Check</label>
 			<fieldset style="border: solid 1px white;">
 				<div>
-					<label> <input type="checkbox" name='Alergy' value='' /> ´ëµÎ
-						<input type="checkbox" name='Alergy' value='' /> ¶¥Äá <input
-						type="checkbox" name='Alergy' value='' /> ¿ìÀ¯ <input
-						type="checkbox" name='Alergy' value='' /> °Ô
+					<label> <input type="checkbox" name='Alergy' value='' /> ëŒ€ë‘
+						<input type="checkbox" name='Alergy' value='' /> ë•…ì½© <input
+						type="checkbox" name='Alergy' value='' /> ìš°ìœ  <input
+						type="checkbox" name='Alergy' value='' /> ê²Œ
 					</label>
 				</div>
 				<div>
-					<label> <input type="checkbox" name='Alergy' value='' /> »õ¿ì
-						<input type="checkbox" name='Alergy' value='' /> ÂüÄ¡ <input
-						type="checkbox" name='Alergy' value='' /> ¿¬¾î <input
-						type="checkbox" name='Alergy' value='' /> ¾¦
+					<label> <input type="checkbox" name='Alergy' value='' /> ìƒˆìš°
+						<input type="checkbox" name='Alergy' value='' /> ì°¸ì¹˜ <input
+						type="checkbox" name='Alergy' value='' /> ì—°ì–´ <input
+						type="checkbox" name='Alergy' value='' /> ì‘¥
 					</label>	
 				</div>
 				<div>
 					<label> <input type="checkbox" name='Alergy' value='' />
-						¼Ò°í±â <input type="checkbox" name='Alergy' value='' /> ´ß°í±â <input
-						type="checkbox" name='Alergy' value='' /> µÅÁö°í±â
+						ì†Œê³ ê¸° <input type="checkbox" name='Alergy' value='' /> ë‹­ê³ ê¸° <input
+						type="checkbox" name='Alergy' value='' /> ë¼ì§€ê³ ê¸°
 					</label>
 				</div>
 				<div>
 					<label> <input type="checkbox" name='Alergy' value='' />
-						º¹¼þ¾Æ <input type="checkbox" name='Alergy' value='' /> ¹Îµé·¹ <input
-						type="checkbox" name='Alergy' value='' /> °è¶õÈòÀÚ
+						ë³µìˆ­ì•„ <input type="checkbox" name='Alergy' value='' /> ë¯¼ë“¤ë ˆ <input
+						type="checkbox" name='Alergy' value='' /> ê³„ëž€í°ìž
 					</label>
 				</div>
 			</fieldset>
 		</div>
 	</form>
 	<div style="text-align:center; margin-bottom:15px;">
-		<input type="button" name ="signup" value='°¡ÀÔÇÏ±â' style="display:none;">
-		<input type="button" name ="modify" value='¼öÁ¤ÇÏ±â' >
-		<input type="button" name ="signout" value='Å»ÅðÇÏ±â' >
+		<input type="button" name ="signup" value='ê°€ìž…í•˜ê¸°' style="display:none;">
+		<input type="button" name ="modify" value='ìˆ˜ì •í•˜ê¸°' >
+		<input type="button" name ="signout" value='íƒˆí‡´í•˜ê¸°' >
 	</div>
