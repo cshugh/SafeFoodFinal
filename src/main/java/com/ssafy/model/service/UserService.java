@@ -6,12 +6,13 @@ import com.ssafy.model.dto.User;
 import com.ssafy.model.dto.UserFoodBean;
 
 public interface UserService  {
-	public User searchUser(String id) throws Exception;
-	public void insertUser(User user) throws Exception;
-	public void updateUser(User user) throws Exception;
-	public void deleteUser(String id) throws Exception;
-	public void insertUserFood(UserFoodBean userfood) throws Exception;
-	public List<UserFoodBean> searchUserFoodList(String uid) throws Exception;
-	public void deleteUserFood(UserFoodBean userfood) throws Exception;
-	public UserFoodBean searchUserFood(UserFoodBean bean) throws Exception;
+	public User searchUser(String id) ;
+	public void insertUser(User user) ;
+	public void updateUser(User user) ;
+	public void deleteUser(String id);
+	public void insertUserFood(UserFoodBean userfood) ;
+	public List<UserFoodBean> searchUserFoodList(String uid) ;
+	public void deleteUserFood(UserFoodBean userfood);
+	public UserFoodBean searchUserFood(UserFoodBean bean) ;
+	public boolean login(String user, String password);
 }

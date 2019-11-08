@@ -20,7 +20,7 @@ public class UserServiceImp implements UserService {
 //	public String getAllergyIngredients(Food food, String allergies) {
 //		return dao.getAllergyIngredients(food, allergies);
 //	}
-	public User searchUser(String id) throws Exception {
+	public User searchUser(String id) {
 		try { 
 			User User = dao.searchUser(id);
 			if(User == null) {
@@ -29,10 +29,10 @@ public class UserServiceImp implements UserService {
 				return User;
 			}
 		} catch (Exception e) {
-			throw new SQLException();
+			throw new SafeFoodException();
 		}
 	}
-	public boolean login(String id, String pw) throws Exception {
+	public boolean login(String id, String pw){
 		try {
 			User User = dao.searchUser(id);
 			if(User == null) {
@@ -45,17 +45,17 @@ public class UserServiceImp implements UserService {
 				}
 			}
 		} catch (Exception e) {
-			throw new SQLException();
+			throw new SafeFoodException();
 		}
 	}
-	public boolean checkID(String id) throws Exception {
+	public boolean checkID(String id){
 		try {
 			return (dao.searchUser(id) != null);
 		} catch (Exception e) {
-			throw new SQLException();
+			throw new SafeFoodException();
 		}
 	}
-	public void insertUser(User User) throws Exception {
+	public void insertUser(User User) {
 		try {
 			User find = dao.searchUser(User.getId());
 			if(find != null) {
@@ -64,10 +64,10 @@ public class UserServiceImp implements UserService {
 				dao.insertUser(User);
 			}
 		} catch (Exception e) {
-			throw new SQLException();
+			throw new SafeFoodException();
 		}
 	}
-	public void updateUser(User User) throws Exception {
+	public void updateUser(User User) {
 		try {
 			User find = dao.searchUser(User.getId());
 			if(find == null) {
@@ -76,10 +76,10 @@ public class UserServiceImp implements UserService {
 				dao.updateUser(User);
 			}
 		} catch (Exception e) {
-			throw new SQLException();
+			throw new SafeFoodException();
 		}
 	}
-	public void deleteUser(String id) throws Exception {
+	public void deleteUser(String id) {
 		try {
 			User find = dao.searchUser(id);
 			if(find == null) {
@@ -88,11 +88,11 @@ public class UserServiceImp implements UserService {
 				dao.deleteUser(id);
 			}
 		} catch (Exception e) {
-			throw new SQLException();
+			throw new SafeFoodException();
 		}
 	}
 	@Override
-	public void insertUserFood(UserFoodBean userfood) throws Exception {
+	public void insertUserFood(UserFoodBean userfood) {
 		try {
 			dao.insertUserFood(userfood);
 		}catch (Exception e) {
@@ -101,7 +101,7 @@ public class UserServiceImp implements UserService {
 		}
 	}
 	@Override
-	public List<UserFoodBean> searchUserFoodList(String uid) throws Exception {
+	public List<UserFoodBean> searchUserFoodList(String uid)  {
 		try {
 			return dao.searchUserFoodList(uid);
 		} catch (Exception e) {
@@ -110,7 +110,7 @@ public class UserServiceImp implements UserService {
 		}
 	}
 	@Override
-	public void deleteUserFood(UserFoodBean userfood) throws Exception {
+	public void deleteUserFood(UserFoodBean userfood)  {
 		try {
 			dao.deleteUserFood(userfood);
 		} catch (Exception e) {
@@ -119,7 +119,7 @@ public class UserServiceImp implements UserService {
 		}
 	}
 	@Override
-	public UserFoodBean searchUserFood(UserFoodBean bean) throws Exception {
+	public UserFoodBean searchUserFood(UserFoodBean bean) {
 		try {
 			return dao.searchUserFood(bean);
 		} catch (Exception e) {
