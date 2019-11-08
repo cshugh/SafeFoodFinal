@@ -47,7 +47,7 @@
 								Sing In</button>
 							<div id="loginPopup">
 								<div class="form-popup" id="popupForm">
-									<form action="/action_page.php" class="form-container">
+									<form action="login.do" class="form-container">
 										<label for="아이디"> <strong>아이디</strong>
 										</label> <input type="text" id="email" placeholder="아이디를 입력하세요."
 											name="email" required> <label for="psw"> <strong>비밀번호</strong>

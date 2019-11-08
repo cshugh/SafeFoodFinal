@@ -68,6 +68,7 @@ public class MainController {
 
 	@PostMapping("login.do")
 	public String login(String user, String password, HttpSession session) {
+		System.out.println(user+","+password);
 		boolean result = userService.login(user, password);
 		if(result) {
 			session.setAttribute("user", user);
