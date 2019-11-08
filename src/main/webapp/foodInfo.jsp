@@ -52,7 +52,7 @@
 							style="background-image: url(${food.img}); background-size:cover; background-repeat:no-repeat;"></a>
 						<div class="text">
 							<h3>
-								<a href="foodDetail.do=?code=${food.code}">${food.name}</a>
+								<a href="foodDetail.do?code=${food.code}">${food.name}</a>
 							</h3>
 							<p class="sched-time">
 								<span><span class="fa fa-calendar"></span> April 22, 2018</span>
