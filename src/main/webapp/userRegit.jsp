@@ -49,11 +49,8 @@
     <header role="banner">
       <jsp:include page="nav.jsp"></jsp:include>
     </header>
-    <!-- END header -->
-	<jsp:include page="mainSlider.jsp"></jsp:include>    	
-    <!-- END slider -->
-	
-
+	<jsp:include page="userSlider.jsp"></jsp:include>
+<section class="section bg-light" style="padding: 3em">
 <form id="regitForm" class="form-horizontal" style=" margin: 0 auto;  padding: 20px;  width : 60%;">
 		<div class="form-group">
 			<label for="inputid" class="control-label">아 이 디</label> 
@@ -117,7 +114,7 @@
 		<input type="button" name ="signup" value='취소' >
 
 	</div>
-
+</section>
 
     <footer class="site-footer" role="contentinfo">
      	<jsp:include page="footer.jsp"></jsp:include>

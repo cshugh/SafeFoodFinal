@@ -39,7 +39,7 @@
 
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item cta-btn"><a class="nav-link"
-							href="contact.html">Sign Up</a></li>
+							href="regitUser.do">Sign Up</a></li>
 						<li class="nav-item cta-btn">
 							<!-- <a class="nav-link" href="contact.html">Sign In</a> -->
 							<button class="nav-link" id="loginBtn" onclick="openForm()"

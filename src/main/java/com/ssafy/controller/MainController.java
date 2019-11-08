@@ -41,7 +41,7 @@ public class MainController {
 	}
 	@GetMapping("regitUser.do")
 	public String regitUser() {
-		return "user/UserRegit";
+		return "userRegit";
 	}
 	@PostMapping("insertUser.do")
 	public String insertUser(User user) {

@@ -49,8 +49,10 @@
     <header role="banner">
       <jsp:include page="nav.jsp"></jsp:include>
     </header>
-    <!-- END header -->
-	<jsp:include page="mainSlider.jsp"></jsp:include>    	
+    <!-- END header --> 
+	<jsp:include page="userSlider.jsp">
+	
+	</jsp:include>    	
     <!-- END slider -->
 	
 
