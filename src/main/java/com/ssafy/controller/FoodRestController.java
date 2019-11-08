@@ -67,7 +67,7 @@ public class FoodRestController {
 	@ApiOperation("모든 푸드의 정보를 반환한다.")
 	@GetMapping("api/searchAllFood")
 	public ResponseEntity<Map<String, Object>> searchAllFood(){
-		List<Food> foodList = foodService.searchAllFood(null, null);
+		List<Food> foodList = foodService.searchAllFood();
 		return handleSuccess(foodList);
 	}
 	@ApiOperation("푸드코드로 푸드의 정보를 찾는다.")

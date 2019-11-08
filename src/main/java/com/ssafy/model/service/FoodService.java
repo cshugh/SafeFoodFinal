@@ -8,5 +8,7 @@ import com.ssafy.model.dto.Food;
 public interface FoodService {
 	public void insertFood(Food food);
 	public Food searchFood(int code);
-	public List<Food> searchAllFood(String key, String value);
+	public List<Food> searchAllFood();
+	public List<Food> searchFoodByCondition(String key, String value);
+	
 }

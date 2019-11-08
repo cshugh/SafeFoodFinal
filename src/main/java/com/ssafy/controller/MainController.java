@@ -45,15 +45,22 @@ public class MainController {
 		return "userRegit";
 	}
 	
+	@GetMapping("infoUser.do")
+	public String updateUser() {
+		return "userinfo";
+	}
+	
 	@PostMapping("insertUser.do")
 	public String insertUser(User user) {
-		System.out.println(user);
 		userService.insertUser(user);
 		return "redirect:main.jsp";
 	}
 	
-//	@PutMapping("updateUser.do")
-	
+	@PutMapping("updateUser.do")
+	public String updateUser(User user) {
+		userService.insertUser(user);
+		return "redirect:main.jsp";
+	}
 	/*
 	 * @PostMapping("insertFood.do") public String insertFood() { return "food/"; }
 	 */
@@ -63,11 +70,17 @@ public class MainController {
 		return "foodDetail";
 	}
 
-	@PostMapping("searchAllFood.do") 
-	 public String searchAllFood(Model model, String key, String value) {
+	@GetMapping("searchAllFood.do") 
+	 public String searchAllFood(Model model) {
+		model.addAttribute("foodList", foodService.searchAllFood());
+		return "foodInfo"; 
+	 }
+	@PostMapping("searchFoodByCondition.do") 
+	 public String searchFoodByCondition(Model model, String key, String value) {
+		System.out.println(key+","+value);
 		if(key==null) key="";
 		if(value==null) value="";
-		model.addAttribute("foodList", foodService.searchAllFood(key, value));
+		model.addAttribute("foodList", foodService.searchFoodByCondition(key, value));
 		return "foodInfo"; 
 	 }
 

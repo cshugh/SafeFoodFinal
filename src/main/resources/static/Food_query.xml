@@ -29,8 +29,10 @@
     <select id = "searchFood" parameterType="integer" resultType="food">
     	select * from food where code=#{code:INTEGER}
     </select>
-  
-  	<select id = "searchAllFood" parameterType="pagebean" resultType="food">
+  <select id = "searchAllFood" parameterType="pagebean" resultType="food">
+    	select * from food;
+    </select>
+  	<select id = "searchFoodByCondition" parameterType="pagebean" resultType="food">
     	select * from food
     	<where>  
     		<if test="key != null and key != 'all'">
@@ -45,7 +47,6 @@
     					material like concat('%', #{word}, '%')
     				</when>
     			 </choose>
-    			
     		</if>
     	</where>
     </select>

@@ -14,9 +14,18 @@ public class FoodServiceImp implements FoodService{
 	@Autowired
 	private FoodDao dao;
 	
-	public List<Food> searchAllFood(String key, String value) {
+	public List<Food> searchAllFood() {
 		try {
-			return dao.searchAllFood(key, value);
+			return dao.searchAllFood();
+		} catch(Exception e){
+			e.printStackTrace();
+			throw new SafeFoodException("찾으려는 정보가 없습니다");
+		}
+	}
+	
+	public List<Food> searchFoodByCondition(String key, String value) {
+		try {
+			return dao.searchFoodByCondition(key, value);
 		} catch(Exception e){
 			e.printStackTrace();
 			throw new SafeFoodException("찾으려는 정보가 없습니다");
