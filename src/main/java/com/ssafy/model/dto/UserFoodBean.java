@@ -9,7 +9,7 @@ public class UserFoodBean implements Serializable{
 	String name;
 	int count;
 	
-	public UserFoodBean(int fno, String uid, String name, int count) {
+	public UserFoodBean(int fno, String uid, String name, int count) { 
 		super();
 		this.fno = fno;
 		this.uid = uid;
