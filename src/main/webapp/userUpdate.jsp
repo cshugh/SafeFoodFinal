@@ -57,7 +57,7 @@
 <form id="regitForm" class="form-horizontal" style=" margin: 0 auto;  padding: 20px;  width : 60%;">
 		<div class="form-group">
 			<label for="inputid" class="control-label">아 이 디</label> 
-			<input	type="text" class="form-control" id="id" placeholder="">
+			<input	type="text" class="form-control" id="id" placeholder="" readonly="readonly">
 		</div>
 
 		<div class="form-group">
