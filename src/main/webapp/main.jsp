@@ -45,44 +45,20 @@
 	<section class="section bg-light pt-0 bottom-slant-gray">
 		<div class="container">
 			<div class="row">
+				<c:forEach items = "${foodList}" var = "food">
 				<div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
 					<div class="blog d-block">
 						<a class="bg-image d-block" href="single.html"
-							style="background-image: url('img/누크바3.jpg');"></a>
+							style="background-image: url(${food.img}); background-size:contain; background-repeat:no-repeat;"></a>
 						<div class="text">
 							<h3>
-								<a href="single.html">식품명</a>
+								<a href="foodDetail.do=?code=${food.code}">${food.name}</a>
 							</h3>
 							<p class="sched-time">
 								<span><span class="fa fa-calendar"></span> April 22, 2018</span>
 								<br>
 							</p>
-							<p>Far far away, behind the word mountains, far from the
-								countries Vokalia and Consonantia, there live the blind texts.</p>
-
-							<p>
-								<a href="#" class="btn btn-primary btn-sm">추가</a>
-								<a href="#" class="btn btn-primary btn-sm">찜</a>
-							</p>
-
-						</div>
-
-					</div>
-				</div>
-				<div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-					<div class="blog d-block">
-						<a class="bg-image d-block" href="single.html"
-							style="background-image: url('img/누크바2.jpg');"></a>
-						<div class="text">
-							<h3>
-								<a href="single.html">식품명</a>
-							</h3>
-							<p class="sched-time">
-								<span><span class="fa fa-calendar"></span> April 22, 2018</span>
-								<br>
-							</p>
-							<p>Far far away, behind the word mountains, far from the
-								countries Vokalia and Consonantia, there live the blind texts.</p>
+							<p>${food.material}</p>
 							<p>
 								<a href="#" class="btn btn-primary btn-sm">추가</a>
 								<a href="#" class="btn btn-primary btn-sm">찜</a>
@@ -90,27 +66,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-					<div class="blog d-block">
-						<a class="bg-image d-block" href="single.html"
-							style="background-image: url('img/신라면큰사발2.jpg');"></a>
-						<div class="text">
-							<h3>
-								<a href="single.html">식품명</a>
-							</h3>
-							<p class="sched-time">
-								<span><span class="fa fa-calendar"></span> April 22, 2018</span>
-								<br>
-							</p>
-							<p>Far far away, behind the word mountains, far from the
-								countries Vokalia and Consonantia, there live the blind texts.</p>
-							<p>
-								<a href="#" class="btn btn-primary btn-sm">추가</a>
-								<a href="#" class="btn btn-primary btn-sm">찜</a>
-							</p>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
 			</div>
 		</div>
 

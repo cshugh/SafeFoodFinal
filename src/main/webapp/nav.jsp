@@ -20,7 +20,7 @@
 	</script>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 	<div class="container">
-		<a class="navbar-brand" href="news.jsp">Safe Food<a>
+		<a class="navbar-brand" href="main.jsp">Safe Food<a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navbarsExample05" aria-controls="navbarsExample05"
 					aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
 					<ul class="navbar-nav ml-auto pl-lg-5 pl-0">
 						<li class="nav-item"><a class="nav-link" href="index.html">공지사항</a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="recipes.html">상품
+						<li class="nav-item"><a class="nav-link" href="searchAllFood.do">상품
 								정보</a></li>
 						<li class="nav-item"><a class="nav-link" href="recipes.html">베스트
 								섭취 정보</a></li>
