@@ -25,13 +25,8 @@
 <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
 
-<link rel="stylesheet" href="css/index.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-<!-- Bootstrap core CSS -->
- <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link href="dist/css/bootstrap-theme.min.css" rel="stylesheet">
-<link href="theme.css" rel="stylesheet">
 <script type='text/javascript' src='js/jquery-3.3.1.js'></script>
 <script type="text/javascript">
 $(function(){
