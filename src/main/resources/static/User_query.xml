@@ -2,9 +2,9 @@
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 	
-<mapper namespace="user" >
+<mapper namespace="com.ssafy.model.dao.UserDao" >
 	
-	<insert id ="insert" parameterType="user">
+	<insert id ="insertUser" parameterType="user">
 	insert into user(id, password, name, email, phone, address, allergy) 
 				values(#{id:VARCHAR}
 					  ,#{password:VARCHAR}
@@ -16,11 +16,11 @@
 					
 	</insert>
 	
-	<delete id = "delete" parameterType="string">
+	<delete id = "deleteUser" parameterType="string">
 		delete from user where id=#{id}
 	</delete>
 	
-	<update id= "update" parameterType="user">
+	<update id= "updateUser" parameterType="user">
 		update user set password= #{password:VARCHAR}
 						, name=#{name:VARCHAR}
 						, email=#{email:VARCHAR}
@@ -30,15 +30,15 @@
 		where id = #{id:VARCHAR}
 	</update>
    
-    <select id = "search" parameterType="string" resultType="user">
+    <select id = "searchUser" parameterType="string" resultType="user">
     	select * from user where id=#{id}
     </select>
     
-    <select id = "searchFoodList" parameterType="string" resultType = "userfood">
+    <select id = "searchUserFoodList" parameterType="string" resultType = "userfood">
     	select * from userfood where uid = #{uid}
     </select>
     
-    <insert id = "insertFood" parameterType="userfood">
+    <insert id = "insertUserFood" parameterType="userfood">
     	insert into userfood(no, fno, name, uid, count) 
     	values(#{no:INTEGER}
     	, #{fno:INTEGER}
@@ -47,10 +47,10 @@
     	, #{count:INTEGER}) 
     </insert>
     
-    <select id = "searchFood" parameterType="userfood" resultType = "userfood">
+    <select id = "searchUserFood" parameterType="userfood" resultType = "userfood">
     	select * from userfood where uid = #{uid:VARCHAR} and fno = #{fno:INTEGER} 
     </select>
-	<delete id = "deleteFood" parameterType="string">
+	<delete id = "deleteUserFood" parameterType="string">
 		delete from userfood where no=#{no}
 	</delete>
 </mapper>

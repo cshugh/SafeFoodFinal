@@ -14,27 +14,27 @@ public class FoodServiceImp implements FoodService{
 	@Autowired
 	private FoodDao dao;
 	
-	public List<Food> searchAll(String key, String value) {
+	public List<Food> searchAllFood(String key, String value) {
 		try {
-			return dao.searchAll(key, value);
+			return dao.searchAllFood(key, value);
 		} catch(Exception e){
 			e.printStackTrace();
 			throw new SafeFoodException("찾으려는 정보가 없습니다");
 		}
 	}
 	
-	public Food search(int code) {
+	public Food searchFood(int code) {
 		try {
-			return dao.search(code);
+			return dao.searchFood(code);
 		} catch(Exception e) {
 			e.printStackTrace();
 			throw new SafeFoodException("찾으려는 정보가 없습니다");
 		}
 	}
 	@Override
-	public void add(Food food) {
+	public void insertFood(Food food) {
 		try {
-			dao.add(food);
+			dao.insertFood(food);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new SafeFoodException("이미 존재하는 정보입니다");

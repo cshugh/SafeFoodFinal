@@ -6,16 +6,16 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import com.ssafy.model.dto.User;
-import com.ssafy.model.dto.UserfoodBean;
+import com.ssafy.model.dto.UserFoodBean;
 @Repository
 @Mapper
 public interface UserDao {
-	public void update(User user);
-	public void remove(String id) ;
-	public void add(User user) ;
-	public User search(String id) ;
-	public void insertFood(UserfoodBean userfood) ;
-	public List<UserfoodBean> searchFoodList(String uid) ;
-	public void deleteFood(UserfoodBean userfood) ;
-	public UserfoodBean searchFood(UserfoodBean bean);
+	public User searchUser(String id);
+	public void insertUser(User user);
+	public void updateUser(User user);
+	public void deleteUser(String id);
+	public void insertUserFood(UserFoodBean userfood) ;
+	public List<UserFoodBean> searchUserFoodList(String uid) ;
+	public void deleteUserFood(UserFoodBean userfood) ;
+	public UserFoodBean searchUserFood(UserFoodBean bean);
 }

@@ -9,7 +9,7 @@ import com.ssafy.model.dto.Food;
 @Repository
 @Mapper
 public interface FoodDao {
-	public void add(Food food);
-	public List<Food> searchAll(String key, String value);
-	public Food search(int code);
+	public void insertFood(Food food);
+	public List<Food> searchAllFood(String key, String value);
+	public Food searchFood(int code);
 }

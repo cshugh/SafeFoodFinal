@@ -2,21 +2,21 @@ package com.ssafy.model.dto;
 
 import java.io.Serializable;
 
-public class UserfoodBean implements Serializable{
+public class UserFoodBean implements Serializable{
 	int no; 
 	int fno;
 	String uid;
 	String name;
 	int count;
 	
-	public UserfoodBean(int fno, String uid, String name, int count) {
+	public UserFoodBean(int fno, String uid, String name, int count) {
 		super();
 		this.fno = fno;
 		this.uid = uid;
 		this.name = name;
 		this.count = count;
 	}
-	public UserfoodBean(int no, int fno, String uid, String name, int count) {
+	public UserFoodBean(int no, int fno, String uid, String name, int count) {
 		super();
 		this.no = no;
 		this.fno = fno;
@@ -44,7 +44,7 @@ public class UserfoodBean implements Serializable{
 		this.uid = uid;
 	}
 	
-	public UserfoodBean() {
+	public UserFoodBean() {
 		super();
 	}
 	public int getCount() {
@@ -59,7 +59,7 @@ public class UserfoodBean implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public UserfoodBean(int no, int fno, String uid) {
+	public UserFoodBean(int no, int fno, String uid) {
 		super();
 		this.no = no;
 		this.fno = fno;

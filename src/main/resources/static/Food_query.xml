@@ -2,9 +2,9 @@
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 	
-<mapper namespace="food" >
+<mapper namespace="com.ssafy.model.dao.FoodDao" >
 	
-	<insert id ="insert" parameterType="food">
+	<insert id ="insertFood" parameterType="food">
 	insert into food(code, name, maker, material, supportpereat
 	               , calory, carbo, protein, fat, sugar, natrium
 	               , chole, fattyacid, transfat, img) 
@@ -26,11 +26,11 @@
 	</insert>
 
    
-    <select id = "search" parameterType="string" resultType="food">
-    	select * from food where code=#{code}
+    <select id = "searchFood" parameterType="integer" resultType="food">
+    	select * from food where code=#{code:INTEGER}
     </select>
   
-  	<select id = "searchAll" parameterType="pagebean" resultType="food">
+  	<select id = "searchAllFood" parameterType="pagebean" resultType="food">
     	select * from food
     	<where>  
     		<if test="key != null and key != 'all'">

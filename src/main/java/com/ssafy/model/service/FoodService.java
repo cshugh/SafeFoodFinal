@@ -6,7 +6,7 @@ import com.ssafy.model.dto.Food;
 
 
 public interface FoodService {
-	public void add(Food food);
-	public Food search(int code);
-	public List<Food> searchAll(String key, String value);
+	public void insertFood(Food food);
+	public Food searchFood(int code);
+	public List<Food> searchAllFood(String key, String value);
 }
