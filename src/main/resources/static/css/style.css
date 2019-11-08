@@ -410,9 +410,9 @@ header .navbar .cta-btn a:hover {
   position: absolute;
   top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
+/*   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+  transform: translateX(-50%); */
 }
 
 .heading-wrap .back-text, .heading-wrap .back-text-dark {
@@ -863,6 +863,7 @@ header .navbar .cta-btn a:hover {
   background-color: #f8f9fa;
   left: 0;
   position: absolute;
+
   /* -webkit-transform: skewY(-6deg);
   -ms-transform: skewY(-6deg);
   transform: skewY(-6deg);
@@ -872,7 +873,7 @@ header .navbar .cta-btn a:hover {
 } 
 
 .slider-wrap.no-slanted:after {
-  display: none;
+/*   display: none; */
 }
 
 .owl-custom-nav {
@@ -1104,10 +1105,10 @@ header .navbar .cta-btn a:hover {
   width: 50px;
   height: 2px;
   left: 50%;
-  -webkit-transform: translateX(-50%);
+/*   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  background: #ff7404;
+  background: #ff7404; */
 }
 
 .text-black {
@@ -1216,7 +1217,7 @@ header .navbar .cta-btn a:hover {
 }
 
 .list-unstyled.check li:before {
-  color: #5AC8D8;¤»
+  color: #5AC8D8;ï¿½ï¿½
   left: 0;
   font-family: "Ionicons";
   content: "\f122";
@@ -1253,12 +1254,12 @@ header .navbar .cta-btn a:hover {
   background-color: #fff;
   left: 0;
   position: absolute;
-  -webkit-transform: skewY(-6deg);
+ /*  -webkit-transform: skewY(-6deg);
   -ms-transform: skewY(-6deg);
   transform: skewY(-6deg);
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
-  transform-origin: top left;
+  transform-origin: top left; */
 }
 
 .site-footer p:last-child {

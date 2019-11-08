@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <script>
     function openForm() {
     	document.getElementById("loginPopup").style.display = "block";
@@ -29,20 +29,12 @@
 
 				<div class="collapse navbar-collapse" id="navbarsExample05">
 					<ul class="navbar-nav ml-auto pl-lg-5 pl-0">
-						<li class="nav-item"><a class="nav-link" href="index.html">°øÁö»çÇ×</a>
+						<li class="nav-item"><a class="nav-link" href="index.html">ê³µì§€ì‚¬í•­</a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="searchAllFood.do">»óÇ°
-								Á¤º¸</a></li>
-						<li class="nav-item"><a class="nav-link" href="recipes.html">º£½ºÆ®
-								¼·Ãë Á¤º¸</a></li>
-
-						<li class="nav-item"><a class="nav-link" href="about.html">³»
-								¼·Ãë Á¤º¸</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.html">¿¹»ó
-								¼·Ãë Á¤º¸</a></li>
-						<!-- <li class="nav-item">
-                <a class="nav-link active" href="news.html">ÀÎ»ý</a>
-              </li> -->
+						<li class="nav-item"><a class="nav-link" href="recipes.html">ìƒí’ˆ
+								ì •ë³´</a></li>
+						<li class="nav-item"><a class="nav-link" href="recipes.html">ë² ìŠ¤íŠ¸
+								ì„­ì·¨ ì •ë³´</a></li>
 					</ul>
 
 					<ul class="navbar-nav ml-auto">
@@ -56,13 +48,13 @@
 							<div id="loginPopup">
 								<div class="form-popup" id="popupForm">
 									<form action="/action_page.php" class="form-container">
-										<label for="¾ÆÀÌµð"> <strong>¾ÆÀÌµð</strong>
-										</label> <input type="text" id="email" placeholder="¾ÆÀÌµð¸¦ ÀÔ·ÂÇÏ¼¼¿ä."
-											name="email" required> <label for="psw"> <strong>ºñ¹Ð¹øÈ£</strong>
+										<label for="ì•„ì´ë””"> <strong>ì•„ì´ë””</strong>
+										</label> <input type="text" id="email" placeholder="ì•„ì´ë””ë¥¼ ìž…ë ¥í•˜ì„¸ìš”."
+											name="email" required> <label for="psw"> <strong>ë¹„ë°€ë²ˆí˜¸</strong>
 										</label> <input type="password" id="login_psw"
-											placeholder="ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä." name="psw" required>
-										<button type="submit" class="btn" onclick="loginClick()">·Î±×ÀÎ</button>
-										<button type="button" class="btn cancel" onclick="closeForm()">´Ý±â</button>
+											placeholder="ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš”." name="psw" required>
+										<button type="submit" class="btn" onclick="loginClick()">ë¡œê·¸ì¸</button>
+										<button type="button" class="btn cancel" onclick="closeForm()">ë‹«ê¸°</button>
 									</form>
 								</div>
 							</div>

@@ -57,7 +57,7 @@
 <form id="regitForm" class="form-horizontal" style=" margin: 0 auto;  padding: 20px;  width : 60%;">
 		<div class="form-group">
 			<label for="inputid" class="control-label">아 이 디</label> 
-			<input	type="text" class="form-control" id="id" placeholder="">
+			<input	type="text" class="form-control" id="id" placeholder="" readonly="readonly">
 		</div>
 
 		<div class="form-group">
@@ -113,9 +113,9 @@
 		</div>
 	</form>
 	<div style="text-align:center; margin-bottom:15px;">
-		<input type="button" name ="signup" value='가입하기' >
-		<input type="button" name ="signup" value='취소' >
-
+		<input type="button" name ="signup" value='가입하기' style="display:none;">
+		<input type="button" name ="modify" value='수정하기' >
+		<input type="button" name ="signout" value='탈퇴하기' >
 	</div>
 
 
