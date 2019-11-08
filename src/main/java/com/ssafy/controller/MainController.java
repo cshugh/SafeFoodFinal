@@ -35,11 +35,14 @@ public class MainController {
 	}
 	
 	
-	@DeleteMapping("deleteUser.do")
-	public String deleteUser(@RequestParam String id) {
+	@GetMapping("deleteUser.do")
+	public String deleteUser(String id,HttpSession session ) {
+		System.out.println("화나");
 		userService.deleteUser(id);
+		session.invalidate();
 		return "redirect:main.jsp";
 	}
+	
 	@GetMapping("regitUser.do")
 	public String regitUser() {
 		return "userRegit";
