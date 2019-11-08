@@ -5,16 +5,33 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>detailList</title>
-<!-- <link rel="stylesheet" href="css/index.css"> -->
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1,  shrink-to-fit=no">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="Free-Template.co" />
+<title>Safe FoodDetail - 당신의 안전한 먹거리를 위하여</title>
+
+<link rel="shortcut icon" href="ftco-32x32.png">
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800"
+	rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/aos.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+
+<link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+<link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+<link rel="stylesheet" href="css/index.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <!-- Bootstrap core CSS -->
-<!-- <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-Bootstrap theme
+ <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
 <link href="dist/css/bootstrap-theme.min.css" rel="stylesheet">
-<link href="theme.css" rel="stylesheet"> -->
+<link href="theme.css" rel="stylesheet">
 <script type='text/javascript' src='js/jquery-3.3.1.js'></script>
 <script type="text/javascript">
 $(function(){
@@ -94,33 +111,6 @@ function DoughnutChart() {
 	width: 5%;
 }
 </style>
-<head>
-<title>Safe Food - 당신의 안전한 먹거리를 위하여</title>
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<meta name="author" content="Free-Template.co" />
-
-<link rel="shortcut icon" href="ftco-32x32.png">
-
-<link
-	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800"
-	rel="stylesheet">
-
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/animate.css">
-<link rel="stylesheet" href="css/owl.carousel.min.css">
-<link rel="stylesheet" href="css/aos.css">
-
-<link rel="stylesheet" href="css/magnific-popup.css">
-
-
-<link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
-<link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
 
 <!-- Theme Style -->
 <link rel="stylesheet" href="css/style.css">
