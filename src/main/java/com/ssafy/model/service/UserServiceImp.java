@@ -11,6 +11,9 @@ import com.ssafy.model.dto.Food;
 import com.ssafy.model.dto.SafeFoodException;
 import com.ssafy.model.dto.User;
 import com.ssafy.model.dto.UserFoodBean;
+
+import work.crypt.BCrypt;
+import work.crypt.SHA256;
 @Service
 public class UserServiceImp implements UserService {
 	@Autowired
@@ -33,12 +36,20 @@ public class UserServiceImp implements UserService {
 		}
 	}
 	public boolean login(String id, String pw){
+		SHA256 sha = SHA256.getInsatnce();
+		
 		try {
+            String orgPass = pw;
+            String shaPass = sha.getSha256(orgPass.getBytes());
+            
 			User User = dao.searchUser(id);
 			if(User == null) {
 				throw new SafeFoodException("찾으려는 정보가 없습니다");
 			}else {
-				if(pw.equals(User.getPassword())) {
+
+				String dbpasswd= User.getPassword(); 
+				
+				if(BCrypt.checkpw(shaPass,dbpasswd)) {
 					return true;
 				}else {
 					throw new SafeFoodException("비밀 번호 오류");
@@ -48,6 +59,7 @@ public class UserServiceImp implements UserService {
 			throw new SafeFoodException();
 		}
 	}
+	
 	public boolean checkID(String id){
 		try {
 			return (dao.searchUser(id) != null);
@@ -55,12 +67,19 @@ public class UserServiceImp implements UserService {
 			throw new SafeFoodException();
 		}
 	}
+	
 	public void insertUser(User User) {
+		SHA256 sha = SHA256.getInsatnce();
 		try {
+			String orgPass = User.getPassword();
+            String shaPass = sha.getSha256(orgPass.getBytes());
+        	String bcPass = BCrypt.hashpw(shaPass, BCrypt.gensalt());
+        	
 			User find = dao.searchUser(User.getId());
 			if(find != null) {
 				throw new SafeFoodException("회원정보 삽입 중 오류");
 			}else {
+				User.setPassword(bcPass);
 				dao.insertUser(User);
 			}
 		} catch (Exception e) {
@@ -68,11 +87,17 @@ public class UserServiceImp implements UserService {
 		}
 	}
 	public void updateUser(User User) {
+		SHA256 sha = SHA256.getInsatnce();
 		try {
+			String orgPass = User.getPassword();
+            String shaPass = sha.getSha256(orgPass.getBytes());
+        	String bcPass = BCrypt.hashpw(shaPass, BCrypt.gensalt());
+        	
 			User find = dao.searchUser(User.getId());
 			if(find == null) {
 				throw new SafeFoodException("수정할 회원 정보가 없습니다.");
 			}else {
+				User.setPassword(bcPass);
 				dao.updateUser(User);
 			}
 		} catch (Exception e) {
