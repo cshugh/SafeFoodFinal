@@ -4,7 +4,7 @@
 
 <div class="slider-wrap">
 	<div class="slider-item"
-		style="background-image: url('img/hero_2.jpg');">
+		style="background-image: url('img/Food-spices-surface-world.jpg');">
 		<!-- 내용 첨가할 것 -->
 		<div class="container">
 			<div
