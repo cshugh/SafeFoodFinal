@@ -10,7 +10,7 @@ import com.ssafy.model.dto.Food;
 @Mapper
 public interface FoodDao {
 	public void insertFood(Food food);
-	public List<Food> searchFoodByCondition(String key, String value);
+	public List<Food> searchFoodByCondition(String key, String word);
 	public List<Food> searchAllFood();
 	public Food searchFood(int code);
 }

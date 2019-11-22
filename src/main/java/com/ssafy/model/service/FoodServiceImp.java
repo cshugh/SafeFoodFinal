@@ -25,6 +25,7 @@ public class FoodServiceImp implements FoodService{
 	
 	public List<Food> searchFoodByCondition(String key, String value) {
 		try {
+			System.out.println("여기는 service야"+key+" "+value);
 			return dao.searchFoodByCondition(key, value);
 		} catch(Exception e){
 			e.printStackTrace();

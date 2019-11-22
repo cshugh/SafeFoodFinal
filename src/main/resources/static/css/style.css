@@ -224,7 +224,7 @@ header .navbar .dropdown-menu .dropdown-item:hover {
 
 header .navbar .dropdown-menu .dropdown-item.active {
   background: #ff7404;
-  color: #fff;
+  color: black;
 }
 
 header .navbar .dropdown-menu a {

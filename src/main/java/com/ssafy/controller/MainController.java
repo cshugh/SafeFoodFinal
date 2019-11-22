@@ -81,7 +81,7 @@ public class MainController {
 		model.addAttribute("foodList", foodService.searchAllFood());
 		return "foodInfo"; 
 	 }
-	@PostMapping("searchFoodByCondition.do") 
+	@GetMapping("searchFoodByCondition.do") 
 	 public String searchFoodByCondition(Model model, String key, String value) {
 		System.out.println(key+","+value);
 		if(key==null) key="";
