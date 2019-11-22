@@ -37,7 +37,6 @@ public class MainController {
 	
 	@GetMapping("deleteUser.do")
 	public String deleteUser(String id,HttpSession session ) {
-		System.out.println("화나");
 		userService.deleteUser(id);
 		session.invalidate();
 		return "redirect:main.jsp";
@@ -66,6 +65,10 @@ public class MainController {
 	public String updateUser(User user) {
 		userService.insertUser(user);
 		return "redirect:main.jsp";
+	}
+	@GetMapping("qna.do")
+	public String qna() {
+		return "redirect:qna.jsp";
 	}
 	/*
 	 * @PostMapping("insertFood.do") public String insertFood() { return "food/"; }

@@ -69,7 +69,9 @@
 				</c:forEach>
 			</div>
 		</div>
-
+		<%-- <div style="height:500px">
+			<%@ include file="index.html" %>
+		</div> --%>
 		<div class="row mt-5" data-aos="fade-up">
 			<div class="col-12 text-center">
 				<a href="#" class="p-3">1</a> <a href="#" class="p-3">2</a> <a

@@ -116,7 +116,7 @@ function DoughnutChart() {
 	</header>
 	<jsp:include page="mainSlider.jsp"></jsp:include>
 
-	<section class="section bg-light pt-0 bottom-slant-gray">
+	<section class="section bg-light pt-0 bottom-slant-gray" style="margin-top:50px">
 		<div id="title">
 			<h1>제품 정보</h1>
 		</div>

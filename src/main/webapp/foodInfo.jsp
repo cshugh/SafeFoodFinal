@@ -42,7 +42,7 @@
 	<jsp:include page="mainSlider.jsp"></jsp:include>    	
     <!-- END slider -->
 	
-	<section class="section bg-light pt-0 bottom-slant-gray">
+	<section class="section bg-light pt-0 bottom-slant-gray" style="margin-top:50px">
 		<div class="container">
 			<div class="row">
 				<c:forEach items = "${foodList}" var = "food">
@@ -98,4 +98,4 @@
     <script src="js/main.js"></script>
     
   </body>
-</html>
+</html>-
