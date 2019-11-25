@@ -88,29 +88,33 @@
 			<label for="" class="col-sm-2 control-label">Check</label>
 			<fieldset style="border: solid 1px white;">
 				<div>
-					<label> <input type="checkbox" name='alergy' value='대두' /> 대두
-						<input type="checkbox" name='alergy' value='땅콩' /> 땅콩 <input
-						type="checkbox" name='alergy' value='우유' /> 우유 <input
-						type="checkbox" name='alergy' value='게' /> 게
+					<label> 
+					<input type="checkbox" name='allergy' value='대두' /> 대두
+					<input type="checkbox" name='allergy' value='땅콩' /> 땅콩 
+					<input type="checkbox" name='allergy' value='우유' /> 우유 
+					<input type="checkbox" name='allergy' value='게' /> 게
 					</label>
 				</div>
 				<div>
-					<label> <input type="checkbox" name='alergy' value='새우' /> 새우
-						<input type="checkbox" name='alergy' value='참치' /> 참치 <input
-						type="checkbox" name='alergy' value='연어' /> 연어 <input
-						type="checkbox" name='alergy' value='쑥' /> 쑥
+					<label> 
+					<input type="checkbox" name='allergy' value='새우' /> 새우
+					<input type="checkbox" name='allergy' value='참치' /> 참치 
+					<input type="checkbox" name='allergy' value='연어' /> 연어 
+					<input type="checkbox" name='allergy' value='쑥' /> 쑥
 					</label>	
 				</div>
 				<div>
-					<label> <input type="checkbox" name='alergy' value='' />
-						소고기 <input type="checkbox" name='alergy' value='' /> 닭고기 <input
-						type="checkbox" name='alergy' value='' /> 돼지고기
+					<label> 
+					<input type="checkbox" name='allergy' value='소고기' /> 소고기 
+					<input type="checkbox" name='allergy' value='닭고기' /> 닭고기 
+					<input type="checkbox" name='allergy' value='돼지고기' /> 돼지고기
 					</label>
 				</div>
 				<div>
-					<label> <input type="checkbox" name='alergy' value='복숭아' />
-						복숭아 <input type="checkbox" name='alergy' value='민들레' /> 민들레 <input
-						type="checkbox" name='alergy' value='계란흰자' /> 계란흰자
+					<label> 
+					<input type="checkbox" name='allergy' value='복숭아' /> 복숭아 
+					<input type="checkbox" name='allergy' value='민들레' /> 민들레 
+					<input type="checkbox" name='allergy' value='계란흰자' /> 계란흰자
 					</label>
 				</div>
 			</fieldset>

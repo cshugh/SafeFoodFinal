@@ -33,6 +33,9 @@
     <link rel="stylesheet" href="css/style.css">
 
   </head>
+  <script type="text/javascript">
+
+  </script>
   <body>
     
     <header role="banner">
@@ -41,9 +44,17 @@
     <!-- END header -->
 	<jsp:include page="mainSlider.jsp"></jsp:include>    	
     <!-- END slider -->
+    <br>
+    <br>
 	
+		
 	<section class="section bg-light pt-0 bottom-slant-gray">
-		<div class="container">
+<div class="container">
+<DIV class=video-container style="TEXT-ALIGN: center">
+	<object type="text/html" width="80%" height="500" 
+		data="//www.youtube.com/embed/3w5iMGSHvsE" allowFullScreen>
+	</object> 
+	</DIV>
 			<div class="row">
 				<c:forEach items = "${foodList}" var = "food">
 				<div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -72,13 +83,6 @@
 		<%-- <div style="height:500px">
 			<%@ include file="index.html" %>
 		</div> --%>
-		<div class="row mt-5" data-aos="fade-up">
-			<div class="col-12 text-center">
-				<a href="#" class="p-3">1</a> <a href="#" class="p-3">2</a> <a
-					href="#" class="p-3">3</a> <span class="p-3">...</span> <a href="#"
-					class="p-3">5</a>
-			</div>
-		</div>
 	</section>
 
     <footer class="site-footer" role="contentinfo">
@@ -98,6 +102,5 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/magnific-popup-options.js"></script>
     <script src="js/main.js"></script>
-    
   </body>
 </html>
