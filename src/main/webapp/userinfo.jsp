@@ -55,7 +55,7 @@
 	<jsp:include page="userSlider.jsp"></jsp:include>
 
 	<section class="section bg-light" style="padding: 3em">
-		<form method="post" action="updateUs.do" class="form-horizontal"
+		<form method="post" action="updateUser.do" class="form-horizontal"
 			style="margin: 0 auto; padding: 20px; width: 60%;">
 			<div class="form-group">
 				<label for="inputid" class="control-label">아 이 디</label> <input
@@ -184,6 +184,7 @@
 				</fieldset>
 			</div>
 			<div style="text-align: center; margin-bottom: 15px;">
+			<input type="hidden" name="_method" value="put">
 				<input type="submit" name="update" value='수정하기'> 
 				<a href="deleteUser.do?id=${member.id}">
 				<input type="button" name="signOut" value='탈퇴하기 '>

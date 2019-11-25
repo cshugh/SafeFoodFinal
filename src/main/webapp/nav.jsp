@@ -1,5 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<style>
+#test_btn1{
+ border-top-left-radius: 5px; 
+border-bottom-left-radius: 5px; margin-right:-4px; 
+} 
+
+#test_btn2{ border-top-right-radius: 5px; 
+border-bottom-right-radius: 5px; 
+margin-left:-3px; 
+} 
+
+#btn_group button{ 
+border: 1px solid skyblue; 
+background-color: rgba(0,0,0,0); 
+color: skyblue; 
+padding: 5px; } 
+
+#btn_group button:hover{ 
+color:white;
+ background-color: skyblue; 
+ } 
+ </style>
+
 <script>
     function openForm() {
     	document.getElementById("loginPopup").style.display = "block";
@@ -57,16 +80,19 @@
 				<li class="nav-item cta-btn">
 					<a class="nav-link" id="loginBtn" onclick="openForm()">Sign In</a>
 					<div id="loginPopup">
-						<div class="form-popup" id="popupForm">
-							<form method="post" action="login.do" class="form-container">
+						<div class="form-popup" id="popupForm" style="border-radius:5px; border-style:none">
+							<form method="post" action="login.do" class="form-container" 
+							 style="border-radius:5px; border-style:none">
 								<label for="아이디"> <strong>아이디</strong>
 								</label> <input type="text" id="user" name="user"
 									placeholder="아이디를 입력하세요." required> <label for="psw">
 									<strong>비밀번호</strong>
 								</label> <input type="password" id="password"
 									placeholder="비밀번호를 입력하세요." name="password" required>
-								<button type="submit" class="btn" onclick="loginClick()">로그인</button>
-								<button type="button" class="btn cancel" onclick="closeForm()">닫기</button>
+								<div id="btn_group">
+								<button type="submit" id="test_btn1" class="btn" onclick="loginClick()">로그인</button>
+								<button type="button" id="test_btn1" class="btn cancel" onclick="closeForm()">닫기</button>
+								</div>
 							</form>
 						</div>
 					</div>

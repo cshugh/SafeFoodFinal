@@ -63,9 +63,11 @@ public class MainController {
 	
 	@PutMapping("updateUser.do")
 	public String updateUser(User user) {
-		userService.insertUser(user);
+		System.out.println(user.getAllergy());
+		userService.updateUser(user);
 		return "redirect:main.jsp";
 	}
+	
 	@GetMapping("qna.do")
 	public String qna() {
 		return "redirect:qna.jsp";
