@@ -48,10 +48,12 @@ public class UserServiceImp implements UserService {
 			}else {
 
 				String dbpasswd= User.getPassword(); 
-				
-				if(BCrypt.checkpw(shaPass,dbpasswd)) {
+				System.out.println("여기");
+				if(BCrypt.checkpw(dbpasswd,shaPass)) {
+					System.out.println("비번이 안들어와");
 					return true;
 				}else {
+					
 					throw new SafeFoodException("비밀 번호 오류");
 				}
 			}
