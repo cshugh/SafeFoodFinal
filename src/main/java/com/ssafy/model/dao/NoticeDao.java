@@ -9,12 +9,12 @@ import com.ssafy.model.dto.PageBean;
 @Mapper
 public interface NoticeDao {
 	public int  getNoticeNo();
-	public void insertNotice(Notice notice);
-	public void insertNoticeFile(List<NoticeFile> files, int notino);
-	public Notice search(String no);
+	public void insert(Notice notice);
+	public void insertFile(List<NoticeFile> files, int notino);
+	public Notice search(int no);
 	public List<Notice> searchAll(PageBean bean);
 	public int  count(PageBean bean);
-	public void updateNotice(Notice notice);
-	public void deleteNotice(String no) ;
-	public void deleteNoticeFile(int notino);
+	public void update(Notice notice);
+	public void delete(int no) ;
+	public void deleteFile(int notino);
 }

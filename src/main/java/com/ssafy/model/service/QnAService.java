@@ -14,7 +14,7 @@ public interface QnAService {
 	public List<QnA> searchAll(PageBean bean);
 	public void insertComment(Comment com);
 	public void deleteComment(int cno);
-	public int  getQno(int qno);
+	public int  getQno();
 	public List<Comment> searchComments(int qno);
 	
 }

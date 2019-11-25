@@ -10,7 +10,7 @@ import com.ssafy.model.dto.QnA;
 
 @Mapper
 public interface QnADao {
-	public int  getQno(int qno);
+	public int  getQno();
 	public void insert(QnA board);
 	public void insertComment(Comment com);
 	public QnA search(int no);
