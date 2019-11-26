@@ -74,10 +74,7 @@ public class QnAServiceImpl implements QnAService {
 	@Override
 	public void insertComment(Comment com) {
 		try {
-			int qno = com.getQno();
-			if(getQno(qno)>0) {				
-				dao.insertComment(com);
-			}
+			dao.insertComment(com);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new QnAException("댓글 추가 중 오류 발생");
@@ -85,8 +82,8 @@ public class QnAServiceImpl implements QnAService {
 		
 	}
 	@Override
-	public int getQno(int qno) {
-		return dao.getQno(qno);
+	public int getQno() {
+		return dao.getQno();
 	}
 	@Override
 	public List<Comment> searchComments(int qno) {

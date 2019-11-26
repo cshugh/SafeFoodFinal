@@ -66,8 +66,6 @@ color:white;
 				</li>
 				<li class="nav-item"><a class="nav-link" href="searchAllFood.do">상품
 						정보</a></li>
-				<li class="nav-item"><a class="nav-link" href="recipes.html">베스트
-						섭취 정보</a></li>
 				<li class="nav-item"><a class="nav-link" href="qna.do">Q&A</a></li>
 			</ul>
 			<ul class="navbar-nav ml-auto" id="userIn" style="display: ${(empty user) ? 'none': 'block'};">

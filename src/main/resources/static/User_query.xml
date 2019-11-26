@@ -5,14 +5,15 @@
 <mapper namespace="com.ssafy.model.dao.UserDao" >
 	
 	<insert id ="insertUser" parameterType="user">
-	insert into user(id, password, name, email, phone, address, allergy) 
+	insert into user(id, password, name, email, phone, address, allergy, grant) 
 				values(#{id:VARCHAR}
 					  ,#{password:VARCHAR}
 					  ,#{name:VARCHAR}
 					  ,#{email:VARCHAR}
 					  ,#{phone:VARCHAR}
 					  ,#{address:VARCHAR}
-					  ,#{allergy:VARCHAR})
+					  ,#{allergy:VARCHAR}
+					  ,#{grant:VARCHAR})
 					
 	</insert>
 	
@@ -26,7 +27,8 @@
 						, email=#{email:VARCHAR}
 						, phone=#{phone:VARCHAR}
 						, address=#{address:VARCHAR}
-						, allergy=#{allergy:VARCHAR} 
+						, allergy=#{allergy:VARCHAR}
+						, grant=#{grant:VARCHAR}
 		where id = #{id:VARCHAR}
 	</update>
    
@@ -39,11 +41,10 @@
     </select>
     
     <insert id = "insertUserFood" parameterType="userfood">
-    	insert into userfood(no, fno, name, uid, count) 
+    	insert into userfood(no, fno, uid, count) 
     	values(#{no:INTEGER}
     	, #{fno:INTEGER}
-    	, #{name:VARCHAR} 
-    	,#{uid:VARCHAR}
+    	, #{uid:VARCHAR}
     	, #{count:INTEGER}) 
     </insert>
     

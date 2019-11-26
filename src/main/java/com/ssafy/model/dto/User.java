@@ -10,7 +10,8 @@ public class User implements Serializable {
 	private String email     ;
 	private String phone     ;
 	private String address   ;
-	private String allergy	;
+	private String allergy	 ;
+	private String grant	 ;
 	private List<Food> foodList;
 	public List<Food> getFoodList() {
 		return foodList;
@@ -18,8 +19,10 @@ public class User implements Serializable {
 	public void setFoodList(List<Food> foodList) {
 		this.foodList = foodList;
 	}
+	public User() {}
+	
 	public User(String id, String password, String name, String email, String phone, String address, String allergy,
-			List<Food> foodList) {
+			String grant) {
 		super();
 		this.id = id;
 		this.password = password;
@@ -28,16 +31,26 @@ public class User implements Serializable {
 		this.phone = phone;
 		this.address = address;
 		this.allergy = allergy;
-		this.foodList = foodList;
+		this.grant = grant;
 	}
-	
-	public User(String id, String password, String name, String phone, String allergy) {
+	public User(String id, String password, String name, String email, String phone, String address, String allergy,
+			String grant, List<Food> foodList) {
 		super();
 		this.id = id;
 		this.password = password;
 		this.name = name;
+		this.email = email;
 		this.phone = phone;
+		this.address = address;
 		this.allergy = allergy;
+		this.grant = grant;
+		this.foodList = foodList;
+	}
+	public String getGrant() {
+		return grant;
+	}
+	public void setGrant(String grant) {
+		this.grant = grant;
 	}
 	public String getAllergy() {
 		return allergy;
@@ -45,34 +58,7 @@ public class User implements Serializable {
 	public void setAllergy(String allergy) {
 		this.allergy = allergy;
 	}
-	public User() {}
-	public User(String id, String name, String email, String phone) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.email = email;
-		this.phone = phone;
-	}
-	public User(String id, String password, String name, String email, String phone, String address) {
-		super();
-		this.id = id;
-		this.password = password;
-		this.name = name;
-		this.email = email;
-		this.phone = phone;
-		this.address = address;
-	}
-
-	public User(String id, String password, String name, String email, String phone, String address, String allergy) {
-		super();
-		this.id = id;
-		this.password = password;
-		this.name = name;
-		this.email = email;
-		this.phone = phone;
-		this.address = address;
-		this.allergy = allergy;
-	}
+	
 	public String getId() {
 		return id;
 	}

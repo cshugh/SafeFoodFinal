@@ -13,7 +13,7 @@ import com.ssafy.model.dto.User;
 import com.ssafy.model.dto.UserFoodBean;
 
 import work.crypt.BCrypt;
-import work.crypt.SHA256;
+//import work.crypt.SHA256;
 @Service
 public class UserServiceImp implements UserService {
 	@Autowired
@@ -36,20 +36,13 @@ public class UserServiceImp implements UserService {
 		}
 	}
 	public boolean login(String id, String pw){
-		SHA256 sha = SHA256.getInsatnce();
-		
+//		SHA256 sha = SHA256.getInsatnce();
 		try {
-            String orgPass = pw;
-            String shaPass = sha.getSha256(orgPass.getBytes());
-            
 			User User = dao.searchUser(id);
 			if(User == null) {
 				throw new SafeFoodException("찾으려는 정보가 없습니다");
 			}else {
-
-				String dbpasswd= User.getPassword(); 
-				
-				if(BCrypt.checkpw(shaPass,dbpasswd)) {
+				if(pw.equals(User.getPassword())) {
 					return true;
 				}else {
 					throw new SafeFoodException("비밀 번호 오류");
@@ -58,6 +51,29 @@ public class UserServiceImp implements UserService {
 		} catch (Exception e) {
 			throw new SafeFoodException();
 		}
+
+//		try {
+//            String orgPass = pw; 
+//            String shaPass = sha.getSha256(orgPass.getBytes());
+//            
+//			User User = dao.searchUser(id);
+//			if(User == null) {
+//				throw new SafeFoodException("찾으려는 정보가 없습니다");
+//			}else {
+//
+//				String dbpasswd= User.getPassword(); 
+//				System.out.println("여기");
+//				if(BCrypt.checkpw(dbpasswd,shaPass)) {
+//					System.out.println("비번이 안들어와");
+//					return true;
+//				}else {
+//					
+//					throw new SafeFoodException("비밀 번호 오류");
+//				}
+//			}
+//		} catch (Exception e) {
+//			throw new SafeFoodException();
+//		}
 	}
 	
 	public boolean checkID(String id){
@@ -69,40 +85,62 @@ public class UserServiceImp implements UserService {
 	}
 	
 	public void insertUser(User User) {
-		SHA256 sha = SHA256.getInsatnce();
 		try {
-			String orgPass = User.getPassword();
-            String shaPass = sha.getSha256(orgPass.getBytes());
-        	String bcPass = BCrypt.hashpw(shaPass, BCrypt.gensalt());
-        	
 			User find = dao.searchUser(User.getId());
 			if(find != null) {
-				throw new SafeFoodException("회원정보 삽입 중 오류");
+				throw new SafeFoodException();
 			}else {
-				User.setPassword(bcPass);
 				dao.insertUser(User);
 			}
 		} catch (Exception e) {
 			throw new SafeFoodException();
 		}
+
+//		SHA256 sha = SHA256.getInsatnce();
+//		try {
+//			String orgPass = User.getPassword();
+//            String shaPass = sha.getSha256(orgPass.getBytes());
+//        	String bcPass = BCrypt.hashpw(shaPass, BCrypt.gensalt());
+//        	
+//			User find = dao.searchUser(User.getId());
+//			if(find != null) {
+//				throw new SafeFoodException("회원정보 삽입 중 오류");
+//			}else {
+//				User.setPassword(bcPass);
+//				dao.insertUser(User);
+//			}
+//		} catch (Exception e) {
+//			throw new SafeFoodException();
+//		}
 	}
 	public void updateUser(User User) {
-		SHA256 sha = SHA256.getInsatnce();
 		try {
-			String orgPass = User.getPassword();
-            String shaPass = sha.getSha256(orgPass.getBytes());
-        	String bcPass = BCrypt.hashpw(shaPass, BCrypt.gensalt());
-        	
 			User find = dao.searchUser(User.getId());
 			if(find == null) {
 				throw new SafeFoodException("수정할 회원 정보가 없습니다.");
 			}else {
-				User.setPassword(bcPass);
 				dao.updateUser(User);
 			}
 		} catch (Exception e) {
 			throw new SafeFoodException();
 		}
+
+//		SHA256 sha = SHA256.getInsatnce();
+//		try {
+//			String orgPass = User.getPassword();
+//            String shaPass = sha.getSha256(orgPass.getBytes());
+//        	String bcPass = BCrypt.hashpw(shaPass, BCrypt.gensalt());
+//        	
+//			User find = dao.searchUser(User.getId());
+//			if(find == null) {
+//				throw new SafeFoodException("수정할 회원 정보가 없습니다.");
+//			}else {
+//				User.setPassword(bcPass);
+//				dao.updateUser(User);
+//			}
+//		} catch (Exception e) {
+//			throw new SafeFoodException();
+//		}
 	}
 	public void deleteUser(String id) {
 		try {

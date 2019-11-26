@@ -72,6 +72,10 @@ public class MainController {
 	public String qna() {
 		return "redirect:qna.jsp";
 	}
+	@GetMapping("notice.do")
+	public String notice() {
+		return "redirect:notice.jsp";
+	}
 	/*
 	 * @PostMapping("insertFood.do") public String insertFood() { return "food/"; }
 	 */
@@ -98,6 +102,7 @@ public class MainController {
 	@PostMapping("login.do")
 	public String login(String user, String password, HttpSession session) {
 		boolean result = userService.login(user, password);
+		System.out.println(result);
 		if(result) {
 			session.setAttribute("user", user);
 		}
