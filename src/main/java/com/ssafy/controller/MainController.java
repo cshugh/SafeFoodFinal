@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ssafy.model.dto.Pick;
 import com.ssafy.model.dto.User;
+import com.ssafy.model.dto.UserFoodBean;
 import com.ssafy.model.service.FoodService;
 import com.ssafy.model.service.PickService;
 import com.ssafy.model.service.UserService;
@@ -124,7 +125,7 @@ public class MainController {
 		return "redirect:main.jsp";
 	}
 
-	
+	//찜
 	@GetMapping("pickfood.do")
 	public String pick(HttpSession session,int fno) {
 		String id = (String) session.getAttribute("user");
@@ -139,6 +140,7 @@ public class MainController {
 		//redirect를 안써주면 do뒤에 .jsp가 붙게됨
 	}
 	
+	//찜삭제
 	@GetMapping("pickDelete.do")
 	public String pickDelete(HttpSession session, int fno) {
 		String id = (String) session.getAttribute("user");
@@ -148,6 +150,55 @@ public class MainController {
 		pickfood.setFno(fno);		
 		
 		pickService.deletePick(pickfood);
+		
+		return "redirect:searchAllFood.do";
+	}
+	
+	//추가(섭취)
+	@GetMapping("insertUserFood.do")
+	public String insertUserFood(HttpSession session, int fno) {
+		String id = (String) session.getAttribute("user");
+		UserFoodBean userfood = new UserFoodBean();
+		userfood.setUid(id);
+		userfood.setFno(fno);
+		
+		userService.insertUserFood(userfood);
+		
+		return "redirect:searchAllFood.do";
+	}
+	
+	//섭취삭제
+	@GetMapping("deleteUserFood.do")
+	public String deleteUserFood(HttpSession session, int fno) {
+		String id = (String) session.getAttribute("user");
+		UserFoodBean userfood = new UserFoodBean();
+		userfood.setUid(id);
+		userfood.setFno(fno);
+		
+		userService.deleteUserFood(userfood);
+		
+		return "redirect:searchAllFood.do";
+	}
+	
+	//섭취식품목록
+	@GetMapping("searchUserFoodList")
+	public String searchUserFoodList(Model model,HttpSession session) {
+		String id = (String) session.getAttribute("user");
+		
+		model.addAttribute("UserFoodList",userService.searchUserFoodList(id));
+		
+		return "redirect:searchAllFood.do";
+	}
+	
+	//섭취식품검색
+	@GetMapping("searchUserFood")
+	public String searchUserFood(Model model,HttpSession session,int fno) {
+		String id = (String) session.getAttribute("user");
+		UserFoodBean userfood = new UserFoodBean();
+		userfood.setUid(id);
+		userfood.setFno(fno);
+		
+		model.addAttribute("bean",userService.searchUserFood(userfood));
 		
 		return "redirect:searchAllFood.do";
 	}
