@@ -41,11 +41,11 @@
     </select>
     
     <insert id = "insertUserFood" parameterType="userfood">
-    	insert into userfood(no, fno, uid, count) 
-    	values(#{no:INTEGER}
-    	, #{fno:INTEGER}
+    	insert into userfood( fno, uid, date, count) 
+    	values(
+    	 #{fno:INTEGER}
     	, #{uid:VARCHAR}
-    	, #{count:INTEGER}) 
+    	, now(),1 )
     </insert>
     
     <select id = "searchUserFood" parameterType="userfood" resultType = "userfood">

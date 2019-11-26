@@ -37,7 +37,16 @@
 
   </script>
   <body>
-    
+    <script type="text/javascript">
+    /* 	$(document).ready(function(){
+    		drawTable();
+    	})
+    	
+    	function drawTable(){
+    		$(".tbl_weather").attr("class","table");
+    	} 
+    */
+    </script>
     <header role="banner">
       <jsp:include page="nav.jsp"></jsp:include>
     </header>
@@ -49,40 +58,19 @@
 	
 		
 	<section class="section bg-light pt-0 bottom-slant-gray">
-<div class="container">
-<DIV class=video-container style="TEXT-ALIGN: center">
-	<object type="text/html" width="80%" height="500" 
-		data="//www.youtube.com/embed/3w5iMGSHvsE" allowFullScreen>
-	</object> 
-	</DIV>
-			<div class="row">
-				<c:forEach items = "${foodList}" var = "food">
-				<div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-					<div class="blog d-block">
-						<a class="bg-image d-block" href="single.html"
-							style="background-image: url(${food.img}); background-size:contain; background-repeat:no-repeat;"></a>
-						<div class="text">
-							<h3>
-								<a href="foodDetail.do=?code=${food.code}">${food.name}</a>
-							</h3>
-							<p class="sched-time">
-								<span><span class="fa fa-calendar"></span> April 22, 2018</span>
-								<br>
-							</p>
-							<p>${food.material}</p>
-							<p>
-								<a href="#" class="btn btn-primary btn-sm">추가</a>
-								<a href="#" class="btn btn-primary btn-sm">찜</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				</c:forEach>
-			</div>
-		</div>
-		<%-- <div style="height:500px">
-			<%@ include file="index.html" %>
-		</div> --%>
+	<div class="container">
+		<DIV class=video-container style="TEXT-ALIGN: center">
+		<object type="text/html" width="80%" height="500" 
+			data="//www.youtube.com/embed/3w5iMGSHvsE" allowFullScreen>
+		</object> 
+		</DIV>	
+	</div>
+	
+	<div class="container">
+		${foodNews}
+	</div>
+	
+	
 	</section>
 
     <footer class="site-footer" role="contentinfo">

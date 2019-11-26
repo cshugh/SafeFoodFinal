@@ -175,3 +175,14 @@ create table userfood(
     key fk_userfood_fno(fno), constraint fk_userfood_fno foreign key(fno) references food(code),
     key fk_userfood_uid(uid), constraint fk_userfood_uid foreign key(uid) references user(id)
 );
+
+create table pick(
+	no int(11) not null auto_increment primary key,
+    fno int(11) not null,
+    uid varchar(200) not null,
+    foreign key fk_pick_uid(uid) references user(id),
+    foreign key fk_pick_fno(fno) references food(code)
+    );
+    
+    insert into userfood(fno,uid) values(4,"admin");
+    insert into pick(fno,uid) values(3,"admin");
