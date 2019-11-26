@@ -12,5 +12,9 @@
 	<delete id = "deletePick" parameterType="pick">
 		delete from pick where uid=#{uid} and fno=#{fno}
 	</delete>
-      	
+	
+	<select id="seachPick" parameterType="string" resultType="pick">
+		select * from pick where uid=#{uid}
+	</select>
+	
 </mapper>

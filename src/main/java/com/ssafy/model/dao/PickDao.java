@@ -9,4 +9,5 @@ import com.ssafy.model.dto.Pick;
 public interface PickDao {
 	void insertPick(Pick pick);
 	void deletePick(Pick pick);
+	Pick searchPick(String id);
 }

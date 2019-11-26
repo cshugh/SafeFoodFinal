@@ -155,6 +155,16 @@ public class MainController {
 		return "redirect:searchAllFood.do";
 	}
 	
+	//찜목록
+	@GetMapping("pickSearch.do")
+	public String pickSearch(Model model,HttpSession session) {
+		String id = (String) session.getAttribute("user");
+		
+		model.addAttribute("pickList",pickService.searchPick(id));
+		
+		return "redirect:searchAllFood.do";
+	}
+	
 	//추가(섭취)
 	@GetMapping("insertUserFood.do")
 	public String insertUserFood(HttpSession session, int fno) {
@@ -203,6 +213,7 @@ public class MainController {
 		
 		return "redirect:searchAllFood.do";
 	}
+	
 	
 	// login.do
 	@GetMapping("getLoginInfo.do")
