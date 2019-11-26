@@ -1,5 +1,8 @@
 package com.ssafy.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +12,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ssafy.model.dto.Pick;
@@ -104,18 +110,20 @@ public class MainController {
 	@PostMapping("login.do")
 	public String login(String user, String password, HttpSession session) {
 		boolean result = userService.login(user, password);
-		System.out.println(result);
 		if(result) {
 			session.setAttribute("user", user);
+			
 		}
 		return "redirect:main.jsp";
 	}
 	
 	@GetMapping("logout.do")
 	public String logout(HttpSession session) {
+		
 		session.invalidate();
 		return "redirect:main.jsp";
 	}
+
 	
 	@GetMapping("pickfood.do")
 	public String pick(HttpSession session,int fno) {
@@ -144,7 +152,21 @@ public class MainController {
 		return "redirect:searchAllFood.do";
 	}
 	
-	
-	
-
+	// login.do
+	@GetMapping("getLoginInfo.do")
+	@ResponseBody
+	public Map<String, Object> getLoginInfo(HttpSession session) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		String id = (String)(session.getAttribute("user"));
+		System.out.println(id);
+		if (id != null) {
+			map.put("status", true);
+			map.put("id", id);
+		} else {
+			map.put("status", false);
+		}
+		System.out.println(map);
+		//이거를 
+		return map;
+	}
 }
