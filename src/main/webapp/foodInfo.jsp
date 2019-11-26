@@ -60,8 +60,8 @@
 							</p>
 							<p>${food.material}</p>
 							<p>
-								<a href="#" class="btn btn-primary btn-sm" style="border-radius: 5px;">추가</a>
-								<a href="#" class="btn btn-primary btn-sm" style="border-radius: 5px;">찜</a>
+								<a href="" class="btn btn-primary btn-sm">추가</a>
+								<a href="pickfood.do?fno=${food.code}" class="btn btn-primary btn-sm" >찜</a>
 							</p>
 						</div>
 					</div>

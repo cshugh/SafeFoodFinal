@@ -5,17 +5,16 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ssafy.model.dto.Pick;
 import com.ssafy.model.dto.User;
 import com.ssafy.model.service.FoodService;
+import com.ssafy.model.service.PickService;
 import com.ssafy.model.service.UserService;
 
 @Controller
@@ -25,6 +24,9 @@ public class MainController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private PickService pickService;
 	
 	
 	@ExceptionHandler
@@ -114,5 +116,35 @@ public class MainController {
 		session.invalidate();
 		return "redirect:main.jsp";
 	}
+	
+	@GetMapping("pickfood.do")
+	public String pick(HttpSession session,int fno) {
+		String id = (String) session.getAttribute("user");
+		Pick pickfood = new Pick();
+	
+		pickfood.setUid(id);	
+		pickfood.setFno(fno);		
+
+		pickService.insertPick(pickfood);
+		
+		return "redirect:searchAllFood.do";
+		//redirect를 안써주면 do뒤에 .jsp가 붙게됨
+	}
+	
+	@GetMapping("pickDelete.do")
+	public String pickDelete(HttpSession session, int fno) {
+		String id = (String) session.getAttribute("user");
+		Pick pickfood = new Pick();
+		
+		pickfood.setUid(id);	
+		pickfood.setFno(fno);		
+		
+		pickService.deletePick(pickfood);
+		
+		return "redirect:searchAllFood.do";
+	}
+	
+	
+	
 
 }

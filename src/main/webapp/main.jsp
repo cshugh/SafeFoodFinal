@@ -34,14 +34,7 @@
 
   </head>
   <script type="text/javascript">
-	$(function(){
-		$.ajax({
-			url:'openFood.do'
-			,data:{}
-			,dataType:'json'
-			,success
-		})
-	})
+
   </script>
   <body>
     <script type="text/javascript">
@@ -51,7 +44,8 @@
     	
     	function drawTable(){
     		$(".tbl_weather").attr("class","table");
-    	} */
+    	} 
+    */
     </script>
     <header role="banner">
       <jsp:include page="nav.jsp"></jsp:include>

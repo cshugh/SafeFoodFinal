@@ -12,7 +12,7 @@
    	<typeAlias type="com.ssafy.model.dto.PageBean" 		alias ="pagebean" />
    	<typeAlias type="com.ssafy.model.dto.Notice" 		alias ="notice" />
    	<typeAlias type="com.ssafy.model.dto.NoticeFile" 	alias ="noticefile" />
-   	
+   	<typeAlias type="com.ssafy.model.dto.Pick"			alias ="pick"/>
   </typeAliases>
     
   <mappers>
@@ -21,6 +21,7 @@
      <mapper resource = "static/Food_query.xml"/>
      <mapper resource = "static/Qna_query.xml" />
      <mapper resource = "static/Notice_query.xml" />
+     <mapper resource = "static/Pick_query.xml" />
      
   </mappers>
    <!-- query 설정 끝 -->
