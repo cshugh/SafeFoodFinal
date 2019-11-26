@@ -62,15 +62,14 @@ color:white;
 
 		<div class="collapse navbar-collapse" id="navbarsExample05">
 			<ul class="navbar-nav ml-auto pl-lg-5 pl-0">
-				<li class="nav-item"><a class="nav-link" href="notice.do">공지사항</a>
-				</li>
-				<li class="nav-item"><a class="nav-link" href="searchAllFood.do">상품
-						정보</a></li>
+				<li class="nav-item"><a class="nav-link" href="notice.do">Notice</a></li>
+				<li class="nav-item"><a class="nav-link" href="searchAllFood.do">Product Info</a></li>
+				<li class="nav-item"><a class="nav-link" href="foodIntake.do">Your Intake Info</a></li>
 				<li class="nav-item"><a class="nav-link" href="qna.do">Q&A</a></li>
 			</ul>
 			<ul class="navbar-nav ml-auto" id="userIn" style="display: ${(empty user) ? 'none': 'block'};">
 				<li class="nav-item cta-btn"><a class="nav-link" href="#">${user}님	안녕하세요!</a></li>
-				<li class="nav-item cta-btn"><a class="nav-link" href="infoUser.do">My Page</a></li>
+				<li class="nav-item cta-btn"><a class="nav-link" href="infoUser.do">Modify your Info</a></li>
 				<li class="nav-item cta-btn"><a class="nav-link" href="logout.do">Sign Out</a></li>
 			</ul>
 			<ul class="navbar-nav ml-auto" id="userOut" style="display: ${(not empty user) ? 'none': 'block'};">

@@ -9,12 +9,10 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="author" content="Free-Template.co" />
-<title>Safe FoodDetail - 식품 상세 정보</title>
+<title>Safe FoodIntake - 내 섭취 정보</title>
 
 <link rel="shortcut icon" href="ftco-32x32.png">
-<link
-	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -28,19 +26,42 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
 <script type='text/javascript' src='js/jquery-3.3.1.js'></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-$(function(){
+google.charts.load('current', {'packages' : ['corechart']});
+google.charts.setOnLoadCallback(drawVisualization);
+
+function drawVisualization() {
+	var data = google.visualization.arrayToDataTable([
+		['Month' , 'B', 'E', 'M', 'P' ,'R', 'A'],
+		['2004/05' , 165, 938, 522, 998 ,450,614.6],
+		['2005/06' , 135, 1120, 599, 1268 ,288,682],
+		['2006/07' , 157, 1167, 587, 807 ,397,623],
+		['2007/08' , 139, 1110, 615, 968 ,215,609.4],
+		['2008/09' , 136, 691, 629, 1026 ,366,569.6],
+	]);
+	var options = {
+			title : 'Monthly Coffe Production by Country',
+			vAxis : {title: 'Cups'},
+			hAxis : {title: 'Month'},
+			seriesType : 'bars',
+			series : {5:{type: 'line'}}
+	};
+	var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+	chart.draw(data,options);
+}
+/*$(function (){
 		DoughnutChart();
 });
 
 function DoughnutChart() {		
 	// 우선 컨텍스트를 가져옵니다. 
 	var ctx = document.getElementById("myChart").getContext('2d');
-	/*
-	 - Chart를 생성하면서, 
+	
+	// - Chart를 생성하면서, 
 	 - ctx를 첫번째 argument로 넘겨주고, 
-	 - 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
-	 */
+	 // - 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
+	
 	var myChart = new Chart(ctx,
 			{
 				type : 'doughnut',
@@ -83,7 +104,7 @@ function DoughnutChart() {
 					}
 				}
 			});
-	}
+	} */
 
 
 </script>
@@ -118,95 +139,46 @@ function DoughnutChart() {
 
 	<section class="section bg-light pt-0 bottom-slant-gray" style="margin-top:50px">
 		<div id="title">
-			<h1>제품 정보</h1>
+			<h1>내 섭취 정보</h1>
 		</div>
-		<br />
-		<div class="table-responsive">
-			<table id="table" class="table" style="margin: auto;">
-				<tr>
-					<td rowspan='6' width='30%' align="center"><img id="Picture"
-						src="img/${food.name}.jpg" width='300px' height='300px' style="object-fit:cover;"></td>
-				</tr>
-				<tr>
-					<th>제품명</th>
-					<td id="FName">${food.name}</td>
-				</tr>
-				<tr>
-					<th>제조사</th>
-					<td id="Brand">${food.maker}</td>
-				</tr>
-				<tr>
-					<th>원재료</th>
-					<td id="Ingredient">${food.material}</td>
-				</tr>
-			<%-- 	<tr>
-					<th>알레르기성분</th>
-					<td>${food.allergy}</td>
-				</tr> --%>
-				<tr>
-					<th align='left'>Quantity&nbsp;<br /> <input type="number"
-						required="required" min="1" id='person' />
-						<p /> <br /> <a href="#" class="btn btn-primary btn-sm">추가</a> <a
-						href="#" class="btn btn-primary btn-sm">찜</a>
-					</th>
-					<td></td>
-				</tr>
-			</table>
-		</div>
-		<br />
+
 		<div class="container">
+		지금까지 먹은거
+			<div class="row">
+				
+				<div class="table-responsive">
+					<table id="table" class="table" style="margin: auto;">
+						<tr>
+							<td width='30%' align="center" rowspan='3'><img id="Picture"
+								src="img/${food.name}.jpg" width='150px' height='150px'
+								style="object-fit: cover;"></td>
+							<td id="FName">${food.name}이름</td>
+							<td id="Brand">${food.maker}브랜드</td>
+							<td id="Alergy">${food.allergy}알러지요소</td>
+							<td id="Ingredient">${food.material}원재료</td>
+						</tr>
+						<tr>
+							<td id="FName">${food.name}d</td>
+							<td id="Brand">${food.maker}b</td>
+							<td id="Alergy">${food.allergy}a</td>
+							<td id="Ingredient">${food.material}m</td>
+						</tr>
+					</table>
+
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<canvas id="myChart"></canvas>
+
+					<div id="chart_div"></div>
 				</div>
 				<div class="col-md-6">
-					<div class="table-responsive">
-						<table class="table">
-							<tr>
-								<th>일일 제공량</th>
-								<td id="Serving">${food.supportpereat}</td>
-							</tr>
-							<tr>
-								<th>칼로리</th>
-								<td id="Cal">${food.calory}</td>
-							</tr>
-							<tr>
-								<th>탄수화물</th>
-								<td id="Calbo">${food.carbo}</td>
-							</tr>
-							<tr>
-								<th>단백질</th>
-								<td id="Protein">${food.protein}</td>
-							</tr>
-							<tr>
-								<th>지방</th>
-								<td id="Fat">${food.fat}</td>
-							</tr>
-							<tr>
-								<th>당류</th>
-								<td id="Sweet">${food.sugar}</td>
-							</tr>
-							<tr>
-								<th>나트륨</th>
-								<td id="Natrum">${food.natrium}</td>
-							</tr>
-							<tr>
-								<th>콜레스테롤</th>
-								<td id="Coles">${food.chole}</td>
-							</tr>
-							<tr>
-								<th>포화지방산</th>
-								<td id="GoodFat">${food.fattyacid}</td>
-							</tr>
-							<tr>
-								<th>트랜스지방</th>
-								<td id="TransFat">${food.transfat}</td>
-							</tr>
-						</table>
-					</div>
+					<div class="table-responsive"></div>
 				</div>
 			</div>
 		</div>
+
+
 	</section>
 	<footer class="site-footer" role="contentinfo">
 		<jsp:include page="footer.jsp"></jsp:include>

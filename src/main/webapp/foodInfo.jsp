@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Safe Food - 당신의 안전한 먹거리를 위하여</title>
+    <title>Safe FoodInfo - 식품 정보</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     

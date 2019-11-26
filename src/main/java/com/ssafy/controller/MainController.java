@@ -85,6 +85,12 @@ public class MainController {
 	public String notice() {
 		return "redirect:notice.jsp";
 	}
+	@GetMapping("foodIntake.do")
+	public String foodIntake() {
+		//아이디 검증해서 
+		//그 아이디에 맞는 db 가져와서 넣어줘야함
+		return "redirect:foodIntake.jsp";
+	}
 	/*
 	 * @PostMapping("insertFood.do") public String insertFood() { return "food/"; }
 	 */
@@ -93,7 +99,7 @@ public class MainController {
 		model.addAttribute("food", foodService.searchFood(code));
 		return "foodDetail";
 	}
-
+	
 	@GetMapping("searchAllFood.do") 
 	 public String searchAllFood(Model model) {
 		model.addAttribute("foodList", foodService.searchAllFood());
