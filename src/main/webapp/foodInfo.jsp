@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,6 +54,16 @@
 						<div class="text">
 							<h3>
 								<a href="foodDetail.do?code=${food.code}">${food.name}</a>
+								&nbsp &nbsp
+								<span>
+								<label>
+									<c:choose>
+										<c:when test="${fn:contains(food.material,'산)') }">
+										국외산
+										</c:when>
+										<c:otherwise>국내산</c:otherwise>
+									</c:choose>
+								</label></span>
 							</h3>
 							<p class="sched-time">
 								<span><span class="fa fa-calendar"></span> April 22, 2018</span>

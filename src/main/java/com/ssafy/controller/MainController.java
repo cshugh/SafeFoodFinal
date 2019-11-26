@@ -97,6 +97,7 @@ public class MainController {
 	@GetMapping("searchAllFood.do") 
 	 public String searchAllFood(Model model) {
 		model.addAttribute("foodList", foodService.searchAllFood());
+
 		return "foodInfo"; 
 	 }
 	@GetMapping("searchFoodByCondition.do") 
