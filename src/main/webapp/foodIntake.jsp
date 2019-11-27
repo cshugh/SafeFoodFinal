@@ -119,13 +119,11 @@ function DoughnutChart() {
 	width: 80%;
 }
 
-#table td {
-	text-align: left;
+
+.table td {
+	text-align:center;
 }
 
-#table th {
-	width: 5%;
-}
 </style>
 
 <!-- Theme Style -->
@@ -137,18 +135,16 @@ function DoughnutChart() {
 	</header>
 	<jsp:include page="mainSlider.jsp"></jsp:include>
 
-	<section class="section bg-light pt-0 bottom-slant-gray" style="margin-top:50px">
+	<section class="section bg-light pt-0 bottom-slant-gray" style="margin-top:50px; ">
 		<div id="title">
 			<h1>내 섭취 정보</h1>
 		</div>
 
 		<div class="container">
-		지금까지 먹은거
 			<div class="row">
-			
 				<div class="table-responsive">
-					<table id="table" class="table" style="margin: auto;">
-					<tr>
+					<table class="table" style="margin: auto; margin-top:30px; margin-bottom:30px; ">
+						<tr style="height:50px; background:#333; text-align:center; color:white;">
 							<td>번호</td>
 							<td>사진</td>
 							<td>이름</td>
@@ -156,22 +152,19 @@ function DoughnutChart() {
 							<td>알러지유발요소</td>
 							<td>칼로리</td>
 						</tr>
-					<c:forEach items = "${userFoodList}" var = "food">
-						
-						<tr>
-							<td>${food.index}</td>
-							<td width='30%' align="center" rowspan='2'><img id="Picture"
-								src="img/${food.name}.jpg" width='150px' height='150px'
-								style="object-fit: cover;"></td>
-							<td>${food.name}</td>
-							<td>${food.maker}</td>
-							<td>${food.allergyIngredients}</td>
-							<td>${food.calory}</td>
-						</tr>
+						<c:forEach items="${userFoodList}" var="food" varStatus="status">
+							<tr style="height:100px; text-align:center; border-bottom:0.5px solid gray">
+								<td>${status.count}</td>
+								<td width='100px' align="center" >
+								<img src="img/${food.name}.jpg" width='95px' height='95px' style="object-fit: cover; "></td>
+								<td>${food.name}</td>
+								<td>${food.maker}</td>
+								<td>${food.allergyIngredients}</td>
+								<td>${food.calory}</td>
+							</tr>
+						</c:forEach>
 					</table>
-
 				</div>
-				</c:forEach>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
