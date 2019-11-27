@@ -40,6 +40,7 @@
     	select * from userfood where uid = #{uid}
     </select>
     
+    
     <insert id = "insertUserFood" parameterType="userfood">
     	insert into userfood( fno, uid, date, count) 
     	values(

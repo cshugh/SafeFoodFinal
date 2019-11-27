@@ -33,7 +33,16 @@
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
 
+	<style type="text/css">
+		#materialTable  td {
+		border:1px solid black;
+		}
+		
+		#materialTable{
+		width: 500px;
+		}
 
+	</style>
   </head>
   <body>
     
@@ -58,22 +67,16 @@
 								<a href="foodDetail.do?code=${food.code}">${food.name}</a>
 								&nbsp &nbsp
 								<span>
-								<label>
-									<c:choose>
-										<c:when test="${fn:contains(food.material,'산)') }">
-										국외산
-										</c:when>
-										<c:otherwise>국내산</c:otherwise>
-									</c:choose>
-								</label></span>
+								<label>${food.nation}</label>
+								</span>
 							</h3>
 							<%-- <p class="sched-time">
 								<span><span class="fa fa-calendar"></span>칼로리: ${food.calory}</span>
 								<br>
 							</p> --%>
 							
-							<table>
-								<tr>
+							<table id ="materialTable"  >
+								<tr style="text-align: center; background-color:#DF991D; color:white  ">
 									<td>
 									<label>칼로리</label>
 									</td>
@@ -93,15 +96,44 @@
 									<label>나트륨</label>
 									</td>
 									<td>
-									<label>콜레스테롤</label>
-									</td>
-									<td>
 									<label>트랜스지방</label>
 									</td>
 								</tr>
+								<tr style="text-align: center">
+									<td>
+									<label>${food.calory}</label>
+									</td>
+									<td>
+									<label>${food.carbo}</label>
+									</td>
+									<td>
+									<label>${food.protein}</label>
+									</td>
+									<td>
+									<label>${food.fat}</label>
+									</td>
+									<td>
+									<label>${food.sugar}</label>
+									</td>
+									<td>
+									<label>${food.natrium}</label>
+									</td>
+									<td>
+									<label>${food.transfat}</label>
+									</td>
+								</tr>
 							</table>
-							
-							<p>알러지유발가능 성분 : ${food.allergyIngredients}</p>
+							<c:forEach items="${food.listAllergy}" var="nutri">
+								<c:choose>
+
+									<c:when test="${fn:contains(allergies,nutri) }">
+										<label style="color: red">${nutri}</label>
+									</c:when>
+									<c:otherwise>
+										<label >${nutri}</label>
+									</c:otherwise>
+								</c:choose>
+							</c:forEach>
 							<p>
 								<a href="insertUserFood.do?fno=${food.code}" class="btn btn-primary btn-sm">추가</a>
 								<a href="pickfood.do?fno=${food.code}" class="btn btn-primary btn-sm" >찜</a>
