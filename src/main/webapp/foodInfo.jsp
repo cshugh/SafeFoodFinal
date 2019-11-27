@@ -44,6 +44,7 @@
     <!-- END slider -->
 	
 	<section class="section bg-light pt-0 bottom-slant-gray" style="margin-top:50px">
+		<jsp:include page="recommendIntake.jsp"></jsp:include>   
 		<div class="container">
 			<div class="row">
 				<c:forEach items = "${foodList}" var = "food">
