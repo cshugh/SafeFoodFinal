@@ -5,14 +5,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1,  shrink-to-fit=no">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1,  shrink-to-fit=no">
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="author" content="Free-Template.co" />
 <title>Safe FoodIntake - 내 섭취 정보</title>
 
 <link rel="shortcut icon" href="ftco-32x32.png">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800"
+	rel="stylesheet">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -23,90 +26,102 @@
 <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
 <script type='text/javascript' src='js/jquery-3.3.1.js'></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript"
+	src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-google.charts.load('current', {'packages' : ['corechart']});
-google.charts.setOnLoadCallback(drawVisualization);
+	google.charts.load('current', {
+		'packages' : [ 'corechart' ]
+	});
+	google.charts.setOnLoadCallback(drawVisualization);
 
-function drawVisualization() {
-	var data = google.visualization.arrayToDataTable([
-		['Month' , 'B', 'E', 'M', 'P' ,'R', 'A'],
-		['2004/05' , 165, 938, 522, 998 ,450,614.6],
-		['2005/06' , 135, 1120, 599, 1268 ,288,682],
-		['2006/07' , 157, 1167, 587, 807 ,397,623],
-		['2007/08' , 139, 1110, 615, 968 ,215,609.4],
-		['2008/09' , 136, 691, 629, 1026 ,366,569.6],
-	]);
-	var options = {
-			title : 'Monthly Coffe Production by Country',
-			vAxis : {title: 'Cups'},
-			hAxis : {title: 'Month'},
+	function drawVisualization() {
+		var data = google.visualization.arrayToDataTable([
+				[ '칼로리', "탄수화물", "단백질", "지방", "당류", "나트륨",
+					 "콜레스테롤", "포화지방산", "트랜스지방" ],
+				[ 100, 2, 3, 4, 5, 6,7,8,9 ],
+				[ 100, 2, 3, 4, 5, 6,7,8,9 ],
+				[ 100, 2, 3, 4, 5, 6,7,8,9 ],
+				[ 100, 2, 3, 4, 5, 6,7,8,9 ],
+				[ 1, 2, 3, 4, 5, 6,7,8,9 ] ]);
+		var options = {
+			title : '영양소',
+			vAxis : {
+				title : 'Cups'
+			},
+			hAxis : {
+				title : 'Month'
+			},
 			seriesType : 'bars',
-			series : {5:{type: 'line'}}
-	};
-	var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-	chart.draw(data,options);
-}
-/*$(function (){
-		DoughnutChart();
-});
+			series : {
+				9 : {
+					type : 'line'
+				}
+			}
+		};
+		var chart = new google.visualization.ComboChart(document
+				.getElementById('chart_div'));
+		chart.draw(data, options);
+	}
 
-function DoughnutChart() {		
-	// 우선 컨텍스트를 가져옵니다. 
-	var ctx = document.getElementById("myChart").getContext('2d');
+	/*$(function (){
+	 DoughnutChart();
+	 });
+
+	 function DoughnutChart() {		
+	 // 우선 컨텍스트를 가져옵니다. 
+	 var ctx = document.getElementById("myChart").getContext('2d');
 	
-	// - Chart를 생성하면서, 
+	 // - Chart를 생성하면서, 
 	 - ctx를 첫번째 argument로 넘겨주고, 
 	 // - 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
 	
-	var myChart = new Chart(ctx,
-			{
-				type : 'doughnut',
-				data : {
-					labels : [ "칼로리", "탄수화물", "단백질", "지방", "당류", "나트륨",
-							"콜레스테롤", "포화지방산", "트랜스지방" ],
-					datasets : [ {
-						label : '# of Votes',
-						data : [${food.calory}, ${food.carbo}, ${food.protein}, ${food.fat}, ${food.sugar}, ${food.natrium},
-								${food.chole}, ${food.fattyacid}, ${food.transfat}],
-						backgroundColor : [ 'rgba(255, 99, 132, 0.2)',
-								'rgba(54, 162, 235, 0.2)',
-								'rgba(255, 206, 86, 0.2)',
-								'rgba(75, 192, 192, 0.2)',
-								'rgba(153, 102, 255, 0.2)',
-								'rgba(255, 159, 64, 0.2)',
-								'rgba(255, 215, 000, 0.2)',
-								'rgba(075, 000, 130, 0.2)',
-								'rgba(105, 105, 105, 0.2)' ],
-						borderColor : [ 'rgba(255,99,132,1)',
-								'rgba(54, 162, 235, 1)',
-								'rgba(255, 206, 86, 1)',
-								'rgba(75, 192, 192, 1)',
-								'rgba(153, 102, 255, 1)',
-								'rgba(255, 159, 64, 1)',
-								'rgba(255, 215, 000, 1)',
-								'rgba(075, 000, 130, 1)',
-								'rgba(105, 105, 105, 1)' ],
-						borderWidth : 1
-					} ]
-				},
-				options : {
-					maintainAspectRatio : true, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
-					scales : {
-						yAxes : [ {
-							ticks : {
-								beginAtZero : true
-							}
-						} ]
-					}
-				}
-			});
-	} */
-
-
+	 var myChart = new Chart(ctx,
+	 {
+	 type : 'doughnut',
+	 data : {
+	 labels : [ "칼로리", "탄수화물", "단백질", "지방", "당류", "나트륨",
+	 "콜레스테롤", "포화지방산", "트랜스지방" ],
+	 datasets : [ {
+	 label : '# of Votes',
+	 data : [${food.calory}, ${food.carbo}, ${food.protein}, ${food.fat}, ${food.sugar}, ${food.natrium},
+	 ${food.chole}, ${food.fattyacid}, ${food.transfat}],
+	 backgroundColor : [ 'rgba(255, 99, 132, 0.2)',
+	 'rgba(54, 162, 235, 0.2)',
+	 'rgba(255, 206, 86, 0.2)',
+	 'rgba(75, 192, 192, 0.2)',
+	 'rgba(153, 102, 255, 0.2)',
+	 'rgba(255, 159, 64, 0.2)',
+	 'rgba(255, 215, 000, 0.2)',
+	 'rgba(075, 000, 130, 0.2)',
+	 'rgba(105, 105, 105, 0.2)' ],
+	 borderColor : [ 'rgba(255,99,132,1)',
+	 'rgba(54, 162, 235, 1)',
+	 'rgba(255, 206, 86, 1)',
+	 'rgba(75, 192, 192, 1)',
+	 'rgba(153, 102, 255, 1)',
+	 'rgba(255, 159, 64, 1)',
+	 'rgba(255, 215, 000, 1)',
+	 'rgba(075, 000, 130, 1)',
+	 'rgba(105, 105, 105, 1)' ],
+	 borderWidth : 1
+	 } ]
+	 },
+	 options : {
+	 maintainAspectRatio : true, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+	 scales : {
+	 yAxes : [ {
+	 ticks : {
+	 beginAtZero : true
+	 }
+	 } ]
+	 }
+	 }
+	 });
+	 } */
 </script>
 <style>
 #title {
@@ -119,11 +134,9 @@ function DoughnutChart() {
 	width: 80%;
 }
 
-
 .table td {
-	text-align:center;
+	text-align: center;
 }
-
 </style>
 
 <!-- Theme Style -->
@@ -134,50 +147,106 @@ function DoughnutChart() {
 		<jsp:include page="nav.jsp"></jsp:include>
 	</header>
 	<jsp:include page="mainSlider.jsp"></jsp:include>
-
-	<section class="section bg-light pt-0 bottom-slant-gray" style="margin-top:50px; ">
-		<div id="title">
-			<h1>내 섭취 정보</h1>
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class="table-responsive">
-					<table class="table" style="margin: auto; margin-top:30px; margin-bottom:30px; ">
-						<tr style="height:50px; background:#333; text-align:center; color:white;">
-							<td>번호</td>
-							<td>사진</td>
-							<td>이름</td>
-							<td>브랜드</td>
-							<td>알러지유발요소</td>
-							<td>칼로리</td>
-						</tr>
-						<c:forEach items="${userFoodList}" var="food" varStatus="status">
-							<tr style="height:100px; text-align:center; border-bottom:0.5px solid gray">
-								<td>${status.count}</td>
-								<td width='100px' align="center" >
-								<img src="img/${food.name}.jpg" width='95px' height='95px' style="object-fit: cover; "></td>
-								<td>${food.name}</td>
-								<td>${food.maker}</td>
-								<td>${food.allergyIngredients}</td>
-								<td>${food.calory}</td>
-							</tr>
-						</c:forEach>
-					</table>
+	
+	<section class="section bg-light pt-0 bottom-slant-gray"
+		style="margin-top: 50px;">
+		<c:choose>
+			<c:when test="${empty user}">
+				<div style="text-align:center; padding-top:100px;">로그인 정보가 필요합니다.</div>
+			</c:when>
+			<c:otherwise>
+				<div id="title">
+					<h3>
+						<b>내 섭취 정보</b>
+					</h3>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
 
-					<div id="chart_div"></div>
-				</div>
-				<div class="col-md-6">
-					<div class="table-responsive"></div>
-				</div>
-			</div>
-		</div>
+				<div class="container">
+					<div class="row">
+						<div class="table-responsive">
+							<table class="table"
+								style="margin: auto; margin-top: 30px; margin-bottom: 30px;">
+								<tr
+									style="height: 50px; background: #333; text-align: center; color: white;">
+									<td>번호</td>
+									<td>사진</td>
+									<td>이름</td>
+									<td>브랜드</td>
+									<td>알러지유발요소</td>
+									<td>칼로리</td>
+								</tr>
+								<c:forEach items="${userFoodList}" var="food" varStatus="status">
+									<tr
+										style="height: 100px; text-align: center; border-bottom: 0.5px solid gray"
+										onclick="location.href='searchAllFood.do'">
+										<td>${status.count}</td>
+										<td width='100px' align="center"><img
+											src="img/${food.name}.jpg" width='95px' height='95px'
+											style="object-fit: cover;"></td>
+										<td>${food.name}</td>
+										<td>${food.maker}</td>
+										<td>${food.allergyIngredients}</td>
+										<td>${food.calory}</td>
+									</tr>
+								</c:forEach>
+							</table>
+						</div>
+					</div>
 
+					<div id="title">
+						<h3>
+							<b>찜한 식품 정보</b>
+						</h3>
+					</div>
 
+					<div class="container">
+						<div class="row">
+							<div class="table-responsive">
+								<table class="table"
+									style="margin: auto; margin-top: 30px; margin-bottom: 30px;">
+									<tr
+										style="height: 50px; background: #333; text-align: center; color: white;">
+										<td>번호</td>
+										<td>사진</td>
+										<td>이름</td>
+										<td>브랜드</td>
+										<td>알러지유발요소</td>
+										<td>칼로리</td>
+										<td></td>
+									</tr>
+									<c:forEach items="${pickList}" var="food" varStatus="status">
+										<tr
+											style="height: 100px; text-align: center; border-bottom: 0.5px solid gray">
+											<td>${status.count}</td>
+											<td width='100px' align="center"><img
+												src="img/${food.name}.jpg" width='95px' height='95px'
+												style="object-fit: cover;"></td>
+											<td>${food.name}</td>
+											<td>${food.maker}</td>
+											<td>${food.allergyIngredients}</td>
+											<td>${food.calory}</td>
+											<td>
+												<button
+													onclick="location.href='pickDelete.do?fno=${food.code}'">삭제</button>
+											</td>
+										</tr>
+									</c:forEach>
+								</table>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+
+								<div id="chart_div"></div>
+							</div>
+							<div class="col-md-6">
+								<div class="table-responsive"></div>
+							</div>
+						</div>
+					</div>
+					</div>
+			</c:otherwise>
+		</c:choose>
 	</section>
 	<footer class="site-footer" role="contentinfo">
 		<jsp:include page="footer.jsp"></jsp:include>

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -95,14 +96,20 @@ public class MainController {
 		//그 아이디에 맞는 db 가져와서 넣어줘야함
 		String uid = (String) session.getAttribute("user");
 		List<Food> userFoodList = userService.searchUserConsumeFood(uid);
-		String allegies="대두,땅콩,우유,게,새우,참치,연어,쑥,소고기,닭고기,돼지고기,복숭아"
+		List<Food> pickList = pickService.searchPick(uid);
+		String allergies="대두,땅콩,우유,게,새우,참치,연어,쑥,소고기,닭고기,돼지고기,복숭아"
 				+ "민들레,계란흰자,쇠고기,닭,계란";
 		for (int i = 0; i < userFoodList.size(); i++) {
 			Food food = userFoodList.get(i);
-			String information=getAllergyIngredients(food,allegies);
+			String information=getAllergyIngredients(food,allergies);
 			food.setAllergyIngredients(information);
 		}
+		for(Food f : pickList) {
+			String information = getAllergyIngredients(f, allergies);
+			f.setAllergyIngredients(information);
+		}
 		model.addAttribute("userFoodList", userFoodList);
+		model.addAttribute("pickList", pickList);
 		return "foodIntake";
 	}
 	/*
@@ -116,7 +123,7 @@ public class MainController {
 	
 	@GetMapping("searchAllFood.do") 
 	 public String searchAllFood(Model model,HttpSession session) {
-		String allegies="대두,땅콩,우유,게,새우,참치,연어,쑥,소고기,닭고기,돼지고기,복숭아"
+		String allergies="대두,땅콩,우유,게,새우,참치,연어,쑥,소고기,닭고기,돼지고기,복숭아"
 				+ "민들레,계란흰자,쇠고기,닭,계란";
 		List<Food> Foodlist =  foodService.searchAllFood();
 
@@ -125,7 +132,7 @@ public class MainController {
 			Food food = Foodlist.get(i);
 			
 			//KMP를 이용해서 알러지에 해당하는 재료들만 뽑아서 information에 담는다.
-			String information=getAllergyIngredients(food,allegies);
+			String information=getAllergyIngredients(food,allergies);
 			food.setAllergyIngredients(information);
 			
 			//유발가능한 재료들을 List로 다시 담아준다.
@@ -220,7 +227,6 @@ public class MainController {
 		pickService.insertPick(pickfood);
 		
 		return "redirect:searchAllFood.do";
-		//redirect를 안써주면 do뒤에 .jsp가 붙게됨
 	}
 	
 	//찜삭제
@@ -231,18 +237,7 @@ public class MainController {
 		
 		pickfood.setUid(id);	
 		pickfood.setFno(fno);		
-		
 		pickService.deletePick(pickfood);
-		
-		return "redirect:searchAllFood.do";
-	}
-	
-	//찜목록
-	@GetMapping("pickSearch.do")
-	public String pickSearch(Model model,HttpSession session) {
-		String id = (String) session.getAttribute("user");
-		
-		model.addAttribute("pickList",pickService.searchPick(id));
 		
 		return "redirect:searchAllFood.do";
 	}
