@@ -33,6 +33,7 @@
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
 
+
   </head>
   <body>
     
@@ -65,11 +66,41 @@
 									</c:choose>
 								</label></span>
 							</h3>
-							<p class="sched-time">
-								<span><span class="fa fa-calendar"></span> April 22, 2018</span>
+							<%-- <p class="sched-time">
+								<span><span class="fa fa-calendar"></span>칼로리: ${food.calory}</span>
 								<br>
-							</p>
-							<p>${food.material}</p>
+							</p> --%>
+							
+							<table>
+								<tr>
+									<td>
+									<label>칼로리</label>
+									</td>
+									<td>
+									<label>탄수화물</label>
+									</td>
+									<td>
+									<label>단백질</label>
+									</td>
+									<td>
+									<label>지방</label>
+									</td>
+									<td>
+									<label>당류</label>
+									</td>
+									<td>
+									<label>나트륨</label>
+									</td>
+									<td>
+									<label>콜레스테롤</label>
+									</td>
+									<td>
+									<label>트랜스지방</label>
+									</td>
+								</tr>
+							</table>
+							
+							<p>알러지유발가능 성분 : ${food.allergyIngredients}</p>
 							<p>
 								<a href="insertUserFood.do?fno=${food.code}" class="btn btn-primary btn-sm">추가</a>
 								<a href="pickfood.do?fno=${food.code}" class="btn btn-primary btn-sm" >찜</a>

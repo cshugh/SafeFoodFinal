@@ -1,6 +1,7 @@
 package com.ssafy.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ssafy.model.dto.Food;
 import com.ssafy.model.dto.Pick;
 import com.ssafy.model.dto.User;
 import com.ssafy.model.dto.UserFoodBean;
@@ -102,8 +104,19 @@ public class MainController {
 	
 	@GetMapping("searchAllFood.do") 
 	 public String searchAllFood(Model model) {
-		model.addAttribute("foodList", foodService.searchAllFood());
+		String allegies="대두,땅콩,우유,게,새우,참치,연어,쑥,소고기,닭고기,돼지고기,복숭아"
+				+ "민들레,계란흰자,쇠고기,닭,계란";
+		List<Food> Foodlist =  foodService.searchAllFood();
 
+		for (int i = 0; i < Foodlist.size(); i++) {
+			Food food = Foodlist.get(i);
+			
+			String information=getAllergyIngredients(food,allegies);
+			food.setAllergyIngredients(information);
+		}
+		System.out.println(Foodlist);
+		
+		model.addAttribute("foodList",Foodlist);
 		return "foodInfo"; 
 	 }
 	@GetMapping("searchFoodByCondition.do") 
@@ -237,5 +250,50 @@ public class MainController {
 		System.out.println(map);
 		//이거를 
 		return map;
+	}
+	
+	public static boolean kmp(String origin, String allergy) {
+		char[] T = origin.toCharArray();
+		char[] P = allergy.toCharArray();
+		int tLength = T.length, pLength = P.length;
+		int[] fail = new int[pLength];
+
+		for (int i = 1, j = 0; i < pLength; ++i) {
+			while (j > 0 && P[i] != P[j])
+				j = fail[j - 1];
+
+			if (P[i] == P[j])
+				fail[i] = ++j;
+		}
+		int cnt = 0;
+		for (int i = 0, j = 0; i < tLength; ++i) {
+			while (j > 0 && T[i] != P[j])
+				j = fail[j - 1];
+			if (T[i] == P[j]) {
+				if (j == pLength - 1) {
+					return true;
+				} else {
+					++j;
+				}
+			}
+		}
+		return false;
+	}
+	
+	public static String getAllergyIngredients(Food food, String allergies) {
+		String[] ingredients = allergies.split(",");
+		int size = ingredients.length;
+		String answer = "";
+		int cnt = 0;
+		for (int i = 0; i < size; i++) {
+			if (kmp(food.getName(), ingredients[i]) || kmp(food.getMaterial(), ingredients[i])) {
+				cnt++;
+				if (cnt != 1) {
+					answer += ",";
+				}
+				answer += ingredients[i];
+			}
+		}
+		return answer;
 	}
 }
