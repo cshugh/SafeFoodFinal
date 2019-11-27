@@ -1,5 +1,7 @@
 package com.ssafy.controller;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -103,22 +105,73 @@ public class MainController {
 	}
 	
 	@GetMapping("searchAllFood.do") 
-	 public String searchAllFood(Model model) {
+	 public String searchAllFood(Model model,HttpSession session) {
 		String allegies="대두,땅콩,우유,게,새우,참치,연어,쑥,소고기,닭고기,돼지고기,복숭아"
 				+ "민들레,계란흰자,쇠고기,닭,계란";
 		List<Food> Foodlist =  foodService.searchAllFood();
 
+		//식품마다 재료들에서 알러지 유발가능 재료들만 추출
 		for (int i = 0; i < Foodlist.size(); i++) {
 			Food food = Foodlist.get(i);
 			
+			//KMP를 이용해서 알러지에 해당하는 재료들만 뽑아서 information에 담는다.
 			String information=getAllergyIngredients(food,allegies);
 			food.setAllergyIngredients(information);
+			
+			//유발가능한 재료들을 List로 다시 담아준다.
+			String[] allergyList = information.split(",");
+			List<String> list = new ArrayList<>(Arrays.asList(allergyList));
+			
+			food.setListAllergy(list);
 		}
-		System.out.println(Foodlist);
+		
+		//user가 가지고있는 알러지들을 추출, 로그인안했으면 null로 넘김
+		String id = (String) session.getAttribute("user");
+		if(id!=null) {
+			User user = userService.searchUser(id);
+			String allergy = user.getAllergy();
+			model.addAttribute("allergies",allergy);			
+		}else {
+			model.addAttribute("allergies","");
+		}
+		
+		//원산지 표시로 수입제품이 있을경우 '수입산 포함' 이라고 출력, 없으면 '국내산'
+		String[] nations = {"가나","가봉","가이아나","감비아","과테말라","그레나다","그리스","기니","기니비사우",//ㄱ
+				"나미비아","나우루","나이지리아","남수단","남아프리카","네덜란드","네팔","노르웨이","뉴질랜드","니제르","니카라과","남오세티야",//ㄴ
+				"대만","덴마크","도미니카","독일","동티모르",//ㄷ
+				"라오스","라이베리아","라트비아","러시아","레바논","레소토","루마니아","룩셈부르크","르완다","리비아","리투아니아","리히텐슈타인",//ㄹ
+				"마다가스카르","마셜","말라위","말레이시아","말리","멕시코","모나코","모로코","모리셔스","모리타니","모잠비크","몬테네그로","몰도바","몰디브","몰타","몽골","미국","미얀마","미크로네시아",//ㅁ
+				"바누아투","바레인","바베이도스","바티칸","바하마","방글라데시","베냉","베네수엘라","베트남","벨기에","벨라루스","벨리즈","벨라루스","벨리즈","보스니아","보츠와나","볼리비아","부룬디","부르키나파소","부탄","북마케도니아","북키프로스","불가리아","브라질","브루나이",//ㅂ
+				"사모아","사우디아라비아","사하라 아랍 민주 공화국","산마리노","상투메 프린시페","세네갈","세르비아","세이셸","세인트루시아","소말리아","수단","스리랑카","스웨덴","스위스","스페인","슬로바키아","슬로베니아","시리아","싱가포르",//ㅅ
+				"아랍에미리트","아르헨티나","아이슬란드","아이티","아일랜드","아프가니스탄","알바니아","에스토니아","에콰도르","에티오피아","영국","예멘","오만","오스트레일리아","오스트리아","온두라스","요르단","우간다","우루과이","우즈베키스탄","우크라이나","이라크","이란","이스라엘","이집트","이탈리아","인도","인도네시아","일본",//ㅇ
+				"중국","자메이카","잠비아","북한","짐바브웨",//ㅈ
+				"체코","칠레",//ㅊ
+				"카메룬","카타르","캄보디아","캐나다","콜롬비아","콩고","쿠바","쿠웨이트","크로아티아",//ㅋ
+				"타이완","타지키스탄","탄자니아","태국","터키","토고","튀니지",//ㅌ
+				"파나마","파라과이","파키스탄","파푸아뉴기니","페루","포르투칼","폴란드","프랑스","피지","핀란드","필리핀",//ㅍ
+				"헝가리","호주","홍콩",//ㅎ
+				"외국산","수입산"//번외
+				};
+		
+		for (int i = 0; i < Foodlist.size(); i++) {
+			Food food = Foodlist.get(i);
+			for (int j = 0; j < nations.length; j++) {
+				if (kmp(food.getMaterial(), nations[j])) {
+					food.setNation("수입산 포함");
+					break;
+				} else {
+					food.setNation("국내산");
+				}
+			}
+		}
+		
 		
 		model.addAttribute("foodList",Foodlist);
+		
+		
 		return "foodInfo"; 
 	 }
+	
 	@GetMapping("searchFoodByCondition.do") 
 	 public String searchFoodByCondition(Model model, String key, String value) {
 		System.out.println(key+","+value);

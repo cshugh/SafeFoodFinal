@@ -67,14 +67,8 @@
 								<a href="foodDetail.do?code=${food.code}">${food.name}</a>
 								&nbsp &nbsp
 								<span>
-								<label>
-									<c:choose>
-										<c:when test="${fn:contains(food.material,'산)') }">
-										국외산
-										</c:when>
-										<c:otherwise>국내산</c:otherwise>
-									</c:choose>
-								</label></span>
+								<label>${food.nation}</label>
+								</span>
 							</h3>
 							<%-- <p class="sched-time">
 								<span><span class="fa fa-calendar"></span>칼로리: ${food.calory}</span>
@@ -129,8 +123,17 @@
 									</td>
 								</tr>
 							</table>
-							
-							<p>알러지유발가능 성분 : ${food.allergyIngredients}</p>
+							<c:forEach items="${food.listAllergy}" var="nutri">
+								<c:choose>
+
+									<c:when test="${fn:contains(allergies,nutri) }">
+										<label style="color: red">${nutri}</label>
+									</c:when>
+									<c:otherwise>
+										<label >${nutri}</label>
+									</c:otherwise>
+								</c:choose>
+							</c:forEach>
 							<p>
 								<a href="insertUserFood.do?fno=${food.code}" class="btn btn-primary btn-sm">추가</a>
 								<a href="pickfood.do?fno=${food.code}" class="btn btn-primary btn-sm" >찜</a>
