@@ -190,4 +190,13 @@ public class UserServiceImp implements UserService {
 			throw new SafeFoodException("섭취식품 검색 중 에러 발생");
 		}
 	}
+	@Override
+	public List<Food> searchUserConsumeFood(String uid) {
+		try {
+			return dao.searchUserConsumeFood(uid);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new SafeFoodException("섭취식품 검색 중 에러 발생");
+		}
+	}
 }

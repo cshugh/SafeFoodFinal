@@ -41,7 +41,54 @@
 		#materialTable{
 		width: 500px;
 		}
-
+		.wrapperGrid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 10px;
+			grid-auto-rows: minmax(60px, auto);
+			text-align: center;
+			padding-bottom:10px;
+		}
+		.innerTitle{
+	 	  border: none;
+		  outline: 0;
+		  color: black;
+		  font-weight:bold;
+		  background-color: rgba(170,238,240);
+		  text-align: center;
+		  width: 100%;
+		  font-size: 10px;
+		}
+		.innerGrid {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			transition: 0.3s;
+			width: 100%;
+			border-radius: 5px;
+			padding: 5px;
+		}
+		
+		.innerGrid:hover {
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+		}
+		.alergyTitle{
+	 	  border: none;
+		  outline: 0;
+		  color: white;
+		  font-weight:bold;
+		  background-color: rgba(240,38,17);
+		  text-align: center;
+		  width: 100%;
+		  font-size: 15px;
+		}
+		.alergyWrapper{
+			
+			text-align: center;
+			padding-bottom:10px;
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+			margin:10px;
+			margin-top:0px;
+		}
+		
 	</style>
   </head>
   <body>
@@ -67,65 +114,57 @@
 								<a href="foodDetail.do?code=${food.code}">${food.name}</a>
 								&nbsp &nbsp
 								<span>
-								<label>${food.nation}</label>
+								<label style="font-size:14px;font-weight:bold">${food.nation}</label>
 								</span>
 							</h3>
-							<%-- <p class="sched-time">
-								<span><span class="fa fa-calendar"></span>칼로리: ${food.calory}</span>
-								<br>
-							</p> --%>
-							
-							<table id ="materialTable"  >
-								<tr style="text-align: center; background-color:#DF991D; color:white  ">
-									<td>
-									<label>칼로리</label>
-									</td>
-									<td>
-									<label>탄수화물</label>
-									</td>
-									<td>
-									<label>단백질</label>
-									</td>
-									<td>
-									<label>지방</label>
-									</td>
-									<td>
-									<label>당류</label>
-									</td>
-									<td>
-									<label>나트륨</label>
-									</td>
-									<td>
-									<label>트랜스지방</label>
-									</td>
-								</tr>
-								<tr style="text-align: center">
-									<td>
-									<label>${food.calory}</label>
-									</td>
-									<td>
-									<label>${food.carbo}</label>
-									</td>
-									<td>
-									<label>${food.protein}</label>
-									</td>
-									<td>
-									<label>${food.fat}</label>
-									</td>
-									<td>
-									<label>${food.sugar}</label>
-									</td>
-									<td>
-									<label>${food.natrium}</label>
-									</td>
-									<td>
-									<label>${food.transfat}</label>
-									</td>
-								</tr>
-							</table>
+							<div class="infowrapper" style="margin:15px;padding:10px">
+							<div class="wrapperGrid">
+								<div class="innerGrid">
+									<div class="innerTitle">칼로리</div>
+									${food.calory}
+								</div>
+								<div class="innerGrid">
+									<div class="innerTitle">탄수화물</div>
+									${food.carbo}
+								</div>
+								<div class="innerGrid">
+									<div class="innerTitle">단백질</div>
+									${food.protein}
+								</div>
+							</div>
+							<div class="wrapperGrid">
+								<div class="innerGrid">
+									<div class="innerTitle">지방</div>
+									${food.fat}
+								</div>
+								<div class="innerGrid">
+									<div class="innerTitle">당류</div>
+									${food.sugar}
+								</div>
+								<div class="innerGrid">
+									<div class="innerTitle">나트륨</div>
+									${food.natrium}
+								</div>
+							</div>
+							<div class="wrapperGrid">
+								<div class="innerGrid">
+									<div class="innerTitle">콜레스테롤</div>
+									${food.chole}
+								</div>
+								<div class="innerGrid">
+									<div class="innerTitle">포화지방산</div>
+									${food.fattyacid}
+								</div>
+								<div class="innerGrid">
+									<div class="innerTitle">트랜스지방</div>
+									${food.transfat}
+								</div>
+							</div>
+							</div>
+							<div class="alergyWrapper">
+							<div class="alergyTitle">알러지 유발 요인</div>
 							<c:forEach items="${food.listAllergy}" var="nutri">
 								<c:choose>
-
 									<c:when test="${fn:contains(allergies,nutri) }">
 										<label style="color: red">${nutri}</label>
 									</c:when>
@@ -134,9 +173,10 @@
 									</c:otherwise>
 								</c:choose>
 							</c:forEach>
+							</div>
 							<p>
-								<a href="insertUserFood.do?fno=${food.code}" class="btn btn-primary btn-sm">추가</a>
-								<a href="pickfood.do?fno=${food.code}" class="btn btn-primary btn-sm" >찜</a>
+								<a href="insertUserFood.do?fno=${food.code}" class="btn btn-primary btn-sm" style="font-weight:bold">추가</a>
+								<a href="pickfood.do?fno=${food.code}" class="btn btn-primary btn-sm" style="background:rgba(34,174,76); border-color:rgba(34,174,76)">찜</a>
 							</p>
 						</div>
 					</div>
@@ -145,13 +185,6 @@
 			</div>
 		</div>
 
-		<div class="row mt-5" data-aos="fade-up">
-			<div class="col-12 text-center">
-				<a href="#" class="p-3">1</a> <a href="#" class="p-3">2</a> <a
-					href="#" class="p-3">3</a> <span class="p-3">...</span> <a href="#"
-					class="p-3">5</a>
-			</div>
-		</div>
 	</section>
 
     <footer class="site-footer" role="contentinfo">

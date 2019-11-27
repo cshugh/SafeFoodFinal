@@ -108,7 +108,7 @@
 								style="font-size: 36px; color: rgba(248, 140, 152)"></i><span>Women</span>
 							<div class="womenContainer">
 								<h5>
-									<b>2600</b>
+									<b>2100</b>
 								</h5>
 							</div>
 						</div>

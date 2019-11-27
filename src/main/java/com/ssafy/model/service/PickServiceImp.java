@@ -1,9 +1,12 @@
 package com.ssafy.model.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ssafy.model.dao.PickDao;
+import com.ssafy.model.dto.Food;
 import com.ssafy.model.dto.Pick;
 import com.ssafy.model.dto.SafeFoodException;
 
@@ -36,14 +39,10 @@ public class PickServiceImp implements PickService {
 		}
 	}
 	
-	public Pick searchPick(String id) {
+	public List<Food> searchPick(String id) {
 		try {
-			Pick pick=dao.searchPick(id);
-			if(pick==null) {
-				throw new SafeFoodException("찾으려는 정보가 없습니다");
-			}else {
-				return pick;
-			}
+			return dao.searchPick(id);
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 			throw new SafeFoodException();

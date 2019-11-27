@@ -13,8 +13,18 @@
 		delete from pick where uid=#{uid} and fno=#{fno}
 	</delete>
 	
-	<select id="seachPick" parameterType="string" resultType="pick">
+	<!-- <select id="seachPick" parameterType="string" resultType="pick">
 		select * from pick where uid=#{uid}
+	</select> -->
+	<select id ="searchPick" parameterType="string" resultType="food">
+		select f.code, f.name, f.maker, f.material, f.supportpereat, f.calory, f.carbo, f.protein, f.fat, f.sugar, f.natrium, f.chole, f.fattyacid, f.transfat, f.img
+		from pick p
+		join user u
+		on p.uid = u.id
+		and p.uid = #{uid:VARCHAR}
+		left join food f
+		on p.fno = f.code;
 	</select>
+	
 	
 </mapper>
