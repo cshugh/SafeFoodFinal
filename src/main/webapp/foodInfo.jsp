@@ -33,7 +33,16 @@
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
 
+	<style type="text/css">
+		#materialTable  td {
+		border:1px solid black;
+		}
+		
+		#materialTable{
+		width: 500px;
+		}
 
+	</style>
   </head>
   <body>
     
@@ -72,8 +81,8 @@
 								<br>
 							</p> --%>
 							
-							<table>
-								<tr>
+							<table id ="materialTable"  >
+								<tr style="text-align: center; background-color:#DF991D; color:white  ">
 									<td>
 									<label>칼로리</label>
 									</td>
@@ -93,10 +102,30 @@
 									<label>나트륨</label>
 									</td>
 									<td>
-									<label>콜레스테롤</label>
+									<label>트랜스지방</label>
+									</td>
+								</tr>
+								<tr style="text-align: center">
+									<td>
+									<label>${food.calory}</label>
 									</td>
 									<td>
-									<label>트랜스지방</label>
+									<label>${food.carbo}</label>
+									</td>
+									<td>
+									<label>${food.protein}</label>
+									</td>
+									<td>
+									<label>${food.fat}</label>
+									</td>
+									<td>
+									<label>${food.sugar}</label>
+									</td>
+									<td>
+									<label>${food.natrium}</label>
+									</td>
+									<td>
+									<label>${food.transfat}</label>
 									</td>
 								</tr>
 							</table>
