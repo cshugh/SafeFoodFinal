@@ -40,7 +40,7 @@
 	<jsp:include page="mainSlider.jsp"></jsp:include>
 	 
 	<div style="height:800px;">
-		<div style="border-bottom: 2px solid gray; width: 80%; margin:auto; margin-top: 50px;">
+		<div style="border-bottom: 2px solid gray; width: 80%; margin-left:auto;margin-right:auto; margin-top: 50px;margin-bottom: 50px;">
 			<h3>Q&A</h3>
 		</div>
 		<%@ include file="index.html" %>
