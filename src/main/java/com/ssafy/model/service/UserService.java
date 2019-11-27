@@ -2,6 +2,7 @@ package com.ssafy.model.service;
 
 import java.util.List;
 
+import com.ssafy.model.dto.Food;
 import com.ssafy.model.dto.User;
 import com.ssafy.model.dto.UserFoodBean;
 
@@ -15,4 +16,5 @@ public interface UserService  {
 	public void deleteUserFood(UserFoodBean userfood);
 	public UserFoodBean searchUserFood(UserFoodBean bean) ;
 	public boolean login(String user, String password);
+	public List<Food> searchUserConsumeFood(String uid);
 }

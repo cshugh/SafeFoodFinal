@@ -88,10 +88,21 @@ public class MainController {
 		return "redirect:notice.jsp";
 	}
 	@GetMapping("foodIntake.do")
-	public String foodIntake() {
+	public String foodIntake(Model model, HttpSession session) {
+		//login이 되어있으면 페이지가 올바르게 뜨도록 하는거니까 상관없어.
 		//아이디 검증해서 
 		//그 아이디에 맞는 db 가져와서 넣어줘야함
-		return "redirect:foodIntake.jsp";
+		String uid = (String) session.getAttribute("user");
+		List<Food> userFoodList = userService.searchUserConsumeFood(uid);
+		String allegies="대두,땅콩,우유,게,새우,참치,연어,쑥,소고기,닭고기,돼지고기,복숭아"
+				+ "민들레,계란흰자,쇠고기,닭,계란";
+		for (int i = 0; i < userFoodList.size(); i++) {
+			Food food = userFoodList.get(i);
+			String information=getAllergyIngredients(food,allegies);
+			food.setAllergyIngredients(information);
+		}
+		model.addAttribute("userFoodList", userFoodList);
+		return "foodIntake";
 	}
 	/*
 	 * @PostMapping("insertFood.do") public String insertFood() { return "food/"; }
@@ -114,7 +125,6 @@ public class MainController {
 			String information=getAllergyIngredients(food,allegies);
 			food.setAllergyIngredients(information);
 		}
-		System.out.println(Foodlist);
 		
 		model.addAttribute("foodList",Foodlist);
 		return "foodInfo"; 

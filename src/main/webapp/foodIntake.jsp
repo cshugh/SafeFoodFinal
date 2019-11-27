@@ -145,27 +145,33 @@ function DoughnutChart() {
 		<div class="container">
 		지금까지 먹은거
 			<div class="row">
-				
+			
 				<div class="table-responsive">
 					<table id="table" class="table" style="margin: auto;">
+					<tr>
+							<td>번호</td>
+							<td>사진</td>
+							<td>이름</td>
+							<td>브랜드</td>
+							<td>알러지유발요소</td>
+							<td>칼로리</td>
+						</tr>
+					<c:forEach items = "${userFoodList}" var = "food">
+						
 						<tr>
-							<td width='30%' align="center" rowspan='3'><img id="Picture"
+							<td>${food.index}</td>
+							<td width='30%' align="center" rowspan='2'><img id="Picture"
 								src="img/${food.name}.jpg" width='150px' height='150px'
 								style="object-fit: cover;"></td>
-							<td id="FName">${food.name}이름</td>
-							<td id="Brand">${food.maker}브랜드</td>
-							<td id="Alergy">${food.allergy}알러지요소</td>
-							<td id="Ingredient">${food.material}원재료</td>
-						</tr>
-						<tr>
-							<td id="FName">${food.name}d</td>
-							<td id="Brand">${food.maker}b</td>
-							<td id="Alergy">${food.allergy}a</td>
-							<td id="Ingredient">${food.material}m</td>
+							<td>${food.name}</td>
+							<td>${food.maker}</td>
+							<td>${food.allergyIngredients}</td>
+							<td>${food.calory}</td>
 						</tr>
 					</table>
 
 				</div>
+				</c:forEach>
 			</div>
 			<div class="row">
 				<div class="col-md-6">

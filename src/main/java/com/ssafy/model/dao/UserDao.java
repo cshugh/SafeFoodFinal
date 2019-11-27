@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import com.ssafy.model.dto.Food;
 import com.ssafy.model.dto.User;
 import com.ssafy.model.dto.UserFoodBean;
 @Repository
@@ -18,4 +19,5 @@ public interface UserDao {
 	public List<UserFoodBean> searchUserFoodList(String uid) ;
 	public void deleteUserFood(UserFoodBean userfood) ;
 	public UserFoodBean searchUserFood(UserFoodBean bean);
+	public List<Food> searchUserConsumeFood(String uid);
 }

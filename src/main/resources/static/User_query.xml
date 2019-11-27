@@ -50,6 +50,15 @@
     
     <select id = "searchUserFood" parameterType="userfood" resultType = "userfood">
     	select * from userfood where uid = #{uid:VARCHAR} and fno = #{fno:INTEGER} 
+    </select> 
+    <select id = "searchUserConsumeFood" parameterType="string" resultType = "food">
+    	select f.code, f.name, f.maker, f.material, f.supportpereat, f.calory, f.carbo, f.protein, f.fat, f.sugar, f.natrium, f.chole, f.fattyacid, f.transfat, f.img
+		from userfood uf 
+		join user u
+		on uf.uid = u.id
+		and uf.uid = #{u.id:VARCHAR}
+		left join food f
+		on uf.fno = f.code;
     </select>
 	<delete id = "deleteUserFood" parameterType="string">
 		delete from userfood where no=#{no}
