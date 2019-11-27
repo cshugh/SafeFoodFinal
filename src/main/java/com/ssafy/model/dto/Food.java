@@ -8,6 +8,18 @@ public class Food {
 	String maker;
 	String material;
 	
+	int supportpereat;
+	double calory;
+	double carbo;
+	double protein;
+	double fat;
+	double sugar;
+	double natrium;
+	double chole;
+	double fattyacid;
+	double transfat;
+	String img;
+	
 	//식품이 가지고있는 알레르기 유발가능 재료들
 	String allergyIngredients; //변수 첫글자를 대문자로 하면 못알아먹어 not found됨.
 
@@ -33,19 +45,13 @@ public class Food {
 	}
 
 
-	int supportpereat;
-	double calory;
-	double carbo;
-	double protein;
-	double fat;
-	double sugar;
-	double natrium;
-	double chole;
-	double fattyacid;
-	double transfat;
-	String img;
-	
-	
+	public int getSupportpereat() {
+		return supportpereat;
+	}
+	public void setSupportpereat(int supportpereat) {
+		this.supportpereat = supportpereat;
+	}
+
 	
 	public List<String> getListAllergy() {
 		return listAllergy;

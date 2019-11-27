@@ -66,6 +66,7 @@ color:white;
 				<li class="nav-item"><a class="nav-link" href="searchAllFood.do">Product Info</a></li>
 				<li class="nav-item"><a class="nav-link" href="foodIntake.do">Your Intake Info</a></li>
 				<li class="nav-item"><a class="nav-link" href="qna.do">Q&A</a></li>
+				<li class="nav-item" style="display: ${(user!='admin')? 'none': 'block'};"><a class="nav-link" href="foodRegit.do">식품 등록</a></li>				
 			</ul>
 			<ul class="navbar-nav ml-auto" id="userIn" style="display: ${(empty user) ? 'none': 'block'};">
 				<li class="nav-item cta-btn"><a class="nav-link" href="#">${user}님	안녕하세요!</a></li>
