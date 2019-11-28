@@ -58,9 +58,15 @@
 		</object> 
 		</DIV>	
 	</div>
-	
-	
+	<br>
+	<br>
+	<table style="margin:auto;">
+	<tr>
+	<td>
 		${crawl}
+	</td>
+	</tr>
+	</table>
 	
 	
 	</section>
