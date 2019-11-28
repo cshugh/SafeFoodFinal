@@ -43,7 +43,7 @@
 		<div style="border-bottom: 2px solid gray; width: 80%; margin-left:auto;margin-right:auto; margin-top: 50px;margin-bottom: 50px;">
 			<h3>Q&A</h3>
 		</div>
-		<%@ include file="index.html" %>
+		<%@ include file="index2.html" %>
 		</div>
 		   <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>

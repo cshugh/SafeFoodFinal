@@ -53,7 +53,7 @@ color:white;
 	</script>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 	<div class="container">
-		<a class="navbar-brand" href="main.jsp">Safe Food<a>
+		<a class="navbar-brand" href="mainPage.do">Safe Food<a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarsExample05" aria-controls="navbarsExample05"
 			aria-expanded="false" aria-label="Toggle navigation">

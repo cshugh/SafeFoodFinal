@@ -10,6 +10,9 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +26,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ssafy.model.dto.Food;
 import com.ssafy.model.dto.Pick;
+import com.ssafy.model.dto.SafeFoodException;
 import com.ssafy.model.dto.User;
 import com.ssafy.model.dto.UserFoodBean;
 import com.ssafy.model.service.FoodService;
@@ -46,6 +50,34 @@ public class MainController {
 		ModelAndView mav = new ModelAndView("Error");
 		mav.addObject("msg", e.getMessage());
 		return mav;
+	}
+	
+	@GetMapping("mainPage.do")
+	public String mainPage(Model model) {
+		System.out.println("main으로 가자");
+		try {
+			
+			//웹에서 내용을 가져온다.
+			Document doc = Jsoup.connect("https://news.naver.com/main/list.nhn?mode=LS2D&mid=shm&sid1=103&sid2=241").get();
+
+			//내용 중에서 원하는 부분을 가져온다.
+			Elements contents = doc.select("#main_content");
+
+			//원하는 부분은 Elements형태로 되어 있으므로 이를 String 형태로 바꾸어 준다.
+			String text = contents.html();
+
+			model.addAttribute("crawl",text);
+			
+			System.out.println("붛황이야 : " + text);
+			
+			return "main";
+
+			} catch (IOException e) { //Jsoup의 connect 부분에서 IOException 오류가 날 수 있으므로 사용한다.   
+
+			e.printStackTrace();
+			throw new SafeFoodException("크롤링 실패!");
+
+			}
 	}
 	
 	@GetMapping("foodRegit.do")
@@ -72,7 +104,10 @@ public class MainController {
 		food.setImg("img/"+food.getName()+"."+ext);
 		
 		//저장루트 설정
-		String dir = "C:\\SSAFY\\work_spring\\SpringSafeFood\\src\\main\\resources\\static";
+		String path = System.getProperty("user.dir");
+		System.out.println("어디냐"+path);
+		String dir =  path+"\\src\\main\\resources\\static";
+		//String dir = "C:\\SSAFY\\work_spring\\SpringSafeFood\\src\\main\\resources\\static";
 		
 		//저정되는 파일이름 우리가 만든 새 이미지 이름으로 저장되는 file을 만들고
 		File dest = new File(dir+"\\"+food.getImg());

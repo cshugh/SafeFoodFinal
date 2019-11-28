@@ -38,14 +38,7 @@
   </script>
   <body>
     <script type="text/javascript">
-    /* 	$(document).ready(function(){
-    		drawTable();
-    	})
-    	
-    	function drawTable(){
-    		$(".tbl_weather").attr("class","table");
-    	} 
-    */
+    
     </script>
     <header role="banner">
       <jsp:include page="nav.jsp"></jsp:include>
@@ -66,9 +59,8 @@
 		</DIV>	
 	</div>
 	
-	<div class="container">
-		${foodNews}
-	</div>
+	
+		${crawl}
 	
 	
 	</section>
