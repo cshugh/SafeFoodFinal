@@ -13,4 +13,5 @@ public interface FoodDao {
 	public List<Food> searchFoodByCondition(String key, String word);
 	public List<Food> searchAllFood();
 	public Food searchFood(int code);
+	public void deleteFood(int code);
 }

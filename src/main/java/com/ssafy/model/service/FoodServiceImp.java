@@ -14,6 +14,15 @@ public class FoodServiceImp implements FoodService{
 	@Autowired
 	private FoodDao dao;
 	
+	public void deleteFood(int code) {
+		try {
+			dao.deleteFood(code);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new SafeFoodException("존재하지않는 상품입니다.");
+		}
+	}
+	
 	public List<Food> searchAllFood() {
 		try {
 			return dao.searchAllFood();

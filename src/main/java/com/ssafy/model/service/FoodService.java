@@ -10,5 +10,5 @@ public interface FoodService {
 	public Food searchFood(int code);
 	public List<Food> searchAllFood();
 	public List<Food> searchFoodByCondition(String key, String value);
-	
+	public void deleteFood(int code);
 }

@@ -89,6 +89,7 @@
 			margin-top:0px;
 		}
 		
+	
 	</style>
   </head>
   <body>
@@ -178,6 +179,9 @@
 								<a href="insertUserFood.do?fno=${food.code}" class="btn btn-primary btn-sm" style="font-weight:bold">추가</a>
 								<a href="pickfood.do?fno=${food.code}" class="btn btn-primary btn-sm" style="background:rgba(34,174,76); border-color:rgba(34,174,76)">찜</a>
 							</p>
+								<%-- <span style="display: ${(user!='admin')? 'none': 'block'};"><a href="deleteFood.do?fno=${food.code}" id="removeFood" class="btn btn-default btn-circle" style="background:rgba(34,174,76); border-color:rgba(34,174,76)">삭제</a></span> --%>
+							<span style="display: ${(user!='admin')? 'none': 'block'};"><a href="deleteFood.do?fno=${food.code}" class="btn" id="btn" ><img class="btn-img" src="/img/delete.jpg" style="width: 40px;"></a></span>
+
 						</div>
 					</div>
 				</div>
