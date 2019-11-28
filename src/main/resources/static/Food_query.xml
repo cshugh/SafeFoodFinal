@@ -50,5 +50,9 @@
     		</if>
     	</where>
     </select>
+    
+    <delete id = "deleteFood" parameterType="integer">
+    	delete from food where code=#{code}
+    </delete>
       	
 </mapper>

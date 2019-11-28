@@ -53,6 +53,12 @@ public class MainController {
 		return "foodRegit";
 	}
 	
+	@GetMapping("deleteFood.do")
+	public String deleteFood(int fno) {
+		foodService.deleteFood(fno);
+		return"redirect:searchAllFood.do";
+	}
+	
 	@PostMapping("insertFood.do")
 	public String insertFood(MultipartFile foodImg,Food food,HttpSession session) throws IllegalStateException, IOException {
 		
