@@ -1,13 +1,13 @@
 package com.ssafy.controller;
 
-import java.io.File; 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +15,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.multipart.MultipartRequest;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ssafy.model.dto.Food;
@@ -56,43 +54,29 @@ public class MainController {
 	}
 	
 	@PostMapping("insertFood.do")
-	public String insertFood() {
-		/*
-		 * String uploadPath = request.getRealPath("/img");
-		 * 
-		 * MultipartHttpServletRequest multipartHttpServletRequest =
-		 * (MultipartHttpServletRequest)request; String name =""; String subject ="";
-		 * 
-		 * String fileName1 ="";// 중복처리된 이름 String originalName1 ="";// 중복 처리전 실제 원본 이름
-		 * long fileSize =0;// 파일 사이즈 String fileType ="";// 파일 타입 MultipartRequest
-		 * multi =null; try{ // request,파일저장경로,용량,인코딩타입,중복파일명에 대한 기본 정책 multi =new
-		 * MultipartRequest(request,uploadPath,maxSize,"utf-8",new
-		 * DefaultFileRenamePolicy());
-		 * 
-		 * // form내의 input name="name" 인 녀석 value를 가져옴 name =
-		 * multi.getParameter("name"); // name="subject" 인 녀석 value를 가져옴 subject =
-		 * multi.getParameter("subject");
-		 * 
-		 * // 전송한 전체 파일이름들을 가져옴 Enumeration files = multi.getFileNames();
-		 * 
-		 * while(files.hasMoreElements()){ // form 태그에서 <input type="file"
-		 * name="여기에 지정한 이름" />을 가져온다. String file1 = (String)files.nextElement();// 파일
-		 * input에 지정한 이름을 가져옴 // 그에 해당하는 실재 파일 이름을 가져옴 originalName1 =
-		 * multi.getOriginalFileName(file1); // 파일명이 중복될 경우 중복 정책에 의해 뒤에 1,2,3 처럼 붙어
-		 * unique하게 파일명을 생성하는데 // 이때 생성된 이름을 filesystemName이라 하여 그 이름 정보를 가져온다.(중복에 대한
-		 * 처리) fileName1 = multi.getFilesystemName(file1); // 파일 타입 정보를 가져옴 fileType =
-		 * multi.getContentType(file1); // input file name에 해당하는 실재 파일을 가져옴 File file =
-		 * multi.getFile(file1); // 그 파일 객체의 크기를 알아냄 fileSize = file.length();
-		 
-		        }
-		    }catch(Exception e){
-		        e.printStackTrace();
-		    }
+	public String insertFood(MultipartFile foodImg,Food food,HttpSession session) throws IllegalStateException, IOException {
+		
+		//등록된 image파일 이름을 추출
+		String oName = foodImg.getOriginalFilename();
+		
+		//image의 확장자명만 가져옴
+		String ext =  oName.substring(oName.lastIndexOf('.')+1);
+		
+		//db에 저장될 food의 img에 값을 만들어줌
+		food.setImg("img/"+food.getName()+"."+ext);
+		
+		//저장루트 설정
+		String dir = "C:\\SSAFY\\work_spring\\SpringSafeFood\\src\\main\\resources\\static";
+		
+		//저정되는 파일이름 우리가 만든 새 이미지 이름으로 저장되는 file을 만들고
+		File dest = new File(dir+"\\"+food.getImg());
+		
+		//이미지를 우리가 만든 dest이미지로 transfer
+		foodImg.transferTo(dest);		
 
 		foodService.insertFood(food);
 		return"redirect:searchAllFood.do";
-		*/
-		return null;
+
 	}
 	
 	@GetMapping("deleteUser.do")
@@ -401,4 +385,6 @@ public class MainController {
 		}
 		return answer;
 	}
+	
+	
 }

@@ -105,12 +105,7 @@ public class Food {
 	public void setMaterial(String material) {
 		this.material = material;
 	}
-	public int getsupportpereat() {
-		return supportpereat;
-	}
-	public void setsupportpereat(int servingWt) {
-		this.supportpereat = servingWt;
-	}
+
 	public double getCalory() {
 		return calory;
 	}

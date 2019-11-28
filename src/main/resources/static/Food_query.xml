@@ -12,7 +12,7 @@
 					  ,#{name:VARCHAR}
 					  ,#{maker:VARCHAR}
 					  ,#{material:VARCHAR}
-					  ,#{supportperate:VARCHAR}
+					  ,#{supportpereat:VARCHAR}
 					  ,#{calory:VARCHAR}
 					  ,#{carbo:VARCHAR}
 					  ,#{protein:VARCHAR}

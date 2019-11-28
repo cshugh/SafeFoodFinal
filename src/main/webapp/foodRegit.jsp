@@ -126,7 +126,7 @@
 		
 		<div class="form-group">
 			<label class="control-label">이미지 업로드(jpg / jpeg / png)</label> 
-			<input type="file" value="파일 선택" class="form-control" id="img" name ="img" accept=".jpg, .jpeg, .png">
+			<input type="file" value="파일 선택" class="form-control" id="img" name ="foodImg" accept=".jpg, .jpeg, .png">
 		</div>
 
 		
