@@ -25,104 +25,81 @@
 <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
 <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-
+<script src="js/jquery-3.2.1.min.js"></script>
 <script type='text/javascript' src='js/jquery-3.3.1.js'></script>
-<script type="text/javascript"
-	src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-	google.charts.load('current', {
-		'packages' : [ 'corechart' ]
-	});
-	google.charts.setOnLoadCallback(drawVisualization);
-
-	function drawVisualization() {
-		var data = google.visualization.arrayToDataTable([
-				[ '칼로리', "탄수화물", "단백질", "지방", "당류", "나트륨",
-					 "콜레스테롤", "포화지방산", "트랜스지방" ],
-				[ 100, 2, 3, 4, 5, 6,7,8,9 ],
-				[ 100, 2, 3, 4, 5, 6,7,8,9 ],
-				[ 100, 2, 3, 4, 5, 6,7,8,9 ],
-				[ 100, 2, 3, 4, 5, 6,7,8,9 ],
-				[ 1, 2, 3, 4, 5, 6,7,8,9 ] ]);
-		var options = {
-			title : '영양소',
-			vAxis : {
-				title : 'Cups'
-			},
-			hAxis : {
-				title : 'Month'
-			},
-			seriesType : 'bars',
-			series : {
-				9 : {
-					type : 'line'
-				}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+      $(function(){
+    	  drawChart();
+    	  
+  });
+    var pickFood = '${pickFood}';
+	var sumFood ='${sumFood}';
+	var data ;
+	var data2;
+	function drawChart(){
+		data = new google.visualization.DataTable();
+		data2 = new google.visualization.DataTable();
+		data.addColumn('string','영양소');
+		data.addColumn('number','칼로리');
+		data.addColumn('number','탄수화물');
+		data.addColumn('number','단백질');
+		data.addColumn('number','지방');
+		data.addColumn('number','당류');
+		data.addColumn('number','나트륨');
+		data.addColumn('number','콜레스테롤');
+		data.addColumn('number','포화지방산');
+		data.addColumn('number','트랜스지방');
+		data.addRow([' ',parseInt('${sumFood.calory}',10)
+			,parseInt('${sumFood.carbo}',10)
+			,parseInt('${sumFood.protein}',10)
+			,parseInt('${sumFood.fat}',10)
+			,parseInt('${sumFood.sugar}',10)
+			,parseInt('${sumFood.natrium}',10)
+			,parseInt('${sumFood.chole}',10)
+			,parseInt('${sumFood.fattyacid}',10)
+			,parseInt('${sumFood.transfat}',10)]);
+		data2.addColumn('string','영양소');
+		data2.addColumn('number','칼로리');
+		data2.addColumn('number','탄수화물');
+		data2.addColumn('number','단백질');
+		data2.addColumn('number','지방');
+		data2.addColumn('number','당류');
+		data2.addColumn('number','나트륨');
+		data2.addColumn('number','콜레스테롤');
+		data2.addColumn('number','포화지방산');
+		data2.addColumn('number','트랜스지방');
+		data2.addRow([' ',parseInt('${pickFood.calory}',10)
+			,parseInt('${pickFood.carbo}',10)
+			,parseInt('${pickFood.protein}',10)
+			,parseInt('${pickFood.fat}',10)
+			,parseInt('${pickFood.sugar}',10)
+			,parseInt('${pickFood.natrium}',10)
+			,parseInt('${pickFood.chole}',10)
+			,parseInt('${pickFood.fattyacid}',10)
+			,parseInt('${pickFood.transfat}',10)]);
+		
+		options = {
+			chart: {
+				maintainAspectRatio : true
 			}
 		};
-		var chart = new google.visualization.ComboChart(document
+		option2 = {
+			chart: {
+				maintainAspectRatio : true
+			}
+		};
+		chart = new google.charts.Bar(document
 				.getElementById('chart_div'));
-		chart.draw(data, options);
+		chart2 = new google.charts.Bar(document.getElementById('chart_div2'))
+		chart.draw(data, google.charts.Bar.convertOptions(options));
+		chart2.draw(data2, google.charts.Bar.convertOptions(option2)); 
 	}
-
-	/*$(function (){
-	 DoughnutChart();
-	 });
-
-	 function DoughnutChart() {		
-	 // 우선 컨텍스트를 가져옵니다. 
-	 var ctx = document.getElementById("myChart").getContext('2d');
-	
-	 // - Chart를 생성하면서, 
-	 - ctx를 첫번째 argument로 넘겨주고, 
-	 // - 두번째 argument로 그림을 그릴때 필요한 요소들을 모두 넘겨줍니다. 
-	
-	 var myChart = new Chart(ctx,
-	 {
-	 type : 'doughnut',
-	 data : {
-	 labels : [ "칼로리", "탄수화물", "단백질", "지방", "당류", "나트륨",
-	 "콜레스테롤", "포화지방산", "트랜스지방" ],
-	 datasets : [ {
-	 label : '# of Votes',
-	 data : [${food.calory}, ${food.carbo}, ${food.protein}, ${food.fat}, ${food.sugar}, ${food.natrium},
-	 ${food.chole}, ${food.fattyacid}, ${food.transfat}],
-	 backgroundColor : [ 'rgba(255, 99, 132, 0.2)',
-	 'rgba(54, 162, 235, 0.2)',
-	 'rgba(255, 206, 86, 0.2)',
-	 'rgba(75, 192, 192, 0.2)',
-	 'rgba(153, 102, 255, 0.2)',
-	 'rgba(255, 159, 64, 0.2)',
-	 'rgba(255, 215, 000, 0.2)',
-	 'rgba(075, 000, 130, 0.2)',
-	 'rgba(105, 105, 105, 0.2)' ],
-	 borderColor : [ 'rgba(255,99,132,1)',
-	 'rgba(54, 162, 235, 1)',
-	 'rgba(255, 206, 86, 1)',
-	 'rgba(75, 192, 192, 1)',
-	 'rgba(153, 102, 255, 1)',
-	 'rgba(255, 159, 64, 1)',
-	 'rgba(255, 215, 000, 1)',
-	 'rgba(075, 000, 130, 1)',
-	 'rgba(105, 105, 105, 1)' ],
-	 borderWidth : 1
-	 } ]
-	 },
-	 options : {
-	 maintainAspectRatio : true, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
-	 scales : {
-	 yAxes : [ {
-	 ticks : {
-	 beginAtZero : true
-	 }
-	 } ]
-	 }
-	 }
-	 });
-	 } */
 </script>
+
+
 <style>
 #title {
 	text-align: center;
@@ -176,17 +153,17 @@
 									<td>칼로리</td>
 								</tr>
 								<c:forEach items="${userFoodList}" var="food" varStatus="status">
-									<tr
+									<tr 
 										style="height: 100px; text-align: center; border-bottom: 0.5px solid gray"
-										onclick="location.href='searchAllFood.do'">
-										<td>${status.count}</td>
+										onclick="location.href='foodDetail.do?code=${food.code}'">
+										<td style="padding-top:45px">${status.count}</td>
 										<td width='100px' align="center"><img
 											src="img/${food.name}.jpg" width='95px' height='95px'
 											style="object-fit: cover;"></td>
-										<td>${food.name}</td>
-										<td>${food.maker}</td>
-										<td>${food.allergyIngredients}</td>
-										<td>${food.calory}</td>
+										<td style="padding-top:45px">${food.name}</td>
+										<td style="padding-top:45px">${food.maker}</td>
+										<td style="padding-top:45px">${food.allergyIngredients}</td>
+										<td style="padding-top:45px">${food.calory}</td>
 									</tr>
 								</c:forEach>
 							</table>
@@ -217,15 +194,16 @@
 									<c:forEach items="${pickList}" var="food" varStatus="status">
 										<tr
 											style="height: 100px; text-align: center; border-bottom: 0.5px solid gray">
-											<td>${status.count}</td>
+											<%-- onclick="location.href='foodDetail.do?code=${food.code}'"> --%>
+											<td style="padding-top:45px">${status.count}</td>
 											<td width='100px' align="center"><img
 												src="img/${food.name}.jpg" width='95px' height='95px'
 												style="object-fit: cover;"></td>
-											<td>${food.name}</td>
-											<td>${food.maker}</td>
-											<td>${food.allergyIngredients}</td>
-											<td>${food.calory}</td>
-											<td>
+											<td style="padding-top:45px">${food.name}</td>
+											<td style="padding-top:45px">${food.maker}</td>
+											<td style="padding-top:45px">${food.allergyIngredients}</td>
+											<td style="padding-top:45px">${food.calory}</td>
+											<td style="padding-top:45px">
 												<button
 													onclick="location.href='pickDelete.do?fno=${food.code}'">삭제</button>
 											</td>
@@ -235,12 +213,14 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6">
-
-								<div id="chart_div"></div>
+							<div class="col-md-6" style="padding:15px;text-align:center;">
+							<h5><b>섭취</b></h5>
+								
+								<div id="chart_div" style="height:500px;"></div>
 							</div>
-							<div class="col-md-6">
-								<div class="table-responsive"></div>
+							<div class="col-md-6" style="padding:15px;text-align:center;">
+								<h5><b>찜</b></h5>
+								<div id="chart_div2" style="height:500px"></div>
 							</div>
 						</div>
 					</div>
@@ -262,14 +242,14 @@
 				stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16" /></svg>
 	</div>
 
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
-	<script src="js/main.js"></script>
 </body>
+
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/magnific-popup-options.js"></script>
+<script src="js/main.js"></script>
 </html>
