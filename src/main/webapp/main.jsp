@@ -31,7 +31,11 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
-
+	<style>
+	.list_header newsflash_header {
+	background:#000;
+	}
+	</style>
   </head>
   <script type="text/javascript">
 

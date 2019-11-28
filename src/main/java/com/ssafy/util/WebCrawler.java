@@ -26,7 +26,7 @@ public class WebCrawler {
 		return sdf.format(new Date());
 	}
 	
-	// 네이버 날씨 크롤링 메소드
+	// 크롤링 메소드
 	public Object getFoodNews() throws Exception{
 		//작업 시작 전 시간 기록
 		log.debug("Start Date : "+getCurrentData());
