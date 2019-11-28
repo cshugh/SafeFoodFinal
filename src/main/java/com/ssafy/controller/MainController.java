@@ -56,14 +56,17 @@ public class MainController {
 	public String mainPage(Model model) {
 		System.out.println("main으로 가자");
 		try {
+			//https://jobc.tistory.com/78 참고
 			
 			//웹에서 내용을 가져온다.
 			Document doc = Jsoup.connect("https://news.naver.com/main/list.nhn?mode=LS2D&mid=shm&sid1=103&sid2=241").get();
 
 			//내용 중에서 원하는 부분을 가져온다.
-			Elements contents = doc.select("#main_content");
+			Elements contents = doc.select(".type06_headline li");
 
 			//원하는 부분은 Elements형태로 되어 있으므로 이를 String 형태로 바꾸어 준다.
+			
+			//String text = contents.attr("");
 			String text = contents.html();
 
 			model.addAttribute("crawl",text);

@@ -31,7 +31,12 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
-
+	
+	<style type="text/css">
+		ul{
+			 list-style:none;
+		}
+	</style>
   </head>
   <script type="text/javascript">
 
@@ -40,6 +45,7 @@
     <script type="text/javascript">
     
     </script>
+    
     <header role="banner">
       <jsp:include page="nav.jsp"></jsp:include>
     </header>
@@ -54,7 +60,7 @@
 	<div class="container">
 		<DIV class=video-container style="TEXT-ALIGN: center">
 		<object type="text/html" width="80%" height="500" 
-			data="//www.youtube.com/embed/3w5iMGSHvsE" allowFullScreen>
+			data="//www.youtube.com/embed/POFa9v15zM0" allowFullScreen>
 		</object> 
 		</DIV>	
 	</div>
@@ -63,7 +69,15 @@
 	<table style="margin:auto;">
 	<tr>
 	<td>
+	<div>
+		<h2><label>건강정보</label></h2>
+	</div>
+	<br>
+	<div>	
+	<ul style=" list-style:none;">
 		${crawl}
+	</ul>
+	</div>
 	</td>
 	</tr>
 	</table>
