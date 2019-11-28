@@ -128,6 +128,8 @@ public class MainController {
 		String uid = (String) session.getAttribute("user");
 		List<Food> userFoodList = userService.searchUserConsumeFood(uid);
 		List<Food> pickList = pickService.searchPick(uid);
+		Food sumFood = new Food();
+		Food pickFood = new Food();
 		String allergies="대두,땅콩,우유,게,새우,참치,연어,쑥,소고기,닭고기,돼지고기,복숭아"
 				+ "민들레,계란흰자,쇠고기,닭,계란";
 		for (int i = 0; i < userFoodList.size(); i++) {
@@ -138,9 +140,42 @@ public class MainController {
 		for(Food f : pickList) {
 			String information = getAllergyIngredients(f, allergies);
 			f.setAllergyIngredients(information);
+			pickFood.setCalory(pickFood.getCalory()+f.getCalory());
+			pickFood.setCarbo(pickFood.getCarbo()+f.getCarbo());
+			pickFood.setProtein(pickFood.getProtein()+f.getProtein());
+			pickFood.setFat(pickFood.getFat()+f.getFat());
+			pickFood.setSugar(pickFood.getSugar()+f.getSugar());
+			pickFood.setNatrium(pickFood.getNatrium()+f.getNatrium());
+			pickFood.setChole(pickFood.getChole()+f.getChole());
+			pickFood.setFattyacid(pickFood.getFattyacid()+f.getFattyacid());
+			pickFood.setTransfat(pickFood.getTransfat()+f.getTransfat());
 		}
+		for(Food f : userFoodList) {
+			sumFood.setCalory(sumFood.getCalory()+f.getCalory());
+			sumFood.setCarbo(sumFood.getCarbo()+f.getCarbo());
+			sumFood.setProtein(sumFood.getProtein()+f.getProtein());
+			sumFood.setFat(sumFood.getFat()+f.getFat());
+			sumFood.setSugar(sumFood.getSugar()+f.getSugar());
+			sumFood.setNatrium(sumFood.getNatrium()+f.getNatrium());
+			sumFood.setChole(sumFood.getChole()+f.getChole());
+			sumFood.setFattyacid(sumFood.getFattyacid()+f.getFattyacid());
+			sumFood.setTransfat(sumFood.getTransfat()+f.getTransfat());
+		}
+		
+		pickFood.setCalory(pickFood.getCalory()+sumFood.getCalory());
+		pickFood.setCarbo(pickFood.getCarbo()+sumFood.getCarbo());
+		pickFood.setProtein(pickFood.getProtein()+sumFood.getProtein());
+		pickFood.setFat(pickFood.getFat()+sumFood.getFat());
+		pickFood.setSugar(pickFood.getSugar()+sumFood.getSugar());
+		pickFood.setNatrium(pickFood.getNatrium()+sumFood.getNatrium());
+		pickFood.setChole(pickFood.getChole()+sumFood.getChole());
+		pickFood.setFattyacid(pickFood.getFattyacid()+sumFood.getFattyacid());
+		pickFood.setTransfat(pickFood.getTransfat()+sumFood.getTransfat());
+		
 		model.addAttribute("userFoodList", userFoodList);
 		model.addAttribute("pickList", pickList);
+		model.addAttribute("sumFood",sumFood);
+		model.addAttribute("pickFood",pickFood);
 		return "foodIntake";
 	}
 	/*
