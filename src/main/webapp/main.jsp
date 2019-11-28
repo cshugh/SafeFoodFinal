@@ -31,10 +31,25 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
-	<style>
-	.list_header newsflash_header {
-	background:#000;
-	}
+	
+	<style type="text/css">
+		ul{
+			 list-style:none;
+		}
+		ul > dl{
+			background: white;
+			padding: 15px;
+			border : 1px solid black;
+		
+		}
+		.photo{
+		 width : 200px;
+		 height : 150px;
+		}
+		.photo > a > img{
+		width : 200px;
+		 height : 150px;
+		}
 	</style>
   </head>
   <script type="text/javascript">
@@ -44,6 +59,7 @@
     <script type="text/javascript">
     
     </script>
+    
     <header role="banner">
       <jsp:include page="nav.jsp"></jsp:include>
     </header>
@@ -58,7 +74,7 @@
 	<div class="container">
 		<DIV class=video-container style="TEXT-ALIGN: center">
 		<object type="text/html" width="80%" height="500" 
-			data="//www.youtube.com/embed/3w5iMGSHvsE" allowFullScreen>
+			data="//www.youtube.com/embed/POFa9v15zM0" allowFullScreen>
 		</object> 
 		</DIV>	
 	</div>
@@ -67,7 +83,15 @@
 	<table style="margin:auto;">
 	<tr>
 	<td>
+	<div style="padding:10px;">
+		<h2>건강정보</h2>
+	</div>
+	<br>
+	<div>	
+	<ul style=" list-style:none;">
 		${crawl}
+	</ul>
+	</div>
 	</td>
 	</tr>
 	</table>
@@ -93,4 +117,5 @@
     <script src="js/magnific-popup-options.js"></script>
     <script src="js/main.js"></script>
   </body>
+  
 </html>
